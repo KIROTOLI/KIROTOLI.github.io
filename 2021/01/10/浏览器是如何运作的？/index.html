@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="贾志飞">
   <meta name="keywords" content="">
-  <title>新文档 - 贾志飞的博客</title>
+  <title>浏览器是如何运作的？ - 贾志飞的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -157,12 +157,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/u=631218122,3664574734&fm=11&gp=0.jpg') no-repeat center center;
+         style="background: url('/img/src=http___pic1.win4000.com_m00_43_5f_5fff042b2935a0cf08daf5e1a0bd8336.jpg&refer=http___pic1.win4000.jfif') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="新文档">
+            <span class="h2" id="subtitle" title="浏览器是如何运作的？">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-09 12:24" pubdate>
-        2021年1月9日 中午
+      <time datetime="2021-01-10 13:03" pubdate>
+        2021年1月10日 下午
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      102 字
+      1.3k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      13
        分钟
     </span>
   
@@ -232,28 +232,66 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">新文档</h1>
+            <h1 style="display: none">浏览器是如何运作的？</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：18 小时前
+                  本文最后更新于：几秒前
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="这是我的第一篇博客"><a href="#这是我的第一篇博客" class="headerlink" title="这是我的第一篇博客"></a>这是我的第一篇博客</h1> <a id="more"></a>
-<h3 id="这个是三级标题"><a href="#这个是三级标题" class="headerlink" title="这个是三级标题"></a>这个是三级标题</h3><ul>
-<li>列表1</li>
-<li>列表2<br> a 子列表<br> b 子列表</li>
-<li>列表3</li>
+              <h1 id="关于浏览器在运作时的流程"><a href="#关于浏览器在运作时的流程" class="headerlink" title="关于浏览器在运作时的流程"></a>关于浏览器在运作时的流程</h1><a id="more"></a>
+<h1 id="浏览器是如何运作的"><a href="#浏览器是如何运作的" class="headerlink" title="浏览器是如何运作的"></a>浏览器是如何运作的</h1><ul>
+<li>我们要理解浏览器是如何运作的过程，首先要理解一个概念，也就是进程与线程</li>
 </ul>
-<hr>
-<p> <a target="_blank" rel="noopener" href="https://space.bilibili.com/2882171">bilibili主页</a><br> 图片测试<br> <img src="https://img.pic88.com/preview/2020/08/05/15966333861457328.jpg!s640" srcset="/img/loading.gif" alt="图片"></p>
-<p> <em>字体是倾斜的哦</em><br> <strong>字体加粗了呢</strong></p>
-<p> <code>&lt;html&gt;&lt;/html&gt;</code><br> <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>我是标题<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure></p>
 <blockquote>
-<p>我的内容是引用的<br>还是一句引用</p>
+<p> 进程是操作系统进行资源分配和调度的基本单元 可以申请和拥有计算机资源 进程是程序的基本执行实体<br>线程是操作系统能够进行运算调度的最小单位 一个进程中可以并发多个线程 每条线程并行执行不同的任务</p>
 </blockquote>
+<ul>
+<li><p>在我们了解了进程与线程的概念以后，就可以和你介绍浏览器的运作流程了</p>
+</li>
+<li><p>当我们在电脑上打开打了浏览器时，相当于运行了浏览器这个应用程序</p>
+<h2 id="浏览器的多进程结构"><a href="#浏览器的多进程结构" class="headerlink" title="浏览器的多进程结构"></a>浏览器的多进程结构</h2></li>
+<li><p>而浏览器这个是一个多进程的浏览器结构，根据进程功能不同来拆分浏览器，我们可以将浏览器分解为：</p>
+<p> 1.浏览器进程</p>
+<pre><code> 负责控制浏览器除标签页外的用户界面 
+
+ 包括地址栏 书签 后退 和前进按钮 以及负责与浏览器的其他进程协调工作</code></pre>
+<p> 2.GPU进程</p>
+<pre><code> 负责整个浏览器界面的渲染</code></pre>
+<p> 3.插件进程</p>
+<pre><code> 负责控制网站使用的所有插件</code></pre>
+<p> 4.缓存进程<br> 5.网络进程</p>
+<pre><code>负责发起接受网络请求</code></pre>
+<p> 6.渲染器进程</p>
+<pre><code>用来控制显示tab标签内的所有内容 浏览器在默认情况下会为每个标签页创建一个渲染器进程</code></pre>
+<h2 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h2></li>
+<li><p>当你在浏览器地址栏输入地址时 浏览器的ui线程会捕捉你的输入内容<br>如果访问的是网址 则ui线程会启动一个网络线程来请求dns进行域名解析<br>接着连接服务器获取数据</p>
+</li>
+<li><p>当网络线程获取到数据后 会通过 safeBrowsing来检查站点（检查是否是恶意站点，会弹出警告） </p>
+<p>   safebrowsing是谷歌内置的一套站点安全系统 通过检测该站点的数据来判断是否安全</p>
+</li>
+<li><p>当安全校验通过时 网络线程会通知ui线程准备好了 然后ui线程会创建一个渲染器进程来渲染页面 浏览器进程通过ipc管道将数据传递给渲染器进程</p>
+</li>
+<li><p>渲染器进程的核心任务就是把 html css js 等资源渲染成用户可以交互的web界面 渲染器进程的主线程将html进行解析 构造dom数据结构 在加载完成后 我们会获得一个dom tree</p>
+</li>
+<li><p>在知道dom的结构和每个节点的样式后 接下来需要知道每个节点放在页面上的哪个位置 也就是节点的坐标以及该节点需要占用多大的区域 这个阶段被称为layout布局 主线程通过遍历dom和计算好的样式来生成layout ree 上面的每个节点都记录了x y 坐标与边框尺寸 （这里注意dom tree 与layout tree并不是一一对应的 设置的display：none的节点并不会出现在layout tree上 而在before伪类添加了content值的元素会出现在layout tree 而不会出现在dom tree上）</p>
+</li>
+<li><p>为了保证在屏幕上展示正确的层级 主线程遍历layout tree创建一个绘制记录表 记录了绘制的顺序 该阶段被称为绘制 paint</p>
+</li>
+<li><p>主线程遍历layout tree 生成layer tree</p>
+</li>
+<li><p>主线程将这些layer tree 和绘制信息传递给合成器线程  合成器线程将他们切分为许多图块 然后将每个图块发送给栅格化线程 栅格化线程栅格化每个图块 并将他们存储在gpu内存中 当图块栅格化完成后 合成器线程将收集称为“draw quads”的图块信息 这些信息里记录了图块在内存中的位置 和在页面的那个位置绘制图块的信息 根据这些信息合成器线程生成了一个合成器帧 这个合成器帧通过ipc传送给浏览器进程 接着浏览器进程将合成器帧传送到gpu 然后gpu渲染展示到屏幕上 当页面发生变化 比如滚动页面 都会生成一个新的合成器帧 重复之前的流程</p>
+</li>
+<li><p>此时，你就可以看到显示在可视区域的图块了</p>
+</li>
+</ul>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li><p>为什么要尽量避免重绘和重排</p>
+<p>   可能会导致掉帧 这是因为j有可能js执行阻塞了主线程 而css中有个动画属性叫transform 通过该属性实现的动画不会经过布局和绘制 而是直接运行在合成器线程和栅格化线程中 所以不会受到主线程中js执行的影响</p>
+</li>
+</ul>
 
             </div>
             <hr>
@@ -264,7 +302,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%B5%8B%E8%AF%95/">测试</a>
+                      <a class="hover-with-bg" href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/">互联网</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a>
                     
                   </div>
                 
@@ -277,15 +317,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/10/%E4%BA%92%E8%81%94%E7%BD%91%E8%BF%90%E4%BD%9C%E6%B5%81%E7%A8%8B/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">互联网是如何运作的？</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2021/01/10/%E4%BA%92%E8%81%94%E7%BD%91%E8%BF%90%E4%BD%9C%E6%B5%81%E7%A8%8B/">
+                        <span class="hidden-mobile">互联网是如何运作的？</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>

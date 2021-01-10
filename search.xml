@@ -1,6 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>互联网是如何运作的？</title>
+    <url>/2021/01/10/%E4%BA%92%E8%81%94%E7%BD%91%E8%BF%90%E4%BD%9C%E6%B5%81%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="互联网运作"><a href="#互联网运作" class="headerlink" title="互联网运作"></a>互联网运作</h1> <a id="more"></a>
+<h1 id="互联网时如何运作的"><a href="#互联网时如何运作的" class="headerlink" title="互联网时如何运作的"></a>互联网时如何运作的</h1><ul>
+<li>我们在通过自己的个人客户端访问远程服务器时，都会经过一个流程，接下来我将通过介绍访问bilibili官网主页的形式，来介绍从自己的电脑来进行访问的过程</li>
+</ul>
+<h2 id="从自己电脑访问bilibili主页流程"><a href="#从自己电脑访问bilibili主页流程" class="headerlink" title="从自己电脑访问bilibili主页流程"></a>从自己电脑访问bilibili主页流程</h2><ul>
+<li><p>1.当自己电脑连入互联网时，会获得一个ip地址（客户端）</p>
+</li>
+<li><p>2.访问的哔哩哔哩动画的服务器也接入互联网 同时也会有一个ip地址（服务端）</p>
+</li>
+<li><p>3.客户端在需要时通过互联网与服务端进行通信<br> 电脑发送信息给要访问的服务器 要获取的内容<br> 消息将被转换成电子信号 通过电缆放给服务器<br> 在服务器端将电子信号转换为计算机可以使用的文本数据</p>
+</li>
+</ul>
+<hr>
+<h2 id="关于TCP-IP协议"><a href="#关于TCP-IP协议" class="headerlink" title="关于TCP/IP协议"></a>关于TCP/IP协议</h2><ul>
+<li>当然，上面的流程只是简述了通过自己电脑访问网站的几个关键步骤<br> 那么，自己的电脑到底是通过什么方法去连接到远程的服务器端并将信息传输的呢<br> 我们是通过统称为 TCP/IP协议族 一系列规则俩进行网络通信的</li>
+</ul>
+<blockquote>
+<p>协议是一组规则 用于指定计算机 应如何通过网络进行通信</p>
+</blockquote>
+<h3 id="TCP-IP协议介绍"><a href="#TCP-IP协议介绍" class="headerlink" title="TCP/IP协议介绍"></a>TCP/IP协议介绍</h3><ul>
+<li><p>TCP/IP协议一共分为四层，分别是：<br>  1.应用层</p>
+<pre><code>  提供特定于应用程序的协议 HTTP FTP IMAP</code></pre>
+<p>  2.TCP传输控制层</p>
+<pre><code>  发送数据包到计算机上使用特定端口号的应用程序
+
+  tcp是一种面向连接的可靠字节流服务协议</code></pre>
+<p>  3.IP网络层</p>
+<pre><code>  使用IP地址将数据包发送到特定的计算机</code></pre>
+<p>  4.链路层</p>
+<pre><code>  将二进制数据包与网络信号相互之间转换</code></pre>
+<h3 id="TCP-IP访问流程"><a href="#TCP-IP访问流程" class="headerlink" title="TCP/IP访问流程"></a>TCP/IP访问流程</h3></li>
+<li><p>接下来我们还是使用访问哔哩哔哩官网来对流程进行介绍</p>
+<ol>
+<li><p> 使用应用层的http协议请求获取html文本 消息在发送前会被分解成许多片段 称为数据包</p>
+</li>
+<li><p> 通过应用层进入tcp层后 每个数据包都会被分配一个端口号</p>
+</li>
+<li><p> 进入ip层后 每个数据包将会赋予目标计算机的ip地址</p>
+</li>
+<li><p> 进入链路层后 将数据包的文本信息转译为电子信号 通过电缆发送</p>
+</li>
+<li><p>在电缆的另一端的路由器检查每个数据包中的目标地址<br>并确定将其发送到何处<br>最终数据包到达服务器<br>然后数据包从TCP/IP协议族的底部开始向上运行</p>
+</li>
+<li><p>当数据包开始向上运行时<br>客户端添加的所有路由数据<br>如ip地址和端口号都将从数据包中剥离出来<br>当数据到达栈顶时 数据包恢复成最初始的形式<br>通过端口号可以将数据传递给当前服务器监听该端口的应用程序<br>应用程序根据当前请求数据做出反应<br>服务器将该网站的首页的数据通过刚才的方式返回给你得电脑</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h2><pre><code>当我们在进行访问远程地址时，通常都是由域名来进行对ip地址的绑定来进行访问</code></pre>
+<ul>
+<li>浏览器通过dns来将ip地址与域名识别<ul>
+<li>dns是一个分布式数据库 上面记录了域名和其ip地址的对应关系</li>
+<li>在浏览器中输入网址时 浏览器首先连接dns服务器 获取到该域名的ip地址后 浏览器再连接访问该ip的服务器</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>以上就是通过对访问哔哩哔哩来对互联网运作流程的一个简要介绍</li>
+</ul>
+<p> <a href="https://space.bilibili.com/2882171">bilibili主页</a><br> 图片测试<br> <img src="https://img.pic88.com/preview/2020/08/05/15966333861457328.jpg!s640" alt="图片"></p>
+<p> <em>字体是倾斜的哦</em><br> <strong>字体加粗了呢</strong></p>
+<p> <code>&lt;html&gt;&lt;/html&gt;</code><br> <figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>我是标题<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure></p>
+<blockquote>
+<p>我的内容是引用的<br>还是一句引用</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>互联网</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>新文档</title>
     <url>/2021/01/09/%E6%96%B0%E6%96%87%E6%A1%A3/</url>
     <content><![CDATA[<h1 id="这是我的第一篇博客"><a href="#这是我的第一篇博客" class="headerlink" title="这是我的第一篇博客"></a>这是我的第一篇博客</h1> <a id="more"></a>
@@ -19,6 +92,66 @@
 ]]></content>
       <tags>
         <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浏览器是如何运作的？</title>
+    <url>/2021/01/10/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C%E7%9A%84%EF%BC%9F/</url>
+    <content><![CDATA[<h1 id="关于浏览器在运作时的流程"><a href="#关于浏览器在运作时的流程" class="headerlink" title="关于浏览器在运作时的流程"></a>关于浏览器在运作时的流程</h1><a id="more"></a>
+<h1 id="浏览器是如何运作的"><a href="#浏览器是如何运作的" class="headerlink" title="浏览器是如何运作的"></a>浏览器是如何运作的</h1><ul>
+<li>我们要理解浏览器是如何运作的过程，首先要理解一个概念，也就是进程与线程</li>
+</ul>
+<blockquote>
+<p> 进程是操作系统进行资源分配和调度的基本单元 可以申请和拥有计算机资源 进程是程序的基本执行实体<br>线程是操作系统能够进行运算调度的最小单位 一个进程中可以并发多个线程 每条线程并行执行不同的任务</p>
+</blockquote>
+<ul>
+<li><p>在我们了解了进程与线程的概念以后，就可以和你介绍浏览器的运作流程了</p>
+</li>
+<li><p>当我们在电脑上打开打了浏览器时，相当于运行了浏览器这个应用程序</p>
+<h2 id="浏览器的多进程结构"><a href="#浏览器的多进程结构" class="headerlink" title="浏览器的多进程结构"></a>浏览器的多进程结构</h2></li>
+<li><p>而浏览器这个是一个多进程的浏览器结构，根据进程功能不同来拆分浏览器，我们可以将浏览器分解为：</p>
+<p> 1.浏览器进程</p>
+<pre><code> 负责控制浏览器除标签页外的用户界面 
+
+ 包括地址栏 书签 后退 和前进按钮 以及负责与浏览器的其他进程协调工作</code></pre>
+<p> 2.GPU进程</p>
+<pre><code> 负责整个浏览器界面的渲染</code></pre>
+<p> 3.插件进程</p>
+<pre><code> 负责控制网站使用的所有插件</code></pre>
+<p> 4.缓存进程<br> 5.网络进程</p>
+<pre><code>负责发起接受网络请求</code></pre>
+<p> 6.渲染器进程</p>
+<pre><code>用来控制显示tab标签内的所有内容 浏览器在默认情况下会为每个标签页创建一个渲染器进程</code></pre>
+<h2 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h2></li>
+<li><p>当你在浏览器地址栏输入地址时 浏览器的ui线程会捕捉你的输入内容<br>如果访问的是网址 则ui线程会启动一个网络线程来请求dns进行域名解析<br>接着连接服务器获取数据</p>
+</li>
+<li><p>当网络线程获取到数据后 会通过 safeBrowsing来检查站点（检查是否是恶意站点，会弹出警告） </p>
+<p>   safebrowsing是谷歌内置的一套站点安全系统 通过检测该站点的数据来判断是否安全</p>
+</li>
+<li><p>当安全校验通过时 网络线程会通知ui线程准备好了 然后ui线程会创建一个渲染器进程来渲染页面 浏览器进程通过ipc管道将数据传递给渲染器进程</p>
+</li>
+<li><p>渲染器进程的核心任务就是把 html css js 等资源渲染成用户可以交互的web界面 渲染器进程的主线程将html进行解析 构造dom数据结构 在加载完成后 我们会获得一个dom tree</p>
+</li>
+<li><p>在知道dom的结构和每个节点的样式后 接下来需要知道每个节点放在页面上的哪个位置 也就是节点的坐标以及该节点需要占用多大的区域 这个阶段被称为layout布局 主线程通过遍历dom和计算好的样式来生成layout ree 上面的每个节点都记录了x y 坐标与边框尺寸 （这里注意dom tree 与layout tree并不是一一对应的 设置的display：none的节点并不会出现在layout tree上 而在before伪类添加了content值的元素会出现在layout tree 而不会出现在dom tree上）</p>
+</li>
+<li><p>为了保证在屏幕上展示正确的层级 主线程遍历layout tree创建一个绘制记录表 记录了绘制的顺序 该阶段被称为绘制 paint</p>
+</li>
+<li><p>主线程遍历layout tree 生成layer tree</p>
+</li>
+<li><p>主线程将这些layer tree 和绘制信息传递给合成器线程  合成器线程将他们切分为许多图块 然后将每个图块发送给栅格化线程 栅格化线程栅格化每个图块 并将他们存储在gpu内存中 当图块栅格化完成后 合成器线程将收集称为“draw quads”的图块信息 这些信息里记录了图块在内存中的位置 和在页面的那个位置绘制图块的信息 根据这些信息合成器线程生成了一个合成器帧 这个合成器帧通过ipc传送给浏览器进程 接着浏览器进程将合成器帧传送到gpu 然后gpu渲染展示到屏幕上 当页面发生变化 比如滚动页面 都会生成一个新的合成器帧 重复之前的流程</p>
+</li>
+<li><p>此时，你就可以看到显示在可视区域的图块了</p>
+</li>
+</ul>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li><p>为什么要尽量避免重绘和重排</p>
+<p>   可能会导致掉帧 这是因为j有可能js执行阻塞了主线程 而css中有个动画属性叫transform 通过该属性实现的动画不会经过布局和绘制 而是直接运行在合成器线程和栅格化线程中 所以不会受到主线程中js执行的影响</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>互联网</tag>
+        <tag>浏览器</tag>
       </tags>
   </entry>
 </search>
