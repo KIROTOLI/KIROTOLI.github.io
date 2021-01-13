@@ -346,4 +346,102 @@
         <tag>http</tag>
       </tags>
   </entry>
+  <entry>
+    <title>版本控制工具git</title>
+    <url>/2021/01/13/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7git/</url>
+    <content><![CDATA[<h1 id="版本控制工具"><a href="#版本控制工具" class="headerlink" title="版本控制工具"></a>版本控制工具</h1><ul>
+<li>版本控制工具  <ul>
+<li>在我们的程序开发中，我们通常会不断对程序进行修改，而版本控制工具为我们追踪了多个版本的开发，有了版本控制工具，我们就可以放开手开发，而不用担心之前的版本无法寻回。</li>
+<li>版本控制工具对于我们开发人员来说，通常以下几个功能是很有必要的：<ul>
+<li>版本管理<ul>
+<li>我们可以通过版本控制工具来进行对正在开发项目的的版本管理，可以很方便的回溯到过去的版本</li>
+</ul>
+</li>
+<li>数据备份<ul>
+<li>版本控制工具为我们备份了之前版本的数据记录</li>
+</ul>
+</li>
+<li>权限控制<ul>
+<li>在开发时，不同的开发人员有不同的对项目的管理权限 </li>
+</ul>
+</li>
+<li>历史及记录<ul>
+<li>版本控制工具中记录了开发人员操作的历史与记录</li>
+</ul>
+</li>
+<li>分支管理<ul>
+<li>我们可以在开发时 不只是进行一个主项目的开发，可以独立与主项目 建立分支项目进行独立开发</li>
+</ul>
+</li>
+<li>协同修改<ul>
+<li>不同的开发人员可以一起对一个项目进行开发与维护</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="版本控制工具git"><a href="#版本控制工具git" class="headerlink" title="版本控制工具git"></a>版本控制工具git</h1><ul>
+<li><p>git作为分布式版本控制工具 目前是时间市面上做火热的版本控制工具</p>
+<ul>
+<li>git的优势有很多，如：大部分操作在本地完成，不需要联网等，能够有效、高速的处理从很小到非常大的项目版本管理.</li>
+</ul>
+</li>
+<li><p>git和代码托管中心</p>
+<ul>
+<li><p>局域网环境下 gitlab服务器</p>
+</li>
+<li><p>外网环境下 github 码云</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="git命令行操作"><a href="#git命令行操作" class="headerlink" title="git命令行操作"></a>git命令行操作</h1><ul>
+<li><p>这里只介绍git常用操作命令</p>
+</li>
+<li><p>本地库初始化<br>  git init</p>
+</li>
+<li><p>设置签名</p>
+<ul>
+<li><p>用来区分不同开发人员身份</p>
+</li>
+<li><p>项目级别/仓库级别</p>
+<ul>
+<li><p>只在本地库范围内有效<br>git config user.name tom_pro<br>git config user.email <a href="mailto:goodMorning_pro@atguigu.com">goodMorning_pro@atguigu.com</a></p>
+</li>
+<li><p>此时信息保存到  .git/config</p>
+</li>
+</ul>
+</li>
+<li><p>系统用户级别</p>
+<ul>
+<li><p>登录当前操作系统的用户范围<br>git config–global user.name tom_glb<br>git config–global <a href="mailto:goodMorning_pro@atguigu.com_glb">goodMorning_pro@atguigu.com_glb</a></p>
+</li>
+<li><p>此时信息保存到：~/.gitconfig 文件</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>添加，提交以及查看信息操作</p>
+<ul>
+<li><p>状态查看：git status  查看工作区 暂存区状态</p>
+<blockquote>
+<p>查看具体内容 cat<br>新建文件 vim<br>删除文件 rm<br>文件保存并退出的操作：先按esc 再按：+wq<br>ll  查看当前文件状态</p>
+</blockquote>
+</li>
+<li><p>添加操作：git add【name】 将工作区的新建/修改 添加到暂存区</p>
+</li>
+<li><p>提交操作：git commit -m“备注信息”【name】 将暂存区的内容提交到本地库</p>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>git</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
 </search>
