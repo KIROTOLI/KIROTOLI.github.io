@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>css拓展语言 sass</title>
+    <url>/2021/01/13/sass/</url>
+    <content><![CDATA[<h1 id="css拓展语言css"><a href="#css拓展语言css" class="headerlink" title="css拓展语言css"></a>css拓展语言css</h1><ul>
+<li><p>sass一种帮助你简化css工作流程的方式 帮助你更容易维护和开发css内容</p>
+<a id="more"></a></li>
+<li><p>sass是目前为止世界上最成熟 稳定和强大的专业级css拓展语言</p>
+</li>
+<li><p>sass是用ruby语言写的，但是两者的语法没有关系</p>
+</li>
+</ul>
+<h2 id="sass语法"><a href="#sass语法" class="headerlink" title="sass语法"></a>sass语法</h2><ul>
+<li><p>sass文件后缀名<br>  sass后缀名有两种 一种后缀名为sass 不适用大括号与分号<br>  另一种是scss文件 这种和平时使用的css文件差不多 使用大括号与分号 </p>
+</li>
+<li><p>使用变量<br>  sass最重要的特性就是为css引入了变量 我们可以吧反复使用的css属性值定义为变量 然后通过变量名来引用他们 二无需重复书写这一过程</p>
+<ul>
+<li><p>sass使用$符号来标识变量</p>
+</li>
+<li><p>变量声明：$highlight-color: #F90;<br>  这意味着变量$highlight-color现在的值是#f90<br>  任何可以用作css的属性值的赋值都可以用作sass的变量值 甚至是以空格分隔的多个属性值 或以逗号分隔的多个属性值<br>  变量可以定义在规则快内和规则快外</p>
+</li>
+<li><p>变量引用：变量之间可以互相引用</p>
+</li>
+<li><p>变量名<br>  sass变量名可以与css中的属性名和选择器名称相同 包括中划线和下划线<br>  在sass中下划线与中划线是相互兼容的</p>
+</li>
+</ul>
+</li>
+<li><p>sass选择器可以互相嵌套</p>
+<ul>
+<li><p>父选择器<br>  在使用伪类选择器时 如   ：hover 要在徐娜则其之前加入&amp;<br>  当包含夫选择器标识符的嵌套给i则被打开时 他不会像后代选择器那样进行拼接  而是&amp;被父选择器直接替代</p>
+</li>
+<li><p> 群组选择器</p>
+</li>
+<li><p>子组合选择器和同层组合选择器<br>  “&gt;”  “+”  “~”<br>  上面这三个选择器必须和其他选择器配合使用 以指定浏览器仅选择某种特定上下文中的元素</p>
+<p>  子组合选择器：&gt; 选择一个元素的直接子元素<br>  同层相邻组合选择器： + 选择后面紧跟着的元素<br>  同层全体组合选择器： ~ 选择所有之后的同层元素 不管他们之间隔了多少元素</p>
+</li>
+<li><p>嵌套属性<br>  吧属性名从-的地方划开 在根属性后加个冒号 紧跟一个{}块，<br>  吧子属性写在这个{}块中</p>
+</li>
+</ul>
+</li>
+<li><p>导入sass文件 @import “文件名”</p>
+<ul>
+<li>默认变量值 ！default</li>
+<li>原生css可以导入</li>
+</ul>
+</li>
+<li><p>混合器<br>  使用混合器来实现大段样式的重用<br>  使用@mixin标识符定义<br>  使用@include 定义的名字 来进行引用<br>  可以使用混合器吧样式中的通用样式抽离出来，然后在其他地方重用</p>
+<ul>
+<li><p>选择器的链式继承<br>  继承也可以嵌套 互相继承</p>
+  <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">.one{</span><br><span class="line">}</span><br><span class="line">.two{</span><br><span class="line">@extend .one</span><br><span class="line">}</span><br><span class="line">.three{</span><br><span class="line">@extend .two</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>继承的局限性<br>  也有很多选择器不被支持继承<br>  如 包含选择器（.one.two）<br>  或相邻兄弟选择器（.one+.two）目前不支持继承</p>
+</li>
+<li><p>不要太过于依赖继承 后期很难修改和维护</p>
+</li>
+</ul>
+</li>
+<li><p>sass函数</p>
+<ul>
+<li>字符串函数</li>
+<li>数字函数</li>
+<li>列表函数</li>
+<li>introspection函数</li>
+<li>三元函数</li>
+<li>颜色函数</li>
+</ul>
+</li>
+</ul>
+<h2 id="sass编译css"><a href="#sass编译css" class="headerlink" title="sass编译css"></a>sass编译css</h2><ul>
+<li><p>cmd编译<br>  sass sass.文件名 css.文件名</p>
+</li>
+<li><p>vscode编译<br>  下载 easy sass 重启后在编写完的sass文件界面保存就会自动生成sass文件</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>互联网是如何运作的？</title>
     <url>/2021/01/10/%E4%BA%92%E8%81%94%E7%BD%91%E8%BF%90%E4%BD%9C%E6%B5%81%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="互联网运作"><a href="#互联网运作" class="headerlink" title="互联网运作"></a>互联网运作</h1> <a id="more"></a>
@@ -64,7 +141,7 @@
 </ul>
 <p> <a href="https://space.bilibili.com/2882171">bilibili主页</a><br> 图片测试<br> <img src="https://img.pic88.com/preview/2020/08/05/15966333861457328.jpg!s640" alt="图片"></p>
 <p> <em>字体是倾斜的哦</em><br> <strong>字体加粗了呢</strong></p>
-<p> <code>&lt;html&gt;&lt;/html&gt;</code><br> <figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>我是标题<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure></p>
+<p> <code>&lt;html&gt;&lt;/html&gt;</code><br> </p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">   &lt;title&gt;我是标题&lt;/title&gt;</span><br><span class="line">   &lt;/head&gt;</span><br><span class="line">   &lt;body&gt;&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
 <blockquote>
 <p>我的内容是引用的<br>还是一句引用</p>
 </blockquote>
@@ -85,7 +162,7 @@
 <hr>
 <p> <a href="https://space.bilibili.com/2882171">bilibili主页</a><br> 图片测试<br> <img src="https://img.pic88.com/preview/2020/08/05/15966333861457328.jpg!s640" alt="图片"></p>
 <p> <em>字体是倾斜的哦</em><br> <strong>字体加粗了呢</strong></p>
-<p> <code>&lt;html&gt;&lt;/html&gt;</code><br> <figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>我是标题<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure></p>
+<p> <code>&lt;html&gt;&lt;/html&gt;</code><br> </p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">   &lt;title&gt;我是标题&lt;/title&gt;</span><br><span class="line">   &lt;/head&gt;</span><br><span class="line">   &lt;body&gt;&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
 <blockquote>
 <p>我的内容是引用的<br>还是一句引用</p>
 </blockquote>
@@ -267,83 +344,6 @@
       <tags>
         <tag>互联网</tag>
         <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>css拓展语言 sass</title>
-    <url>/2021/01/13/sass/</url>
-    <content><![CDATA[<h1 id="css拓展语言css"><a href="#css拓展语言css" class="headerlink" title="css拓展语言css"></a>css拓展语言css</h1><ul>
-<li><p>sass一种帮助你简化css工作流程的方式 帮助你更容易维护和开发css内容</p>
-<a id="more"></a></li>
-<li><p>sass是目前为止世界上最成熟 稳定和强大的专业级css拓展语言</p>
-</li>
-<li><p>sass是用ruby语言写的，但是两者的语法没有关系</p>
-</li>
-</ul>
-<h2 id="sass语法"><a href="#sass语法" class="headerlink" title="sass语法"></a>sass语法</h2><ul>
-<li><p>sass文件后缀名<br>  sass后缀名有两种 一种后缀名为sass 不适用大括号与分号<br>  另一种是scss文件 这种和平时使用的css文件差不多 使用大括号与分号 </p>
-</li>
-<li><p>使用变量<br>  sass最重要的特性就是为css引入了变量 我们可以吧反复使用的css属性值定义为变量 然后通过变量名来引用他们 二无需重复书写这一过程</p>
-<ul>
-<li><p>sass使用$符号来标识变量</p>
-</li>
-<li><p>变量声明：$highlight-color: #F90;<br>  这意味着变量$highlight-color现在的值是#f90<br>  任何可以用作css的属性值的赋值都可以用作sass的变量值 甚至是以空格分隔的多个属性值 或以逗号分隔的多个属性值<br>  变量可以定义在规则快内和规则快外</p>
-</li>
-<li><p>变量引用：变量之间可以互相引用</p>
-</li>
-<li><p>变量名<br>  sass变量名可以与css中的属性名和选择器名称相同 包括中划线和下划线<br>  在sass中下划线与中划线是相互兼容的</p>
-</li>
-</ul>
-</li>
-<li><p>sass选择器可以互相嵌套</p>
-<ul>
-<li><p>父选择器<br>  在使用伪类选择器时 如   ：hover 要在徐娜则其之前加入&amp;<br>  当包含夫选择器标识符的嵌套给i则被打开时 他不会像后代选择器那样进行拼接  而是&amp;被父选择器直接替代</p>
-</li>
-<li><p> 群组选择器</p>
-</li>
-<li><p>子组合选择器和同层组合选择器<br>  “&gt;”  “+”  “~”<br>  上面这三个选择器必须和其他选择器配合使用 以指定浏览器仅选择某种特定上下文中的元素</p>
-<p>  子组合选择器：&gt; 选择一个元素的直接子元素<br>  同层相邻组合选择器： + 选择后面紧跟着的元素<br>  同层全体组合选择器： ~ 选择所有之后的同层元素 不管他们之间隔了多少元素</p>
-</li>
-<li><p>嵌套属性<br>  吧属性名从-的地方划开 在根属性后加个冒号 紧跟一个{}块，<br>  吧子属性写在这个{}块中</p>
-</li>
-</ul>
-</li>
-<li><p>导入sass文件 @import “文件名”</p>
-<ul>
-<li>默认变量值 ！default</li>
-<li>原生css可以导入</li>
-</ul>
-</li>
-<li><p>混合器<br>  使用混合器来实现大段样式的重用<br>  使用@mixin标识符定义<br>  使用@include 定义的名字 来进行引用<br>  可以使用混合器吧样式中的通用样式抽离出来，然后在其他地方重用</p>
-<ul>
-<li><p>选择器的链式继承<br>  继承也可以嵌套 互相继承</p>
-  <figure class="highlight jboss-cli"><table><tr><td class="code"><pre><code class="hljs jboss-cli"><span class="hljs-string">.one</span>&#123;<br>&#125;<br><span class="hljs-string">.two</span>&#123;<br>@extend <span class="hljs-string">.one</span><br>&#125;<br><span class="hljs-string">.three</span>&#123;<br>@extend <span class="hljs-string">.two</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
-<li><p>继承的局限性<br>  也有很多选择器不被支持继承<br>  如 包含选择器（.one.two）<br>  或相邻兄弟选择器（.one+.two）目前不支持继承</p>
-</li>
-<li><p>不要太过于依赖继承 后期很难修改和维护</p>
-</li>
-</ul>
-</li>
-<li><p>sass函数</p>
-<ul>
-<li>字符串函数</li>
-<li>数字函数</li>
-<li>列表函数</li>
-<li>introspection函数</li>
-<li>三元函数</li>
-<li>颜色函数</li>
-</ul>
-</li>
-</ul>
-<h2 id="sass编译css"><a href="#sass编译css" class="headerlink" title="sass编译css"></a>sass编译css</h2><ul>
-<li><p>cmd编译<br>  sass sass.文件名 css.文件名</p>
-</li>
-<li><p>vscode编译<br>  下载 easy sass 重启后在编写完的sass文件界面保存就会自动生成sass文件</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>css</tag>
       </tags>
   </entry>
 </search>
