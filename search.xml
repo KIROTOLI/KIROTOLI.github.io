@@ -444,4 +444,163 @@
         <tag>github</tag>
       </tags>
   </entry>
+  <entry>
+    <title>python爬虫</title>
+    <url>/2021/01/19/python%E7%88%AC%E8%99%AB/</url>
+    <content><![CDATA[<h1 id="爬虫简介"><a href="#爬虫简介" class="headerlink" title="爬虫简介"></a>爬虫简介</h1><h2 id="爬虫在使用场景中的分类"><a href="#爬虫在使用场景中的分类" class="headerlink" title="爬虫在使用场景中的分类"></a>爬虫在使用场景中的分类</h2><ul>
+<li>通用爬虫<ul>
+<li>抓取系统重要组成部分</li>
+<li>抓取的是一整张页面数据</li>
+</ul>
+</li>
+<li>聚焦爬虫<ul>
+<li>聚焦在通用爬虫的基础之上</li>
+<li>抓取的是页面中特定的局部内容</li>
+</ul>
+</li>
+<li>增量式爬虫<ul>
+<li>检测网站中数据更新的情况</li>
+<li>只会抓取网站中最新更新的数据<h2 id="爬虫是合法还是违法的"><a href="#爬虫是合法还是违法的" class="headerlink" title="爬虫是合法还是违法的"></a>爬虫是合法还是违法的</h2></li>
+</ul>
+</li>
+<li><pre><code>   在法律中不被禁止</code></pre>
+</li>
+<li><pre><code> 具有违法风险</code></pre>
+<ul>
+<li>   爬虫的风险<ul>
+<li><pre><code>   干扰了被访问网站的正常运营</code></pre>
+</li>
+<li><pre><code>   爬虫抓取了受到法律保护的特定类型的数据和信息</code></pre>
+</li>
+</ul>
+</li>
+<li>   善意爬虫 恶意爬虫<h2 id="爬虫是什么"><a href="#爬虫是什么" class="headerlink" title="爬虫是什么"></a>爬虫是什么</h2></li>
+</ul>
+</li>
+<li><pre><code>   通过编写程序 模拟浏览器上网 然后让其取互联网抓取数据的过程</code></pre>
+</li>
+<li>   robots.txt协议</li>
+</ul>
+<h2 id="requests模块"><a href="#requests模块" class="headerlink" title="requests模块"></a>requests模块</h2><ul>
+<li>明确规定了那些数据可以被爬虫爬取，哪些不可以被爬取 君子协议<ul>
+<li>python中原生的一款基于网络请求的模块 功能非常强大 简单快捷 效率极高</li>
+<li>   作用：模拟浏览器发请求</li>
+</ul>
+</li>
+<li> 如何使用<ul>
+<li>   1.指定url</li>
+<li>   2.发起请求</li>
+<li>   3.获取响应数据</li>
+<li>   4.持久化存储    <h2 id="数据解析"><a href="#数据解析" class="headerlink" title="数据解析"></a>数据解析</h2></li>
+</ul>
+</li>
+<li> 数据解析分类<ul>
+<li>   正则</li>
+<li>bs4<ul>
+<li>   1.实例化一个beautifulsoup对象，并且将页面源码数据加载到该对象中</li>
+<li>   2.通过调用beautifulsoup对象中相关的属性或者方法进行标签定位和数据取</li>
+</ul>
+</li>
+<li>xpath<ul>
+<li>最常用最便捷最高效的一种解析方式 通用性也强<ul>
+<li>解析原理<ul>
+<li>   1.实例化一个etree的对象 且需要将被解析的页面源码数据加载到改数据当中</li>
+<li>   2.调用etree对象中的xpath方法结合xpath表达式实现标签的定位和内容的捕获</li>
+</ul>
+</li>
+<li>   环境安装：-pip install lxml</li>
+<li>如何实例化一个etree对象<ul>
+<li>1.将本地的html文档对象中的源码数据加载到etree对象中<pre><code>  etree.parse(filepath)</code></pre>
+</li>
+<li>2.可以将从互联网上获取的源码数据加载到改对象中<pre><code>  etree.HTML('page_text')</code></pre>
+</li>
+</ul>
+</li>
+<li>xpath(‘xpath表达式’)<ul>
+<li>   /：表示的是从根节点开始，表示的是一个层级</li>
+<li>   //：表示的是多个层级。可以从任意位置开始定位</li>
+<li>   属性定位：//tag[@class=‘class名’]</li>
+<li>   索引定位：//tag[@class=‘class名’]/tag2[x] 索引是从1开始的</li>
+<li>   取文本：/text()[0](因为返回的是一个列表 所以加上[0])</li>
+<li>   取属性：/@属性值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> 数据解析原理<ul>
+<li>   解析的局部的文本内容都会在标签之间或标签对应的属性中进行存储</li>
+<li>   1.进行标签定位</li>
+<li>   2.标签或者标签对应的属性中存储的数据值进行提取（解析）</li>
+</ul>
+</li>
+<li> 编码流程<ul>
+<li>   1.指定url</li>
+<li>   2.发起请求</li>
+<li>   3.获取响应数据</li>
+<li>   4.数据解析</li>
+<li>   5.持久化存储</li>
+</ul>
+</li>
+</ul>
+<h2 id="验证码"><a href="#验证码" class="headerlink" title="验证码"></a>验证码</h2><ul>
+<li> 验证码识别<ul>
+<li>   反爬机制：验证码 识别验证码图片中的数据，用于模拟登录操作</li>
+<li>识别验证码<ul>
+<li>   1.人工肉眼识别</li>
+<li>2.第三方自动识别<pre><code>  云打码
+  超级鹰</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="request高级"><a href="#request高级" class="headerlink" title="request高级"></a>request高级</h2><ul>
+<li> 代理<pre><code>  破解封ip这种反爬机制</code></pre>
+<ul>
+<li>什么是代理<pre><code>  代理服务器</code></pre>
+</li>
+<li>代理的作用<pre><code>  突破自身ip的限制
+  隐藏自身真实ip</code></pre>
+</li>
+<li>代理相关网站<pre><code>  块代理
+  西祠代理
+  西祠代理
+  www。goubanjia。com</code></pre>
+</li>
+<li>代理ip类型<pre><code>  http
+  https</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="异步爬虫"><a href="#异步爬虫" class="headerlink" title="异步爬虫"></a>异步爬虫</h2><p>-之后的内容正在学习中</p>
+<h1 id="简单爬虫实例"><a href="#简单爬虫实例" class="headerlink" title="简单爬虫实例"></a>简单爬虫实例</h1><ul>
+<li>以下几个例子是通过学习爬虫并通过python写出的简单练习，均为新手练习 在此记录一下：</li>
+</ul>
+<h3 id="肯德基餐厅信息查询"><a href="#肯德基餐厅信息查询" class="headerlink" title="肯德基餐厅信息查询"></a>肯德基餐厅信息查询</h3><ul>
+<li>可以通过输入要检索的城市名称来进行指定信息扒取<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url='http://www.kfc.com.cn/kfccda/ashx/GetStoreList.ashx?op=keyword'</span><br><span class="line">city=input("请输入要爬取的城市名称")</span><br><span class="line">index=input("q请输入要爬取的页码")</span><br><span class="line">keyword={</span><br><span class="line">'cname':'' ,</span><br><span class="line">'pid':'' ,</span><br><span class="line">'keyword': city,</span><br><span class="line">'pageIndex':index,</span><br><span class="line">'pageSize':'10',</span><br><span class="line">}</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">response=requests.post(url=url,data=keyword,headers=headers)</span><br><span class="line">response_text=response.text</span><br><span class="line">print(response_text)</span><br><span class="line">filename=city+'肯德基餐厅信息.text'</span><br><span class="line">fp=open(filename,'a',encoding='utf-8')</span><br><span class="line">fp.write('\n')</span><br><span class="line">fp.write(response_text)</span><br><span class="line">print("爬取成功")</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="搜狗浏览器搜索页面的扒取"><a href="#搜狗浏览器搜索页面的扒取" class="headerlink" title="搜狗浏览器搜索页面的扒取"></a>搜狗浏览器搜索页面的扒取</h3></li>
+<li>扒取到的是一整张搜索页面<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url='https://www.sogou.com/web'</span><br><span class="line">kw=input("请输入要爬取的内容：")</span><br><span class="line">uag={</span><br><span class="line">    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">quar={</span><br><span class="line">    'query':kw</span><br><span class="line">}</span><br><span class="line">respon=requests.get(url=url,params=quar,headers=uag)</span><br><span class="line">filename=kw+'.html'</span><br><span class="line">respon_text=respon.text</span><br><span class="line">with open(filename,'w',encoding='utf-8') as fp:</span><br><span class="line">    fp.write(respon_text)</span><br><span class="line">    print(filename ,"保存成功")</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="豆瓣电影排行榜数据扒取"><a href="#豆瓣电影排行榜数据扒取" class="headerlink" title="豆瓣电影排行榜数据扒取"></a>豆瓣电影排行榜数据扒取</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line">url='https://movie.douban.com/j/chart/top_list'</span><br><span class="line">list={</span><br><span class="line">    'type': '24',</span><br><span class="line">    'interval_id':'100:90',</span><br><span class="line">    'action':'',</span><br><span class="line">    'start': '0',</span><br><span class="line">    'limit': '200',</span><br><span class="line">}</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">response=requests.get(url=url,params=list,headers=headers)</span><br><span class="line">name_list=response.json()</span><br><span class="line">fp=open('豆瓣电影排行榜.json','w',encoding='utf-8')</span><br><span class="line">json.dump(name_list,fp=fp,ensure_ascii=False)</span><br><span class="line">print("爬取完成")</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="百度搜索结果扒取"><a href="#百度搜索结果扒取" class="headerlink" title="百度搜索结果扒取"></a>百度搜索结果扒取</h3></li>
+<li>可以自主输入要扒取的内容<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line">#获取url</span><br><span class="line">post_url='https://fanyi.baidu.com/sug'</span><br><span class="line"></span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">search=input("请输入你要搜索的对象：")</span><br><span class="line">name={</span><br><span class="line">    'kw':search</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">sponse=requests.post(url=post_url,data=name,headers=headers)</span><br><span class="line">dictobj=sponse.json()</span><br><span class="line">print(dictobj)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">filename='搜索结果.json'</span><br><span class="line">fp=open(filename,"a",encoding='utf-8')</span><br><span class="line">fp.write('\n')</span><br><span class="line">json.dump(dictobj,fp=fp,ensure_ascii=False)</span><br><span class="line"></span><br><span class="line">print("搜索完毕，结果已输出")</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="对糗事图片网站图片的批量扒取"><a href="#对糗事图片网站图片的批量扒取" class="headerlink" title="对糗事图片网站图片的批量扒取"></a>对糗事图片网站图片的批量扒取</h3></li>
+<li>纯粹的批量扒取图片下载<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import os</span><br><span class="line">if not os.path.exists('./img_list'):</span><br><span class="line">    os.mkdir('./img_list')</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">for j in range(1,3):</span><br><span class="line"></span><br><span class="line">    url='http://xiaohua.zol.com.cn/qutu/diaosi/%d.html'</span><br><span class="line">    new_url=format(url%j)</span><br><span class="line">    respons=requests.get(url=new_url,headers=headers).text</span><br><span class="line">    ex='&lt;div class="summary-text"&gt;.*?&lt;img ?l?o?a?dsrc="(.*?)" alt.*?&lt;/div&gt;'</span><br><span class="line">    img_list=re.findall(ex,respons,re.S)</span><br><span class="line">    print(img_list)</span><br><span class="line">    for src in img_list:</span><br><span class="line">        imgdata=  requests.get(url=src,headers=headers).content</span><br><span class="line">        img_name=src.split('/')[-1]</span><br><span class="line">        img_path= './img_list/'+img_name</span><br><span class="line">        fp=open(img_path,'wb')</span><br><span class="line">        fp.write(imgdata)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="国家药品监督管理总局中居于中华人民共和国化妆品生产许可证相关数据"><a href="#国家药品监督管理总局中居于中华人民共和国化妆品生产许可证相关数据" class="headerlink" title="国家药品监督管理总局中居于中华人民共和国化妆品生产许可证相关数据"></a>国家药品监督管理总局中居于中华人民共和国化妆品生产许可证相关数据</h3></li>
+<li>纯粹练习之作<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">url ='http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsList'</span><br><span class="line">for l in range(1,6):</span><br><span class="line">    page=str(l)</span><br><span class="line">    data={</span><br><span class="line">    'on': 'true',</span><br><span class="line">    'page': page,</span><br><span class="line">    'pageSize': '15',</span><br><span class="line">    'productName': '',</span><br><span class="line">    'conditionType': '1',</span><br><span class="line">    'applyname':'' ,</span><br><span class="line">    'applysn': '',</span><br><span class="line">    }</span><br><span class="line">    list_id=[]</span><br><span class="line">    response=requests.post(url=url,data=data,headers=headers).json()</span><br><span class="line">    print(response)</span><br><span class="line">    for i in response['list']:</span><br><span class="line">        list_id.append(i['ID'])</span><br><span class="line"></span><br><span class="line">    print(list_id)</span><br><span class="line">    name_url='http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsById'</span><br><span class="line">    for j in list_id:</span><br><span class="line"></span><br><span class="line">        data2={</span><br><span class="line">            'id':j</span><br><span class="line">        }</span><br><span class="line">        fp=open("药监局数据.json",'a')</span><br><span class="line">        fp.write('\n')</span><br><span class="line">        response2=requests.post(url=name_url,data=data2,headers=headers).json()</span><br><span class="line">        json.dump(response2,fp=fp,ensure_ascii=False)</span><br><span class="line">print("爬取完毕")</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="三个图片网站的批量下载"><a href="#三个图片网站的批量下载" class="headerlink" title="三个图片网站的批量下载"></a>三个图片网站的批量下载</h3></li>
+<li>大同小异的图片扒取练习<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">from lxml import etree</span><br><span class="line">import os</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">url='http://pic.netbian.com/4kmeinv/'</span><br><span class="line"># 获取响应</span><br><span class="line">response=requests.get(url=url,headers=headers).text</span><br><span class="line"># print(response)</span><br><span class="line"># 数据解析</span><br><span class="line">tree=etree.HTML(response)</span><br><span class="line">li_list=tree.xpath('//div[@class="slist"]/ul/li')</span><br><span class="line">print(li_list)</span><br><span class="line"># 创建一个文件夹</span><br><span class="line">if not os.path.exists('./picture'):</span><br><span class="line">    os.mkdir('./picture')</span><br><span class="line">#     遍历 再解析</span><br><span class="line">for i in li_list:</span><br><span class="line">    img_src='http://pic.netbian.com'+i.xpath('./a/img/@src')[0]</span><br><span class="line">    img_name=i.xpath('./a/img/@alt')[0]+'.jpg'</span><br><span class="line">#     通用请求中文乱码解决方案</span><br><span class="line">    img_name=img_name.encode('iso-8859-1').decode('gbk')</span><br><span class="line">#存储文件</span><br><span class="line">    img_data=requests.get(url=img_src,headers=headers).content</span><br><span class="line">    img_path='picture/'+img_name</span><br><span class="line">    with open(img_path,'wb') as fp:</span><br><span class="line">        fp.write(img_data)</span><br><span class="line">        print(img_name,'下载成功')</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import os</span><br><span class="line">import requests</span><br><span class="line">from lxml import etree</span><br><span class="line">if not os.path.exists('./图片3'):</span><br><span class="line">    os.mkdir('./图片3')</span><br><span class="line">url='https://sc.chinaz.com/tupian/xingganmeinvtupian.html'</span><br><span class="line">headers={</span><br><span class="line">        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">    }</span><br><span class="line">response=requests.get(url=url,headers=headers).text</span><br><span class="line">tree=etree.HTML(response)</span><br><span class="line">img_src=tree.xpath('//*[@id="container"]/div/div/a/@href')</span><br><span class="line">img_list=[</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line">for j in img_src:</span><br><span class="line">    img_src2='https:'+j</span><br><span class="line">    img_list.append(img_src2)</span><br><span class="line">print(img_list)</span><br><span class="line">for inn in img_list:</span><br><span class="line">    response2=requests.get(url=inn,headers=headers).text</span><br><span class="line">    tree2=etree.HTML(response2)</span><br><span class="line">    img_u=tree2.xpath('//div[@class="downbody"]/div[3]/a[1]/@href')[0]</span><br><span class="line">    print(img_u)</span><br><span class="line">    response3=requests.get(url=img_u,headers=headers).content</span><br><span class="line">    img_name=inn.split('/')[-1]+'.rar'</span><br><span class="line">    img_path='./图片3/'+img_name</span><br><span class="line">    with open(img_path,'wb') as fp:</span><br><span class="line">        fp.write(response3)</span><br><span class="line">        print("下载完成")</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import os</span><br><span class="line">from lxml import etree</span><br><span class="line">import requests</span><br><span class="line">if not os.path.exists('./图片4'):</span><br><span class="line">    os.mkdir('./图片4')</span><br><span class="line">headers={</span><br><span class="line">        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">    }</span><br><span class="line">url='https://www.game234.com/meizi/index_%d.html'</span><br><span class="line">for k in range(2,10):</span><br><span class="line">    new_url=format(url%k)</span><br><span class="line">    sponse=requests.get(url=new_url,headers=headers).text</span><br><span class="line">    tree=etree.HTML(sponse)</span><br><span class="line">    img_p=tree.xpath('//*[@id="sortable"]/div/div/a/@href')</span><br><span class="line">    for i in img_p:</span><br><span class="line">        img_src='https://www.game234.com'+i</span><br><span class="line">        sponse2=requests.get(url=img_src,headers=headers).text</span><br><span class="line">        tree2=etree.HTML(sponse2)</span><br><span class="line">        img_q=tree2.xpath('//*[@id="article-box"]/div[2]/img/@src')</span><br><span class="line">        print(img_q)</span><br><span class="line">        for j in img_q:</span><br><span class="line">            img_list=j</span><br><span class="line">            response3=requests.get(url=j,headers=headers).content</span><br><span class="line">            img_name=j.split('/')[-1]</span><br><span class="line">            img_path='./图片4/'+img_name</span><br><span class="line">            with open(img_path,'wb') as fp:</span><br><span class="line">                fp.write(response3)</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>-python -爬虫</tag>
+      </tags>
+  </entry>
 </search>
