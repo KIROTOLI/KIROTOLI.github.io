@@ -715,4 +715,98 @@
         <tag>算法</tag>
       </tags>
   </entry>
+  <entry>
+    <title>JavaScript实现集合与字典</title>
+    <url>/2021/01/26/JavaScript%E5%AE%9E%E7%8E%B0%E9%9B%86%E5%90%88%E4%B8%8E%E5%AD%97%E5%85%B8/</url>
+    <content><![CDATA[<h1 id="JavaScript实现集合与字典"><a href="#JavaScript实现集合与字典" class="headerlink" title="JavaScript实现集合与字典"></a>JavaScript实现集合与字典</h1><h2 id="一、集合结构"><a href="#一、集合结构" class="headerlink" title="一、集合结构"></a>一、集合结构</h2><ul>
+<li><p>集合比较常见的实现方式是哈希表，这里使用JavaScript的Object类进行封装。</p>
+</li>
+<li><p>集合通常是由一组无序的、不能重复的元素构成。</p>
+</li>
+<li><p>数学中常指的集合中的元素是可以重复的，但是计算机中集合的元素不能重复。</p>
+</li>
+<li><p>集合是特殊的数组：</p>
+<ul>
+<li>特殊之处在于里面的元素没有顺序，也不能重复。<br>没有顺序意味着不能通过下标值进行访问，不能重复意味着相同的对象在集合中只会存在一份。</li>
+</ul>
+</li>
+<li><p>实现集合类：</p>
+<ul>
+<li>在ES6中的Set类就是一个集合类，这里我们重新封装一个Set类，了解集合的底层实现。</li>
+<li>JavaScript中的Object类中的key就是一个集合，可以使用它来封装集合类Set。</li>
+</ul>
+</li>
+<li><p>集合常见的操作：</p>
+<ul>
+<li><p>add（value）：向集合添加一个新的项；</p>
+</li>
+<li><p>remove（value）：从集合中移除一个值；</p>
+</li>
+<li><p>has（value）：如果值在集合中，返回true，否则返回false；</p>
+</li>
+<li><p>clear（）：移除集合中的所有项；</p>
+</li>
+<li><p>size（）：返回集合所包含元素的数量，与数组的length属性相似；</p>
+</li>
+<li><p>values（）：返回一个包含集合中所有值的数组；</p>
+<h2 id="集合的实现"><a href="#集合的实现" class="headerlink" title="集合的实现"></a>集合的实现</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">//封装集合类</span><br><span class="line"> function Set(){</span><br><span class="line">     // 属性</span><br><span class="line">     this.items={}</span><br><span class="line">     // 方法</span><br><span class="line">     // 1.add方法</span><br><span class="line">     Set.prototype.add=function(value){</span><br><span class="line">         // 将元素添加到元素中</span><br><span class="line">         // 判断当前集合中是否含有该元素</span><br><span class="line">         if(this.has(value)){</span><br><span class="line">          return false</span><br><span class="line">         }</span><br><span class="line">         this.items[value]=value</span><br><span class="line">         return true</span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // has方法</span><br><span class="line">     Set.prototype.has=function(value){</span><br><span class="line">         return this.items.hasOwnProperty(value)</span><br><span class="line">     }</span><br><span class="line">     // remove方法</span><br><span class="line">     Set.prototype.remove=function(value){</span><br><span class="line">         if(!this.has(value)){</span><br><span class="line">            return false</span><br><span class="line">         }</span><br><span class="line">         // 将元素从集合中删除</span><br><span class="line">         delete this.items[value]</span><br><span class="line">         return true</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // clear方法</span><br><span class="line">     Set.prototype.clear=function(value){</span><br><span class="line">        this.items={}</span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // size方法</span><br><span class="line">     Set.prototype.size=function(value){</span><br><span class="line">        return Object.keys(this.items).length</span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // values方法 获取集合中所有的值</span><br><span class="line">     Set.prototype.values=function(value){</span><br><span class="line">        return Object.keys(this.items)</span><br><span class="line">        </span><br><span class="line">     }</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="集合间的操作"><a href="#集合间的操作" class="headerlink" title="集合间的操作"></a>集合间的操作</h1></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>并集：对于给定的两个集合，返回一个包含两个集合中所有元素的新集合；</li>
+<li>交集：对于给定的两个集合，返回一个包含两个集合中共有元素的新集合；</li>
+<li>差集：对于给定的两个集合，返回一个包含所有存在于第一个集合且不存在于第二个集合的元素的新集合；</li>
+<li>子集：验证一个给定集合是否是另一个集合的子集；<br><img src="/images/2.png" alt="图片"></li>
+</ul>
+<h2 id="并集的实现："><a href="#并集的实现：" class="headerlink" title="并集的实现："></a>并集的实现：</h2><ul>
+<li><p>实现思路：创建集合C代表集合A和集合B的并集，先将集合A中的所有元素添加到集合C中，再遍历集合B，如果是集合C所没有的元素就把它添加到集合C中。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Set.prototype.union = otherSet =&gt; {</span><br><span class="line">     // this:集合对象A</span><br><span class="line">     // otherSet:集合对象B</span><br><span class="line">     //1.创建一个新的集合</span><br><span class="line">     let unionSet = new Set()</span><br><span class="line"></span><br><span class="line">     //2.将A集合中的所有元素添加到新集合中</span><br><span class="line">     let values = this.values()</span><br><span class="line">     // for(let i of values){</span><br><span class="line">     //   unionSet.add(i)</span><br><span class="line">     // }</span><br><span class="line">     for(let i = 0;i &lt; values.length;i++){</span><br><span class="line">       unionSet.add(values[i])</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">     //3.取出B集合中的元素,判断是否需要加到新集合中</span><br><span class="line">     values = otherSet.values()</span><br><span class="line">     // for(let i of values){</span><br><span class="line">     //   //由于集合的add方法已经对重复的元素进行了判断,所以这里可以直接添加</span><br><span class="line">     //   unionSet.add(i)</span><br><span class="line">     // }</span><br><span class="line">     for(let i = 0;i &lt; values.length;i++){</span><br><span class="line">       unionSet.add(values[i])</span><br><span class="line">     }</span><br><span class="line">     return unionSet</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="交集的实现："><a href="#交集的实现：" class="headerlink" title="交集的实现："></a>交集的实现：</h2></li>
+<li><p>实现思路：遍历集合A，当取得的元素也存在于集合B时，就把该元素添加到另一个集合C中。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Set.prototype.intersection = otherSet =&gt; {</span><br><span class="line">     // this:集合A</span><br><span class="line">     // otherSet:集合B</span><br><span class="line">     //1.创建新的集合</span><br><span class="line">     let intersectionSet = new Set()</span><br><span class="line">     </span><br><span class="line">     //2.从A中取出一个元素，判断是否同时存在于集合B中，是则放入新集合中</span><br><span class="line">     let values = this.values()</span><br><span class="line">     for(let i =0 ; i &lt; values.length; i++){</span><br><span class="line">       let item = values[i]</span><br><span class="line">       if (otherSet.has(item)) {</span><br><span class="line">         intersectionSet.add(item)</span><br><span class="line">       }</span><br><span class="line">     }</span><br><span class="line">     return intersectionSet</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="差集的实现："><a href="#差集的实现：" class="headerlink" title="差集的实现："></a>差集的实现：</h2></li>
+<li><p>实现思路：遍历集合A，当取得的元素不存在于集合B时，就把该元素添加到另一个集合C中。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Set.prototype.diffrence = otherSet =&gt; {</span><br><span class="line">        //this:集合A</span><br><span class="line">        //otherSet:集合B</span><br><span class="line">        //1.创建新的集合</span><br><span class="line">        var diffrenceSet = new Set()</span><br><span class="line"></span><br><span class="line">        //2.取出A集合中的每一个元素，判断是否同时存在于B中，不存在则添加到新集合中</span><br><span class="line">        var values = this.values()</span><br><span class="line">        for(var i = 0;i &lt; values.length; i++){</span><br><span class="line">          var item = values[i]</span><br><span class="line">          if (!otherSet.has(item)) {</span><br><span class="line">            diffrenceSet.add(item)</span><br><span class="line">          }</span><br><span class="line">        }</span><br><span class="line">        return diffrenceSet</span><br><span class="line">      }</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="子集的实现："><a href="#子集的实现：" class="headerlink" title="子集的实现："></a>子集的实现：</h2></li>
+<li><p>实现思路：遍历集合A，当取得的元素中有一个不存在于集合B时，就说明集合A不是集合B的子集，返回false。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Set.prototype.subset = otherSet =&gt; {</span><br><span class="line">       //this:集合A</span><br><span class="line">       //otherSet：集合B</span><br><span class="line">       //遍历集合A中的所有元素，如果发现，集合A中的元素，在集合B中不存在，那么放回false，如果遍历完整个集合A没有返回false，就返回true</span><br><span class="line">       let values = this.values()</span><br><span class="line">       for(let i = 0; i &lt; values.length; i++){</span><br><span class="line">         let item = values[i]</span><br><span class="line">         if(!otherSet.has(item)){</span><br><span class="line">           return false</span><br><span class="line">         }</span><br><span class="line">       }</span><br><span class="line">       return true</span><br><span class="line">     }</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="字典结构"><a href="#字典结构" class="headerlink" title="字典结构"></a>字典结构</h1></li>
+<li><p>字典的特点：</p>
+</li>
+<li><p>字典存储的是键值对，主要特点是一一对应；</p>
+<ul>
+<li>比如保存一个人的信息：数组形式：[19，‘Tom’，1.65]，可通过下标值取出信息；字典形式：{“age”：19，”name”：”Tom”，”height”：165}，可以通过key取出value。<br>此外，在字典中key是不能重复且无序的，而Value可以重复。</li>
+</ul>
+</li>
+<li><p>字典和映射的关系：</p>
+<ul>
+<li>有些编程语言中称这种映射关系为字典，如Swift中的Dictonary，Python中的dict；</li>
+<li>有些编程语言中称这种映射关系为Map，比如Java中的HashMap&amp;TreeMap等；</li>
+</ul>
+</li>
+<li><p>字典类常见的操作：</p>
+<ul>
+<li>set(key,value)：向字典中添加新元素。</li>
+<li>remove(key)：通过使用键值来从字典中移除键值对应的数据值。</li>
+<li>has(key)：如果某个键值存在于这个字典中，则返回true，反之则返回false。</li>
+<li>get(key)：通过键值查找特定的数值并返回。</li>
+<li>clear()：将这个字典中的所有元素全部删除。</li>
+<li>size()：返回字典所包含元素的数量。与数组的length属性类似。</li>
+<li>keys()：将字典所包含的所有键名以数组形式返回。</li>
+<li>values()：将字典所包含的所有数值以数组形式返回。<h2 id="封装字典"><a href="#封装字典" class="headerlink" title="封装字典"></a>封装字典</h2></li>
+</ul>
+</li>
+<li><p>字典类可以基于JavaScript中的对象结构来实现，这里直接实现字典类中的常用方法。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">//封装字典类</span><br><span class="line">function Dictionary(){</span><br><span class="line">  //字典属性</span><br><span class="line">  this.items = {}</span><br><span class="line"></span><br><span class="line">  //字典操作方法</span><br><span class="line">  //一.在字典中添加键值对</span><br><span class="line">  Dictionary.prototype.set = function(key, value){</span><br><span class="line">    this.items[key] = value</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //二.判断字典中是否有某个key</span><br><span class="line">  Dictionary.prototype.has = function(key){</span><br><span class="line">    return this.items.hasOwnProperty(key)</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //三.从字典中移除元素</span><br><span class="line">  Dictionary.prototype.remove = function(key){</span><br><span class="line">    //1.判断字典中是否有这个key</span><br><span class="line">    if(!this.has(key)) return false</span><br><span class="line"></span><br><span class="line">    //2.从字典中删除key</span><br><span class="line">    delete this.items[key]</span><br><span class="line">    return true</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //四.根据key获取value</span><br><span class="line">  Dictionary.prototype.get = function(key){</span><br><span class="line">    return this.has(key) ? this.items[key] : undefined</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //五.获取所有keys</span><br><span class="line">  Dictionary.prototype.keys = function(){</span><br><span class="line">    return Object.keys(this.items)</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //六.size方法</span><br><span class="line">  Dictionary.prototype.keys = function(){</span><br><span class="line">    return this.keys().length</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //七.clear方法</span><br><span class="line">  Dictionary.prototype.clear = function(){</span><br><span class="line">    this.items = {}</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>javascript</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
 </search>
