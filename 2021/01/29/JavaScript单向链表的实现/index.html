@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="浏览器是如何运作的？, 贾志飞的博客">
+    <meta name="keywords" content="JavaScript单向链表的实现, 贾志飞的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>浏览器是如何运作的？ | 贾志飞的博客</title>
+    <title>JavaScript单向链表的实现 | 贾志飞的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/src=http___pic1.win4000.com_m00_43_5f_5fff042b2935a0cf08daf5e1a0bd8336.jpg&refer=http___pic1.win4000.jfif')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/c383d5bc27d7356160c7ff7fcef8f279e5486c78.jpg@1320w_742h.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">浏览器是如何运作的？</h1>
+                    <h1 class="description center-align post-title">JavaScript单向链表的实现</h1>
                 </div>
             </div>
         </div>
@@ -433,12 +433,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/">
-                                <span class="chip bg-color">互联网</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
                             </a>
                         
-                            <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/">
-                                <span class="chip bg-color">浏览器</span>
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -453,14 +457,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-10
+                    2021-01-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-13
+                    2021-01-29
                 </div>
                 
 
@@ -489,55 +493,84 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="关于浏览器在运作时的流程"><a href="#关于浏览器在运作时的流程" class="headerlink" title="关于浏览器在运作时的流程"></a>关于浏览器在运作时的流程</h1><a id="more"></a>
-<h1 id="浏览器是如何运作的"><a href="#浏览器是如何运作的" class="headerlink" title="浏览器是如何运作的"></a>浏览器是如何运作的</h1><ul>
-<li>我们要理解浏览器是如何运作的过程，首先要理解一个概念，也就是进程与线程</li>
+                <h1 id="javascript实现单向链表"><a href="#javascript实现单向链表" class="headerlink" title="javascript实现单向链表"></a>javascript实现单向链表</h1><ul>
+<li>单向链表简介<ul>
+<li>链表和数组一样，可以用于存储一系列的元素，但是链表和数组的实现机制完全不同。链表的每个元素由一个存储元素本身的节点和一个指向下一个元素的引用（有的语言称为指针或连接）组成。类似于火车头，一节车厢载着乘客（数据），通过节点连接另一节车厢。<br><img src="/images/%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84.png" alt="图片"></li>
 </ul>
-<blockquote>
-<p> 进程是操作系统进行资源分配和调度的基本单元 可以申请和拥有计算机资源 进程是程序的基本执行实体<br>线程是操作系统能够进行运算调度的最小单位 一个进程中可以并发多个线程 每条线程并行执行不同的任务</p>
-</blockquote>
+</li>
+<li>head属性指向链表的第一个节点；</li>
+<li>链表中的最后一个节点指向null；</li>
+<li>当链表中一个节点也没有的时候，head直接指向null；<br><img src="/images/%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%842.png" alt="图片"><h1 id="数组与链表的对比"><a href="#数组与链表的对比" class="headerlink" title="数组与链表的对比"></a>数组与链表的对比</h1><h2 id="数组的缺点"><a href="#数组的缺点" class="headerlink" title="数组的缺点"></a>数组的缺点</h2></li>
+<li>数组的创建通常是申请一段连续的内存空间,而且大小是固定的 当数组超出原长度时 会进行扩容 一般情况下为申请一个更大的数组 然后将原数组复制过去</li>
+<li>数组的插入成本很高 因为数组会进行大量的位移来进行数据的存储位置的变更<h2 id="链表的优点"><a href="#链表的优点" class="headerlink" title="链表的优点"></a>链表的优点</h2></li>
+<li>链表在存储空间中 不再是一段连续的空间 而是任意的位置存储链表中的数据</li>
+<li>链表的大小可以随意扩容</li>
+<li>链表在进行插入和删除数据时 时间复杂度可以到O(1),相比较于数组效率高到不知哪里去了<h2 id="链表的缺点"><a href="#链表的缺点" class="headerlink" title="链表的缺点"></a>链表的缺点</h2></li>
+<li>在访问链表的数据时 只能从头进行访问 无法根据下标值来进行读取数据</li>
+<li>可以轻松的到达下一个节点 但是回到之前节点时很难的</li>
+</ul>
+<h1 id="链表中的常见操作"><a href="#链表中的常见操作" class="headerlink" title="链表中的常见操作"></a>链表中的常见操作</h1><ul>
+<li>append 链表中增加一个新的项</li>
+<li>insert(position,data) 向链表中特定位置增加一个香</li>
+<li>removeAt(position)删除链表中特定位置的项</li>
+<li>remove(data)删除链表中该项</li>
+<li>update(position,data)将链表中特定位置的项改变内容</li>
+<li>indexOf(data)查找在链表中特定的项的位置</li>
+<li>get(position)获得特定位置的项的内容</li>
+<li>isEmpty()返回链表是否为空</li>
+<li>size()返回链表的长度</li>
+<li>toString()返回链表的toString方法</li>
+</ul>
+<h1 id="封装单向链表"><a href="#封装单向链表" class="headerlink" title="封装单向链表"></a>封装单向链表</h1><ul>
+<li>先创建单向链表类linklist,并且添加基本属性 再添加链表的各种方法</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fuction llinklixt(){</span><br><span class="line">    &lt;!-- 封装内部节点 --&gt;</span><br><span class="line">    fuction Node(data){</span><br><span class="line">        this.data=data</span><br><span class="line">        this.next=null</span><br><span class="line">    }</span><br><span class="line">    &lt;!-- 属性 --&gt;</span><br><span class="line">    this.length=0</span><br><span class="line">    this.head=null</span><br></pre></td></tr></tbody></table></figure>
 <ul>
-<li><p>在我们了解了进程与线程的概念以后，就可以和你介绍浏览器的运作流程了</p>
+<li><p>实现append方法</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">linklixt.prototype.append=function(data){</span><br><span class="line">       var node=new Node(data)</span><br><span class="line">       //链表长度为0的情况</span><br><span class="line">       if(this.length==0){</span><br><span class="line">           this.head=node</span><br><span class="line">       }else{//不为0的情况</span><br><span class="line">           var current=this.head</span><br><span class="line">           while(current.next){</span><br><span class="line">               current=current.next</span><br><span class="line">           }</span><br><span class="line">           current.next=node</span><br><span class="line">       }</span><br><span class="line">       this.length+=1</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>首先创建一个新的node 长度为0时 直接将this.head的指针指向node</p>
 </li>
-<li><p>当我们在电脑上打开打了浏览器时，相当于运行了浏览器这个应用程序</p>
-<h2 id="浏览器的多进程结构"><a href="#浏览器的多进程结构" class="headerlink" title="浏览器的多进程结构"></a>浏览器的多进程结构</h2></li>
-<li><p>而浏览器这个是一个多进程的浏览器结构，根据进程功能不同来拆分浏览器，我们可以将浏览器分解为：</p>
-<p> 1.浏览器进程</p>
-<pre><code> 负责控制浏览器除标签页外的用户界面 
-
- 包括地址栏 书签 后退 和前进按钮 以及负责与浏览器的其他进程协调工作</code></pre>
-<p> 2.GPU进程</p>
-<pre><code> 负责整个浏览器界面的渲染</code></pre>
-<p> 3.插件进程</p>
-<pre><code> 负责控制网站使用的所有插件</code></pre>
-<p> 4.缓存进程<br> 5.网络进程</p>
-<pre><code>负责发起接受网络请求</code></pre>
-<p> 6.渲染器进程</p>
-<pre><code>用来控制显示tab标签内的所有内容 浏览器在默认情况下会为每个标签页创建一个渲染器进程</code></pre>
-<h2 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h2></li>
-<li><p>当你在浏览器地址栏输入地址时 浏览器的ui线程会捕捉你的输入内容<br>如果访问的是网址 则ui线程会启动一个网络线程来请求dns进行域名解析<br>接着连接服务器获取数据</p>
+<li><p>不为0时 创建一个current值设置为this.head 并且通过while遍历 每遍历一次 current的值就指向下一位 直到current的next值指向null 也就是最后一位 此时 将current的next的值赋值给node</p>
 </li>
-<li><p>当网络线程获取到数据后 会通过 safeBrowsing来检查站点（检查是否是恶意站点，会弹出警告） </p>
-<p>   safebrowsing是谷歌内置的一套站点安全系统 通过检测该站点的数据来判断是否安全</p>
+<li><p>实现toString方法</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">linklixt.prototype.toString=function(){</span><br><span class="line">         var current=this.head</span><br><span class="line">         var retstr=''</span><br><span class="line">         while(current){</span><br><span class="line">             retstr+=current.data+' '</span><br><span class="line">             current=current.next</span><br><span class="line">         }</span><br><span class="line">         return retstr</span><br><span class="line">     }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>非常简单 不做分析</p>
 </li>
-<li><p>当安全校验通过时 网络线程会通知ui线程准备好了 然后ui线程会创建一个渲染器进程来渲染页面 浏览器进程通过ipc管道将数据传递给渲染器进程</p>
-</li>
-<li><p>渲染器进程的核心任务就是把 html css js 等资源渲染成用户可以交互的web界面 渲染器进程的主线程将html进行解析 构造dom数据结构 在加载完成后 我们会获得一个dom tree</p>
-</li>
-<li><p>在知道dom的结构和每个节点的样式后 接下来需要知道每个节点放在页面上的哪个位置 也就是节点的坐标以及该节点需要占用多大的区域 这个阶段被称为layout布局 主线程通过遍历dom和计算好的样式来生成layout ree 上面的每个节点都记录了x y 坐标与边框尺寸 （这里注意dom tree 与layout tree并不是一一对应的 设置的display：none的节点并不会出现在layout tree上 而在before伪类添加了content值的元素会出现在layout tree 而不会出现在dom tree上）</p>
-</li>
-<li><p>为了保证在屏幕上展示正确的层级 主线程遍历layout tree创建一个绘制记录表 记录了绘制的顺序 该阶段被称为绘制 paint</p>
-</li>
-<li><p>主线程遍历layout tree 生成layer tree</p>
-</li>
-<li><p>主线程将这些layer tree 和绘制信息传递给合成器线程  合成器线程将他们切分为许多图块 然后将每个图块发送给栅格化线程 栅格化线程栅格化每个图块 并将他们存储在gpu内存中 当图块栅格化完成后 合成器线程将收集称为“draw quads”的图块信息 这些信息里记录了图块在内存中的位置 和在页面的那个位置绘制图块的信息 根据这些信息合成器线程生成了一个合成器帧 这个合成器帧通过ipc传送给浏览器进程 接着浏览器进程将合成器帧传送到gpu 然后gpu渲染展示到屏幕上 当页面发生变化 比如滚动页面 都会生成一个新的合成器帧 重复之前的流程</p>
-</li>
-<li><p>此时，你就可以看到显示在可视区域的图块了</p>
-</li>
+<li><p>insert方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">linklixt.prototype.insert=function(position,data){</span><br><span class="line">       if(position &lt; 0 || position &gt; this.length) return false</span><br><span class="line">       var node=new Node(data)</span><br><span class="line">       if(position==0){</span><br><span class="line">           node.next=this.head</span><br><span class="line">           this.head=node</span><br><span class="line">       }else{</span><br><span class="line">           var index=0</span><br><span class="line">           var current=this.head</span><br><span class="line">           var previous=null</span><br><span class="line">           while(index++&lt;position){</span><br><span class="line">               previous=current</span><br><span class="line">               current=current.next</span><br><span class="line">               </span><br><span class="line">           }</span><br><span class="line">           node.next=current</span><br><span class="line">           previous.next=node</span><br><span class="line">       }</span><br><span class="line">       this.length+=1</span><br><span class="line">       return true</span><br><span class="line">       </span><br><span class="line">       }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>insert方法的实现 当poition为o时 直接</p>
+<ul>
+<li>node.next=this.head</li>
+<li>this.head=node</li>
 </ul>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
-<li><p>为什么要尽量避免重绘和重排</p>
-<p>   可能会导致掉帧 这是因为j有可能js执行阻塞了主线程 而css中有个动画属性叫transform 通过该属性实现的动画不会经过布局和绘制 而是直接运行在合成器线程和栅格化线程中 所以不会受到主线程中js执行的影响</p>
+</li>
+<li><p>当position不为0时首先定义两个变量previous和curent分别指向需要插入位置的前一个节点和后一个节点</p>
+<ul>
+<li>然后，通过：newNode.next = current，改变指向3</li>
+<li>最后，通过：previous.next = newNode，改变指向4</li>
+</ul>
+</li>
+<li><p>get方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">linklixt.prototype.get=function(position){</span><br><span class="line">           // var newnode=new Node()</span><br><span class="line">           // 1.越界判断</span><br><span class="line">           if(position&lt;0||position&gt;=this.length) return null</span><br><span class="line">           // 2.获取对应date</span><br><span class="line">           var current=this.head</span><br><span class="line">           var index=0</span><br><span class="line">           while (index++ &lt; position) {</span><br><span class="line">               current=current.next</span><br><span class="line">               </span><br><span class="line">           }</span><br><span class="line">           return current.data</span><br><span class="line">       }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>indexOf方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">linklixt.prototype.indexOf=function(data){</span><br><span class="line">            var index=0</span><br><span class="line">            var current=this.head</span><br><span class="line"></span><br><span class="line">            while (current) {</span><br><span class="line">                if(current.data==data){</span><br><span class="line">                    return index</span><br><span class="line"></span><br><span class="line">                }</span><br><span class="line">                index+=1</span><br><span class="line">                current=current.next</span><br><span class="line">                </span><br><span class="line">            }</span><br><span class="line">            // 没有找到 返回-1</span><br><span class="line">            return -1;</span><br><span class="line"></span><br><span class="line">        }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>update方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">linklixt.prototype.update=function(position,data){</span><br><span class="line">            // 2.越界判断</span><br><span class="line">            if(position&lt;0 || position&gt;=this.length) return false</span><br><span class="line">            // 2.查找正确的节点</span><br><span class="line">            var current=this.head</span><br><span class="line">            var index=0</span><br><span class="line">            while (index&lt;position) {</span><br><span class="line">                current=current.next</span><br><span class="line">                index++</span><br><span class="line">                </span><br><span class="line">            }</span><br><span class="line">            // 3.将数据更改</span><br><span class="line">            current.data=data</span><br><span class="line">            return true</span><br><span class="line"></span><br><span class="line">        }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p> removeAt方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">linklixt.prototype.removeAt=function(position){</span><br><span class="line">              // 1.越界判断</span><br><span class="line">              if(position&lt;0  || position&gt;=this.length) return false</span><br><span class="line"></span><br><span class="line">              // 2,进行移除</span><br><span class="line">              if(position==0){</span><br><span class="line">                  this.head=this.head.next</span><br><span class="line">              }else{</span><br><span class="line">                  var index=0</span><br><span class="line">                  var previous=null</span><br><span class="line">                  var current=this.head</span><br><span class="line">                  while ((index++ &lt; position)) {</span><br><span class="line">                      previous=current</span><br><span class="line">                      current=current.next</span><br><span class="line">                      </span><br><span class="line">                  }</span><br><span class="line">                  // 前一个结点的next指向 current的next</span><br><span class="line">                  previous.next=current.next</span><br><span class="line">               </span><br><span class="line">                  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">              }</span><br><span class="line">              this.length-=1</span><br><span class="line">                  return true</span><br><span class="line">          }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>实现思路其实和insert方法差不多 不懂得多看看insert方法的实现就懂了,这里不做详解 等哪天有时间了再来写吧</p>
+</li>
+<li><p>remove方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">linklixt.prototype.remove=function(data){</span><br><span class="line">              // 1.先获取data再元素中的位置</span><br><span class="line">              var position=indexOf(data)</span><br><span class="line">              // 2.将获取到的位置的元素删除</span><br><span class="line">              return this.removeAt(position)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">          }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>就是调用前两种方法 先获取到具体位置 再将该位置的元素删除</p>
+</li>
+<li><p>isEmpty方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">linklixt.prototype.isEmpty=function(){</span><br><span class="line">               return this.length==0;</span><br><span class="line">           }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>size方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li1.prototype.length=function(){</span><br><span class="line">               return this.length</span><br><span class="line">           }</span><br></pre></td></tr></tbody></table></figure>
+
+
+
 </li>
 </ul>
 
@@ -566,7 +599,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://KIROTOLI.github.io/2021/01/10/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C%E7%9A%84%EF%BC%9F/">https://KIROTOLI.github.io/2021/01/10/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C%E7%9A%84%EF%BC%9F/</a>
+                    <a href="https://KIROTOLI.github.io/2021/01/29/JavaScript%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/">https://KIROTOLI.github.io/2021/01/29/JavaScript%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -604,12 +637,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/">
-                                    <span class="chip bg-color">互联网</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
                                 </a>
                             
-                                <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/">
-                                    <span class="chip bg-color">浏览器</span>
+                                <a href="/tags/javascript/">
+                                    <span class="chip bg-color">javascript</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -1042,30 +1079,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/01/10/http%E4%B8%8Ehttps%E5%8D%8F%E8%AE%AE/">
+                <a href="/2021/01/29/JavaScript%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/">
                     <div class="card-image">
                         
-                        <img src="/images/jingjiedebifang-001.jpg" class="responsive-img" alt="http与https">
+                        <img src="/images/c383d5bc27d7356160c7ff7fcef8f279e5486c78.jpg@1320w_742h.webp" class="responsive-img" alt="JavaScript单向链表的实现">
                         
-                        <span class="card-title">http与https</span>
+                        <span class="card-title">JavaScript单向链表的实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            http详解
-HTTP 是超文本传输协议，也就是HyperText Transfer Protocol。
-
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1074,15 +1110,20 @@ HTTP 是超文本传输协议，也就是HyperText Transfer Protocol。
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/">
-                        <span class="chip bg-color">互联网</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
-                    <a href="/tags/http/">
-                        <span class="chip bg-color">http</span>
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -1096,23 +1137,23 @@ HTTP 是超文本传输协议，也就是HyperText Transfer Protocol。
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/10/%E4%BA%92%E8%81%94%E7%BD%91%E8%BF%90%E4%BD%9C%E6%B5%81%E7%A8%8B/">
+                <a href="/2021/01/26/JavaScript%E5%AE%9E%E7%8E%B0%E9%9B%86%E5%90%88%E4%B8%8E%E5%AD%97%E5%85%B8/">
                     <div class="card-image">
                         
-                        <img src="/images/src=http___i0.hdslb.com_bfs_article_fe54b228cf85808f38dc855b845f5cc332dc8a5e.jpg&refer=http___i0.hdslb.jfif" class="responsive-img" alt="互联网是如何运作的？">
+                        <img src="/images/3fc01d357efeac40b3c2503c25214b4af3e4b467.jpg@1320w_2346h.webp" class="responsive-img" alt="JavaScript实现集合与字典">
                         
-                        <span class="card-title">互联网是如何运作的？</span>
+                        <span class="card-title">JavaScript实现集合与字典</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            互联网运作
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-26
                             </span>
                         <span class="publish-author">
                             
@@ -1125,8 +1166,16 @@ HTTP 是超文本传输协议，也就是HyperText Transfer Protocol。
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/">
-                        <span class="chip bg-color">互联网</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>

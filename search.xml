@@ -809,4 +809,94 @@
         <tag>算法</tag>
       </tags>
   </entry>
+  <entry>
+    <title>JavaScript单向链表的实现</title>
+    <url>/2021/01/29/JavaScript%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<h1 id="javascript实现单向链表"><a href="#javascript实现单向链表" class="headerlink" title="javascript实现单向链表"></a>javascript实现单向链表</h1><ul>
+<li>单向链表简介<ul>
+<li>链表和数组一样，可以用于存储一系列的元素，但是链表和数组的实现机制完全不同。链表的每个元素由一个存储元素本身的节点和一个指向下一个元素的引用（有的语言称为指针或连接）组成。类似于火车头，一节车厢载着乘客（数据），通过节点连接另一节车厢。<br><img src="/images/%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84.png" alt="图片"></li>
+</ul>
+</li>
+<li>head属性指向链表的第一个节点；</li>
+<li>链表中的最后一个节点指向null；</li>
+<li>当链表中一个节点也没有的时候，head直接指向null；<br><img src="/images/%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%842.png" alt="图片"><h1 id="数组与链表的对比"><a href="#数组与链表的对比" class="headerlink" title="数组与链表的对比"></a>数组与链表的对比</h1><h2 id="数组的缺点"><a href="#数组的缺点" class="headerlink" title="数组的缺点"></a>数组的缺点</h2></li>
+<li>数组的创建通常是申请一段连续的内存空间,而且大小是固定的 当数组超出原长度时 会进行扩容 一般情况下为申请一个更大的数组 然后将原数组复制过去</li>
+<li>数组的插入成本很高 因为数组会进行大量的位移来进行数据的存储位置的变更<h2 id="链表的优点"><a href="#链表的优点" class="headerlink" title="链表的优点"></a>链表的优点</h2></li>
+<li>链表在存储空间中 不再是一段连续的空间 而是任意的位置存储链表中的数据</li>
+<li>链表的大小可以随意扩容</li>
+<li>链表在进行插入和删除数据时 时间复杂度可以到O(1),相比较于数组效率高到不知哪里去了<h2 id="链表的缺点"><a href="#链表的缺点" class="headerlink" title="链表的缺点"></a>链表的缺点</h2></li>
+<li>在访问链表的数据时 只能从头进行访问 无法根据下标值来进行读取数据</li>
+<li>可以轻松的到达下一个节点 但是回到之前节点时很难的</li>
+</ul>
+<h1 id="链表中的常见操作"><a href="#链表中的常见操作" class="headerlink" title="链表中的常见操作"></a>链表中的常见操作</h1><ul>
+<li>append 链表中增加一个新的项</li>
+<li>insert(position,data) 向链表中特定位置增加一个香</li>
+<li>removeAt(position)删除链表中特定位置的项</li>
+<li>remove(data)删除链表中该项</li>
+<li>update(position,data)将链表中特定位置的项改变内容</li>
+<li>indexOf(data)查找在链表中特定的项的位置</li>
+<li>get(position)获得特定位置的项的内容</li>
+<li>isEmpty()返回链表是否为空</li>
+<li>size()返回链表的长度</li>
+<li>toString()返回链表的toString方法</li>
+</ul>
+<h1 id="封装单向链表"><a href="#封装单向链表" class="headerlink" title="封装单向链表"></a>封装单向链表</h1><ul>
+<li>先创建单向链表类linklist,并且添加基本属性 再添加链表的各种方法</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">fuction llinklixt(){</span><br><span class="line">    &lt;!-- 封装内部节点 --&gt;</span><br><span class="line">    fuction Node(data){</span><br><span class="line">        this.data=data</span><br><span class="line">        this.next=null</span><br><span class="line">    }</span><br><span class="line">    &lt;!-- 属性 --&gt;</span><br><span class="line">    this.length=0</span><br><span class="line">    this.head=null</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p>实现append方法</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">linklixt.prototype.append=function(data){</span><br><span class="line">       var node=new Node(data)</span><br><span class="line">       //链表长度为0的情况</span><br><span class="line">       if(this.length==0){</span><br><span class="line">           this.head=node</span><br><span class="line">       }else{//不为0的情况</span><br><span class="line">           var current=this.head</span><br><span class="line">           while(current.next){</span><br><span class="line">               current=current.next</span><br><span class="line">           }</span><br><span class="line">           current.next=node</span><br><span class="line">       }</span><br><span class="line">       this.length+=1</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>首先创建一个新的node 长度为0时 直接将this.head的指针指向node</p>
+</li>
+<li><p>不为0时 创建一个current值设置为this.head 并且通过while遍历 每遍历一次 current的值就指向下一位 直到current的next值指向null 也就是最后一位 此时 将current的next的值赋值给node</p>
+</li>
+<li><p>实现toString方法</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">linklixt.prototype.toString=function(){</span><br><span class="line">         var current=this.head</span><br><span class="line">         var retstr=''</span><br><span class="line">         while(current){</span><br><span class="line">             retstr+=current.data+' '</span><br><span class="line">             current=current.next</span><br><span class="line">         }</span><br><span class="line">         return retstr</span><br><span class="line">     }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>非常简单 不做分析</p>
+</li>
+<li><p>insert方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">linklixt.prototype.insert=function(position,data){</span><br><span class="line">       if(position &lt; 0 || position &gt; this.length) return false</span><br><span class="line">       var node=new Node(data)</span><br><span class="line">       if(position==0){</span><br><span class="line">           node.next=this.head</span><br><span class="line">           this.head=node</span><br><span class="line">       }else{</span><br><span class="line">           var index=0</span><br><span class="line">           var current=this.head</span><br><span class="line">           var previous=null</span><br><span class="line">           while(index++&lt;position){</span><br><span class="line">               previous=current</span><br><span class="line">               current=current.next</span><br><span class="line">               </span><br><span class="line">           }</span><br><span class="line">           node.next=current</span><br><span class="line">           previous.next=node</span><br><span class="line">       }</span><br><span class="line">       this.length+=1</span><br><span class="line">       return true</span><br><span class="line">       </span><br><span class="line">       }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>insert方法的实现 当poition为o时 直接</p>
+<ul>
+<li>node.next=this.head</li>
+<li>this.head=node</li>
+</ul>
+</li>
+<li><p>当position不为0时首先定义两个变量previous和curent分别指向需要插入位置的前一个节点和后一个节点</p>
+<ul>
+<li>然后，通过：newNode.next = current，改变指向3</li>
+<li>最后，通过：previous.next = newNode，改变指向4</li>
+</ul>
+</li>
+<li><p>get方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">linklixt.prototype.get=function(position){</span><br><span class="line">           // var newnode=new Node()</span><br><span class="line">           // 1.越界判断</span><br><span class="line">           if(position&lt;0||position&gt;=this.length) return null</span><br><span class="line">           // 2.获取对应date</span><br><span class="line">           var current=this.head</span><br><span class="line">           var index=0</span><br><span class="line">           while (index++ &lt; position) {</span><br><span class="line">               current=current.next</span><br><span class="line">               </span><br><span class="line">           }</span><br><span class="line">           return current.data</span><br><span class="line">       }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>indexOf方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">linklixt.prototype.indexOf=function(data){</span><br><span class="line">            var index=0</span><br><span class="line">            var current=this.head</span><br><span class="line"></span><br><span class="line">            while (current) {</span><br><span class="line">                if(current.data==data){</span><br><span class="line">                    return index</span><br><span class="line"></span><br><span class="line">                }</span><br><span class="line">                index+=1</span><br><span class="line">                current=current.next</span><br><span class="line">                </span><br><span class="line">            }</span><br><span class="line">            // 没有找到 返回-1</span><br><span class="line">            return -1;</span><br><span class="line"></span><br><span class="line">        }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>update方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">linklixt.prototype.update=function(position,data){</span><br><span class="line">            // 2.越界判断</span><br><span class="line">            if(position&lt;0 || position&gt;=this.length) return false</span><br><span class="line">            // 2.查找正确的节点</span><br><span class="line">            var current=this.head</span><br><span class="line">            var index=0</span><br><span class="line">            while (index&lt;position) {</span><br><span class="line">                current=current.next</span><br><span class="line">                index++</span><br><span class="line">                </span><br><span class="line">            }</span><br><span class="line">            // 3.将数据更改</span><br><span class="line">            current.data=data</span><br><span class="line">            return true</span><br><span class="line"></span><br><span class="line">        }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p> removeAt方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">linklixt.prototype.removeAt=function(position){</span><br><span class="line">              // 1.越界判断</span><br><span class="line">              if(position&lt;0  || position&gt;=this.length) return false</span><br><span class="line"></span><br><span class="line">              // 2,进行移除</span><br><span class="line">              if(position==0){</span><br><span class="line">                  this.head=this.head.next</span><br><span class="line">              }else{</span><br><span class="line">                  var index=0</span><br><span class="line">                  var previous=null</span><br><span class="line">                  var current=this.head</span><br><span class="line">                  while ((index++ &lt; position)) {</span><br><span class="line">                      previous=current</span><br><span class="line">                      current=current.next</span><br><span class="line">                      </span><br><span class="line">                  }</span><br><span class="line">                  // 前一个结点的next指向 current的next</span><br><span class="line">                  previous.next=current.next</span><br><span class="line">               </span><br><span class="line">                  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">              }</span><br><span class="line">              this.length-=1</span><br><span class="line">                  return true</span><br><span class="line">          }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>实现思路其实和insert方法差不多 不懂得多看看insert方法的实现就懂了,这里不做详解 等哪天有时间了再来写吧</p>
+</li>
+<li><p>remove方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">linklixt.prototype.remove=function(data){</span><br><span class="line">              // 1.先获取data再元素中的位置</span><br><span class="line">              var position=indexOf(data)</span><br><span class="line">              // 2.将获取到的位置的元素删除</span><br><span class="line">              return this.removeAt(position)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">          }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>就是调用前两种方法 先获取到具体位置 再将该位置的元素删除</p>
+</li>
+<li><p>isEmpty方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">linklixt.prototype.isEmpty=function(){</span><br><span class="line">               return this.length==0;</span><br><span class="line">           }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>size方法的实现</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">li1.prototype.length=function(){</span><br><span class="line">               return this.length</span><br><span class="line">           }</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>javascript</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
 </search>
