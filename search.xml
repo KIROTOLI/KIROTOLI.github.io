@@ -1,811 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>css拓展语言 sass</title>
-    <url>/2021/01/13/sass/</url>
-    <content><![CDATA[<h1 id="css拓展语言css"><a href="#css拓展语言css" class="headerlink" title="css拓展语言css"></a>css拓展语言css</h1><ul>
-<li><p>sass一种帮助你简化css工作流程的方式 帮助你更容易维护和开发css内容</p>
-</li>
-<li><p>sass是目前为止世界上最成熟 稳定和强大的专业级css拓展语言</p>
-</li>
-<li><p>sass是用ruby语言写的，但是两者的语法没有关系</p>
-</li>
-</ul>
-<h2 id="sass语法"><a href="#sass语法" class="headerlink" title="sass语法"></a>sass语法</h2><ul>
-<li><p>sass文件后缀名<br>  sass后缀名有两种 一种后缀名为sass 不适用大括号与分号<br>  另一种是scss文件 这种和平时使用的css文件差不多 使用大括号与分号 </p>
-</li>
-<li><p>使用变量<br>  sass最重要的特性就是为css引入了变量 我们可以吧反复使用的css属性值定义为变量 然后通过变量名来引用他们 二无需重复书写这一过程</p>
-<ul>
-<li><p>sass使用$符号来标识变量</p>
-</li>
-<li><p>变量声明：$highlight-color: #F90;<br>  这意味着变量$highlight-color现在的值是#f90<br>  任何可以用作css的属性值的赋值都可以用作sass的变量值 甚至是以空格分隔的多个属性值 或以逗号分隔的多个属性值<br>  变量可以定义在规则快内和规则快外</p>
-</li>
-<li><p>变量引用：变量之间可以互相引用</p>
-</li>
-<li><p>变量名<br>  sass变量名可以与css中的属性名和选择器名称相同 包括中划线和下划线<br>  在sass中下划线与中划线是相互兼容的</p>
-</li>
-</ul>
-</li>
-<li><p>sass选择器可以互相嵌套</p>
-<ul>
-<li><p>父选择器<br>  在使用伪类选择器时 如   ：hover 要在徐娜则其之前加入&amp;<br>  当包含夫选择器标识符的嵌套给i则被打开时 他不会像后代选择器那样进行拼接  而是&amp;被父选择器直接替代</p>
-</li>
-<li><p> 群组选择器</p>
-</li>
-<li><p>子组合选择器和同层组合选择器<br>  “&gt;”  “+”  “~”<br>  上面这三个选择器必须和其他选择器配合使用 以指定浏览器仅选择某种特定上下文中的元素</p>
-<p>  子组合选择器：&gt; 选择一个元素的直接子元素<br>  同层相邻组合选择器： + 选择后面紧跟着的元素<br>  同层全体组合选择器： ~ 选择所有之后的同层元素 不管他们之间隔了多少元素</p>
-</li>
-<li><p>嵌套属性<br>  吧属性名从-的地方划开 在根属性后加个冒号 紧跟一个{}块，<br>  吧子属性写在这个{}块中</p>
-</li>
-</ul>
-</li>
-<li><p>导入sass文件 @import “文件名”</p>
-<ul>
-<li>默认变量值 ！default</li>
-<li>原生css可以导入</li>
-</ul>
-</li>
-<li><p>混合器<br>  使用混合器来实现大段样式的重用<br>  使用@mixin标识符定义<br>  使用@include 定义的名字 来进行引用<br>  可以使用混合器吧样式中的通用样式抽离出来，然后在其他地方重用</p>
-<ul>
-<li><p>选择器的链式继承<br>  继承也可以嵌套 互相继承</p>
-  <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">.one{</span><br><span class="line">}</span><br><span class="line">.two{</span><br><span class="line">@extend .one</span><br><span class="line">}</span><br><span class="line">.three{</span><br><span class="line">@extend .two</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>继承的局限性<br>  也有很多选择器不被支持继承<br>  如 包含选择器（.one.two）<br>  或相邻兄弟选择器（.one+.two）目前不支持继承</p>
-</li>
-<li><p>不要太过于依赖继承 后期很难修改和维护</p>
-</li>
-</ul>
-</li>
-<li><p>sass函数</p>
-<ul>
-<li>字符串函数</li>
-<li>数字函数</li>
-<li>列表函数</li>
-<li>introspection函数</li>
-<li>三元函数</li>
-<li>颜色函数</li>
-</ul>
-</li>
-</ul>
-<h2 id="sass编译css"><a href="#sass编译css" class="headerlink" title="sass编译css"></a>sass编译css</h2><ul>
-<li><p>cmd编译<br>  sass sass.文件名 css.文件名</p>
-</li>
-<li><p>vscode编译<br>  下载 easy sass 重启后在编写完的sass文件界面保存就会自动生成sass文件</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>互联网是如何运作的？</title>
-    <url>/2021/01/10/%E4%BA%92%E8%81%94%E7%BD%91%E8%BF%90%E4%BD%9C%E6%B5%81%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="互联网运作"><a href="#互联网运作" class="headerlink" title="互联网运作"></a>互联网运作</h1> <a id="more"></a>
-<h1 id="互联网时如何运作的"><a href="#互联网时如何运作的" class="headerlink" title="互联网时如何运作的"></a>互联网时如何运作的</h1><ul>
-<li>我们在通过自己的个人客户端访问远程服务器时，都会经过一个流程，接下来我将通过介绍访问bilibili官网主页的形式，来介绍从自己的电脑来进行访问的过程</li>
-</ul>
-<h2 id="从自己电脑访问bilibili主页流程"><a href="#从自己电脑访问bilibili主页流程" class="headerlink" title="从自己电脑访问bilibili主页流程"></a>从自己电脑访问bilibili主页流程</h2><ul>
-<li><p>1.当自己电脑连入互联网时，会获得一个ip地址（客户端）</p>
-</li>
-<li><p>2.访问的哔哩哔哩动画的服务器也接入互联网 同时也会有一个ip地址（服务端）</p>
-</li>
-<li><p>3.客户端在需要时通过互联网与服务端进行通信<br> 电脑发送信息给要访问的服务器 要获取的内容<br> 消息将被转换成电子信号 通过电缆放给服务器<br> 在服务器端将电子信号转换为计算机可以使用的文本数据</p>
-</li>
-</ul>
-<hr>
-<h2 id="关于TCP-IP协议"><a href="#关于TCP-IP协议" class="headerlink" title="关于TCP/IP协议"></a>关于TCP/IP协议</h2><ul>
-<li>当然，上面的流程只是简述了通过自己电脑访问网站的几个关键步骤<br> 那么，自己的电脑到底是通过什么方法去连接到远程的服务器端并将信息传输的呢<br> 我们是通过统称为 TCP/IP协议族 一系列规则俩进行网络通信的</li>
-</ul>
-<blockquote>
-<p>协议是一组规则 用于指定计算机 应如何通过网络进行通信</p>
-</blockquote>
-<h3 id="TCP-IP协议介绍"><a href="#TCP-IP协议介绍" class="headerlink" title="TCP/IP协议介绍"></a>TCP/IP协议介绍</h3><ul>
-<li><p>TCP/IP协议一共分为四层，分别是：<br>  1.应用层</p>
-<pre><code>  提供特定于应用程序的协议 HTTP FTP IMAP</code></pre>
-<p>  2.TCP传输控制层</p>
-<pre><code>  发送数据包到计算机上使用特定端口号的应用程序
-
-  tcp是一种面向连接的可靠字节流服务协议</code></pre>
-<p>  3.IP网络层</p>
-<pre><code>  使用IP地址将数据包发送到特定的计算机</code></pre>
-<p>  4.链路层</p>
-<pre><code>  将二进制数据包与网络信号相互之间转换</code></pre>
-<h3 id="TCP-IP访问流程"><a href="#TCP-IP访问流程" class="headerlink" title="TCP/IP访问流程"></a>TCP/IP访问流程</h3></li>
-<li><p>接下来我们还是使用访问哔哩哔哩官网来对流程进行介绍</p>
-<ol>
-<li><p> 使用应用层的http协议请求获取html文本 消息在发送前会被分解成许多片段 称为数据包</p>
-</li>
-<li><p> 通过应用层进入tcp层后 每个数据包都会被分配一个端口号</p>
-</li>
-<li><p> 进入ip层后 每个数据包将会赋予目标计算机的ip地址</p>
-</li>
-<li><p> 进入链路层后 将数据包的文本信息转译为电子信号 通过电缆发送</p>
-</li>
-<li><p>在电缆的另一端的路由器检查每个数据包中的目标地址<br>并确定将其发送到何处<br>最终数据包到达服务器<br>然后数据包从TCP/IP协议族的底部开始向上运行</p>
-</li>
-<li><p>当数据包开始向上运行时<br>客户端添加的所有路由数据<br>如ip地址和端口号都将从数据包中剥离出来<br>当数据到达栈顶时 数据包恢复成最初始的形式<br>通过端口号可以将数据传递给当前服务器监听该端口的应用程序<br>应用程序根据当前请求数据做出反应<br>服务器将该网站的首页的数据通过刚才的方式返回给你得电脑</p>
-</li>
-</ol>
-</li>
-</ul>
-<h2 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h2><pre><code>当我们在进行访问远程地址时，通常都是由域名来进行对ip地址的绑定来进行访问</code></pre>
-<ul>
-<li>浏览器通过dns来将ip地址与域名识别<ul>
-<li>dns是一个分布式数据库 上面记录了域名和其ip地址的对应关系</li>
-<li>在浏览器中输入网址时 浏览器首先连接dns服务器 获取到该域名的ip地址后 浏览器再连接访问该ip的服务器</li>
-</ul>
-</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>以上就是通过对访问哔哩哔哩来对互联网运作流程的一个简要介绍</li>
-</ul>
-<p> <a href="https://space.bilibili.com/2882171">bilibili主页</a><br> 图片测试<br> <img src="https://img.pic88.com/preview/2020/08/05/15966333861457328.jpg!s640" alt="图片"></p>
-<p> <em>字体是倾斜的哦</em><br> <strong>字体加粗了呢</strong></p>
-<p> <code>&lt;html&gt;&lt;/html&gt;</code><br> </p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">   &lt;title&gt;我是标题&lt;/title&gt;</span><br><span class="line">   &lt;/head&gt;</span><br><span class="line">   &lt;body&gt;&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
-<blockquote>
-<p>我的内容是引用的<br>还是一句引用</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>互联网</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新文档</title>
-    <url>/2021/01/09/%E6%96%B0%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[<h1 id="这是我的第一篇博客"><a href="#这是我的第一篇博客" class="headerlink" title="这是我的第一篇博客"></a>这是我的第一篇博客</h1><h3 id="这个是三级标题"><a href="#这个是三级标题" class="headerlink" title="这个是三级标题"></a>这个是三级标题</h3><ul>
-<li>列表1</li>
-<li>列表2<br> a 子列表<br> b 子列表</li>
-<li>列表3</li>
-</ul>
-<hr>
-<p> <a href="https://space.bilibili.com/2882171">bilibili主页</a><br> 图片测试<br> <img src="https://img.pic88.com/preview/2020/08/05/15966333861457328.jpg!s640" alt="图片"></p>
-<p> <em>字体是倾斜的哦</em><br> <strong>字体加粗了呢</strong></p>
-<p> <code>&lt;html&gt;&lt;/html&gt;</code><br> </p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">   &lt;title&gt;我是标题&lt;/title&gt;</span><br><span class="line">   &lt;/head&gt;</span><br><span class="line">   &lt;body&gt;&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
-<blockquote>
-<p>我的内容是引用的<br>还是一句引用</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>浏览器是如何运作的？</title>
-    <url>/2021/01/10/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C%E7%9A%84%EF%BC%9F/</url>
-    <content><![CDATA[<h1 id="关于浏览器在运作时的流程"><a href="#关于浏览器在运作时的流程" class="headerlink" title="关于浏览器在运作时的流程"></a>关于浏览器在运作时的流程</h1><h1 id="浏览器是如何运作的"><a href="#浏览器是如何运作的" class="headerlink" title="浏览器是如何运作的"></a>浏览器是如何运作的</h1><ul>
-<li>我们要理解浏览器是如何运作的过程，首先要理解一个概念，也就是进程与线程</li>
-</ul>
-<blockquote>
-<p> 进程是操作系统进行资源分配和调度的基本单元 可以申请和拥有计算机资源 进程是程序的基本执行实体<br>线程是操作系统能够进行运算调度的最小单位 一个进程中可以并发多个线程 每条线程并行执行不同的任务</p>
-</blockquote>
-<ul>
-<li><p>在我们了解了进程与线程的概念以后，就可以和你介绍浏览器的运作流程了</p>
-</li>
-<li><p>当我们在电脑上打开打了浏览器时，相当于运行了浏览器这个应用程序</p>
-<h2 id="浏览器的多进程结构"><a href="#浏览器的多进程结构" class="headerlink" title="浏览器的多进程结构"></a>浏览器的多进程结构</h2></li>
-<li><p>而浏览器这个是一个多进程的浏览器结构，根据进程功能不同来拆分浏览器，我们可以将浏览器分解为：</p>
-<p> 1.浏览器进程</p>
-<pre><code> 负责控制浏览器除标签页外的用户界面 
-
- 包括地址栏 书签 后退 和前进按钮 以及负责与浏览器的其他进程协调工作</code></pre>
-<p> 2.GPU进程</p>
-<pre><code> 负责整个浏览器界面的渲染</code></pre>
-<p> 3.插件进程</p>
-<pre><code> 负责控制网站使用的所有插件</code></pre>
-<p> 4.缓存进程<br> 5.网络进程</p>
-<pre><code>负责发起接受网络请求</code></pre>
-<p> 6.渲染器进程</p>
-<pre><code>用来控制显示tab标签内的所有内容 浏览器在默认情况下会为每个标签页创建一个渲染器进程</code></pre>
-<h2 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h2></li>
-<li><p>当你在浏览器地址栏输入地址时 浏览器的ui线程会捕捉你的输入内容<br>如果访问的是网址 则ui线程会启动一个网络线程来请求dns进行域名解析<br>接着连接服务器获取数据</p>
-</li>
-<li><p>当网络线程获取到数据后 会通过 safeBrowsing来检查站点（检查是否是恶意站点，会弹出警告） </p>
-<p>   safebrowsing是谷歌内置的一套站点安全系统 通过检测该站点的数据来判断是否安全</p>
-</li>
-<li><p>当安全校验通过时 网络线程会通知ui线程准备好了 然后ui线程会创建一个渲染器进程来渲染页面 浏览器进程通过ipc管道将数据传递给渲染器进程</p>
-</li>
-<li><p>渲染器进程的核心任务就是把 html css js 等资源渲染成用户可以交互的web界面 渲染器进程的主线程将html进行解析 构造dom数据结构 在加载完成后 我们会获得一个dom tree</p>
-</li>
-<li><p>在知道dom的结构和每个节点的样式后 接下来需要知道每个节点放在页面上的哪个位置 也就是节点的坐标以及该节点需要占用多大的区域 这个阶段被称为layout布局 主线程通过遍历dom和计算好的样式来生成layout ree 上面的每个节点都记录了x y 坐标与边框尺寸 （这里注意dom tree 与layout tree并不是一一对应的 设置的display：none的节点并不会出现在layout tree上 而在before伪类添加了content值的元素会出现在layout tree 而不会出现在dom tree上）</p>
-</li>
-<li><p>为了保证在屏幕上展示正确的层级 主线程遍历layout tree创建一个绘制记录表 记录了绘制的顺序 该阶段被称为绘制 paint</p>
-</li>
-<li><p>主线程遍历layout tree 生成layer tree</p>
-</li>
-<li><p>主线程将这些layer tree 和绘制信息传递给合成器线程  合成器线程将他们切分为许多图块 然后将每个图块发送给栅格化线程 栅格化线程栅格化每个图块 并将他们存储在gpu内存中 当图块栅格化完成后 合成器线程将收集称为“draw quads”的图块信息 这些信息里记录了图块在内存中的位置 和在页面的那个位置绘制图块的信息 根据这些信息合成器线程生成了一个合成器帧 这个合成器帧通过ipc传送给浏览器进程 接着浏览器进程将合成器帧传送到gpu 然后gpu渲染展示到屏幕上 当页面发生变化 比如滚动页面 都会生成一个新的合成器帧 重复之前的流程</p>
-</li>
-<li><p>此时，你就可以看到显示在可视区域的图块了</p>
-</li>
-</ul>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
-<li><p>为什么要尽量避免重绘和重排</p>
-<p>   可能会导致掉帧 这是因为j有可能js执行阻塞了主线程 而css中有个动画属性叫transform 通过该属性实现的动画不会经过布局和绘制 而是直接运行在合成器线程和栅格化线程中 所以不会受到主线程中js执行的影响</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>互联网</tag>
-        <tag>浏览器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>http与https</title>
-    <url>/2021/01/10/http%E4%B8%8Ehttps%E5%8D%8F%E8%AE%AE/</url>
-    <content><![CDATA[<h1 id="http详解"><a href="#http详解" class="headerlink" title="http详解"></a>http详解</h1><ul>
-<li>HTTP 是超文本传输协议，也就是HyperText Transfer Protocol。</li>
-</ul>
-<h2 id="详解http协议"><a href="#详解http协议" class="headerlink" title="详解http协议"></a>详解http协议</h2><h3 id="可以拆分成三个部分：超文本-传输-协议"><a href="#可以拆分成三个部分：超文本-传输-协议" class="headerlink" title="可以拆分成三个部分：超文本 传输 协议"></a>可以拆分成三个部分：超文本 传输 协议</h3><ul>
-<li><p>协议:<br>  HTTP 是一个用在计算机世界里的协议。它使用计算机能够理解的语言确立了一种计算机之间交流通信的规范（两个以上的参与者），以及相关的各种控制和错误处理方式（行为约定和规范）。</p>
-</li>
-<li><p>传输:<br>  我们在上网冲浪时，浏览器是请求方 A ，百度网站就是应答方 B。双方约定用 HTTP 协议来通信，于是浏览器把请求数据发送给网站，网站再把一些数据返回给浏览器，最后由浏览器渲染在屏幕，就可以看到图片、视频了。<br>  http是一个双向协议<br>  数据虽然在a和b之间传输 但允许中间有中转或接力</p>
-</li>
-<li><p>超文本:<br> http传输的内容是超文本<br> 超文本：超越了普通文本的文本，他是文字，图片，视频等的混合体 最关键有超链接，能从一个超文本跳转到另一个超文本 html就是最常见的超文本</p>
-</li>
-</ul>
-<ul>
-<li>此时 我们可以对http进行更准确的定义：http是一个在计算机世界里专门在【两点】之间【传输】文字，图片，音频，视频等【超文本】数据的【约定和规范】</li>
-</ul>
-<h3 id="问题：那「HTTP-是用于从互联网服务器传输超文本到本地浏览器的协议HTTP」-，这种说法正确吗？"><a href="#问题：那「HTTP-是用于从互联网服务器传输超文本到本地浏览器的协议HTTP」-，这种说法正确吗？" class="headerlink" title="问题：那「HTTP 是用于从互联网服务器传输超文本到本地浏览器的协议HTTP」 ，这种说法正确吗？"></a>问题：那「HTTP 是用于从互联网服务器传输超文本到本地浏览器的协议HTTP」 ，这种说法正确吗？</h3><ul>
-<li>这种说法是不正确的。因为也可以是「服务器&lt; – &gt;服务器」，所以采用两点之间的描述会更准确。</li>
-</ul>
-<h3 id="常见状态码"><a href="#常见状态码" class="headerlink" title="常见状态码"></a>常见状态码</h3><ul>
-<li><p>1xx 类状态码属于提示信息，是协议处理中的一种中间状态，实际用到的比较少。</p>
-</li>
-<li><p>2xx 类状态码表示服务器成功处理了客户端的请求，也是我们最愿意看到的状态。<br>「200 OK」是最常见的成功状态码，表示一切正常。如果是非 HEAD 请求，服务器返回的响应头都会有 body 数据。<br>「204 No Content」也是常见的成功状态码，与 200 OK 基本相同，但响应头没有 body 数据。<br>「206 Partial Content」是应用于 HTTP 分块下载或断电续传，表示响应返回的 body 数据并不是资源的全部，而是其中的一部分，也是服务器处理成功的状态。</p>
-</li>
-<li><p>3xx 类状态码表示客户端请求的资源发送了变动，需要客户端用新的 URL 重新发送请求获取资源，也就是重定向。<br>「301 Moved Permanently」表示永久重定向，说明请求的资源已经不存在了，需改用新的 URL 再次访问。<br>「302 Moved Permanently」表示临时重定向，说明请求的资源还在，但暂时需要用另一个 URL 来访问。<br>301 和 302 都会在响应头里使用字段 Location，指明后续要跳转的 URL，浏览器会自动重定向新的 URL。<br>「304 Not Modified」不具有跳转的含义，表示资源未修改，重定向已存在的缓冲文件，也称缓存重定向，用于缓存控制。</p>
-</li>
-<li><p>4xx 类状态码表示客户端发送的报文有误，服务器无法处理，也就是错误码的含义。<br>「400 Bad Request」表示客户端请求的报文有错误，但只是个笼统的错误。<br>「403 Forbidden」表示服务器禁止访问资源，并不是客户端的请求出错。<br>「404 Not Found」表示请求的资源在服务器上不存在或未找到，所以无法提供给客户端。</p>
-</li>
-<li><p>5xx 类状态码表示客户端请求报文正确，但是服务器处理时内部发生了错误，属于服务器端的错误码。<br>「500 Internal Server Error」与 400 类型，是个笼统通用的错误码，服务器发生了什么错误，我们并不知道。<br>「501 Not Implemented」表示客户端请求的功能还不支持，类似“即将开业，敬请期待”的意思。<br>「502 Bad Gateway」通常是服务器作为网关或代理时返回的错误码，表示服务器自身工作正常，访问后端服务器发生了错误。<br>「503 Service Unavailable」表示服务器当前很忙，暂时无法响应服务器，类似“网络服务正忙，请稍后重试”的意思。</p>
-</li>
-</ul>
-<h3 id="常见字段"><a href="#常见字段" class="headerlink" title="常见字段"></a>常见字段</h3><ul>
-<li><p>host：客户端发送请求时，用来指定服务器的域名</p>
-</li>
-<li><p>服务器在返回数据时，会有 Content-Length 字段，表明本次回应的数据长度。</p>
-</li>
-<li><p>Connection 字段最常用于客户端要求服务器使用 TCP 持久连接，以便其他请求复用。<br>  HTTP/1.1 版本的默认连接都是持久连接，但为了兼容老版本的 HTTP，需要指定 Connection 首部字段的值为 Keep-Alive</p>
-</li>
-<li><p>Content-Type 字段用于服务器回应时，告诉客户端，本次数据是什么格式。</p>
-</li>
-<li><p>Content-Encoding 字段说明数据的压缩方法。表示服务器返回的数据使用了什么压缩格式</p>
-</li>
-</ul>
-<h2 id="get与post"><a href="#get与post" class="headerlink" title="get与post"></a>get与post</h2><ul>
-<li><p>说一下 GET 和 POST 的区别？</p>
-<p> Get 方法的含义是请求从服务器获取资源，这个资源可以是静态的文本、页面、图片视频等。<br> 比如，你打开我的文章，浏览器就会发送 GET 请求给服务器，服务器就会返回文章的所有文字及资源。<br> 而POST 方法则是相反操作，它向 URI 指定的资源提交数据，数据就放在报文的 body 里。<br> 比如，你在我文章底部，敲入了留言后点击「提交」，浏览器就会执行一次 POST 请求，把你的留言文字放进了报文 body 里，然后拼接好 POST 请求头，通过 TCP 协议发送给服务器。</p>
-</li>
-</ul>
-<ul>
-<li><p>GET与POST在传输过程中是安全和幂等的吗？</p>
-<p>  GET 方法就是安全且幂等的，因为它是「只读」操作，无论操作多少次，服务器上的数据都是安全的，且每次的结果都是相同的。<br>  POST 因为是「新增或提交数据」的操作，会修改服务器上的资源，所以是不安全的，且多次提交数据就会创建多个资源，所以不是幂等的。 </p>
-</li>
-</ul>
-<blockquote>
-<p>先说明下安全和幂等的概念：<br>    在 HTTP 协议里，所谓的「安全」是指请求方法不会「破坏」服务器上的资源。<br>    所谓的「幂等」，意思是多次执行相同的操作，结果都是「相同」的。</p>
-</blockquote>
-<h2 id="http特性"><a href="#http特性" class="headerlink" title="http特性"></a>http特性</h2><ul>
-<li><p>HTTP 最凸出的优点是「简单、灵活和易于扩展、应用广泛和跨平台」</p>
-<p>  简单：HTTP 基本的报文格式就是 header + body，头部信息也是 key-value 简单文本的形式，易于理解，降低了学习和使用的门槛。</p>
-<p>  灵活易于拓展：HTTP协议里的各类请求方法、URI/URL、状态码、头字段等每个组成要求都没有被固定死，都允许开发人员自定义和扩充。<br>  同时 HTTP 由于是工作在应用层（ OSI 第七层），则它下层可以随意变化。<br>  HTTPS 也就是在 HTTP 与 TCP 层之间增加了 SSL/TLS 安全传输层，HTTP/3 甚至把 TCPP 层换成了基于 UDP 的 QUIC。</p>
-<p>  应用广泛和跨平台：互联网发展至今，HTTP 的应用范围非常的广泛，从台式机的浏览器到手机上的各种 APP，从看新闻、刷贴吧到购物、理财、吃鸡，HTTP 的应用片地开花，同时天然具有跨平台的优越性。</p>
-</li>
-<li><p>HTTP 协议里有优缺点一体的双刃剑，分别是「无状态、明文传输」，同时还有一大缺点「不安全」</p>
-<p>  无状态的好处，因为服务器不会去记忆 HTTP 的状态，所以不需要额外的资源来记录状态信息，这能减轻服务器的负担，能够把更多的 CPU 和内存用来对外提供服务。<br>  无状态的坏处，既然服务器没有记忆能力，它在完成有关联性的操作时会非常麻烦。<br>  例如登录-&gt;添加购物车-&gt;下单-&gt;结算-&gt;支付，这系列操作都要知道用户的身份才行。但服务器不知道这些请求是有关联的，每次都要问一遍身份信息。<br>  这样每操作一次，都要验证信息，这样的购物体验还能愉快吗？别问，问就是酸爽！<br>  对于无状态的问题，解法方案有很多种，其中比较简单的方式用 Cookie 技术。<br>  Cookie 通过在请求和响应报文中写入 Cookie 信息来控制客户端的状态。<br>  相当于，在客户端第一次请求后，服务器会下发一个装有客户信息的「小贴纸」，后续客户端请求服务器的时候，带上「小贴纸」，服务器就能认得了了。</p>
-<p>  明文意味着在传输过程中的信息，是可方便阅读的，通过浏览器的 F12 控制台或 Wireshark 抓包都可以直接肉眼查看，为我们调试工作带了极大的便利性。<br>  但是这正是这样，HTTP 的所有信息都暴露在了光天化日下，相当于信息裸奔。在传输的漫长的过程中，信息的内容都毫无隐私可言，很容易就能被窃取，如果里面有你的账号密码信息，那你号没了。</p>
-<p>  HTTP 比较严重的缺点就是不安全：<br>  通信使用明文（不加密），内容可能会被窃听。比如，账号信息容易泄漏，那你号没了。<br>  不验证通信方的身份，因此有可能遭遇伪装。比如，访问假的淘宝、拼多多，那你钱没了。<br>  无法证明报文的完整性，所以有可能已遭篡改。比如，网页上植入垃圾广告，视觉污染，眼没了。<br>  HTTP 的安全问题，可以用 HTTPS 的方式解决，也就是通过引入 SSL/TLS 层，使得在安全上达到了极致。</p>
-</li>
-</ul>
-<ul>
-<li><p>http性能：HTTP 协议是基于 TCP/IP，并且使用了「请求 - 应答」的通信模式，所以性能的关键就在这两点里</p>
-<p>  早期 HTTP/1.0 性能上的一个很大的问题，那就是每发起一个请求，都要新建一次 TCP 连接（三次握手），而且是串行请求，做了无畏的 TCP 连接建立和断开，增加了通信开销。<br>  为了解决上述 TCP 连接问题，HTTP/1.1 提出了长连接的通信方式，也叫持久连接。这种方式的好处在于减少了 TCP 连接的重复建立和断开所造成的额外开销，减轻了服务器端的负载。<br>  持久连接的特点是，只要任意一端没有明确提出断开连接，则保持 TCP 连接状态。</p>
-<p>  HTTP/1.1 采用了长连接的方式，这使得管道（pipeline）网络传输成为了可能。<br>  即可在同一个 TCP 连接里面，客户端可以发起多个请求，只要第一个请求发出去了，不必等其回来，就可以发第二个请求出去，可以减少整体的响应时间。<br>  举例来说，客户端需要请求两个资源。以前的做法是，在同一个TCP连接里面，先发送 A 请求，然后等待服务器做出回应，收到后再发出 B 请求。管道机制则是允许浏览器同时发出 A 请求和 B 请求。<br>  但是服务器还是按照顺序，先回应 A 请求，完成后再回应 B 请求。要是 前面的回应特别慢，后面就会有许多请求排队等着。这称为「队头堵塞」。</p>
-<p>  「请求 - 应答」的模式加剧了 HTTP 的性能问题。<br>  因为当顺序发送的请求序列中的一个请求因为某种原因被阻塞时，在后面排队的所有请求也一同被阻塞了，会招致客户端一直请求不到数据，这也就是「队头阻塞」。好比上班的路上塞车。<br>  总之 HTTP/1.1 的性能一般般，后续的 HTTP/2 和 HTTP/3 就是在优化 HTTP 的性能。</p>
-</li>
-</ul>
-<h2 id="http与https"><a href="#http与https" class="headerlink" title="http与https"></a>http与https</h2><ul>
-<li><p>http与https的区别<br>  HTTP 是超文本传输协议，信息是明文传输，存在安全风险的问题。HTTPS 则解决 HTTP 不安全的缺陷，在 TCP 和 HTTP 网络层之间加入了 SSL/TLS 安全协议，使得报文能够加密传输。<br>  HTTP 连接建立相对简单， TCP 三次握手之后便可进行 HTTP 的报文传输。而 HTTPS 在 TCP 三次握手之后，还需进行 SSL/TLS 的握手过程，才可进入加密报文传输。<br>  HTTP 的端口号是 80，HTTPS 的端口号是 443。<br>  HTTPS 协议需要向 CA（证书权威机构）申请数字证书，来保证服务器的身份是可信的。</p>
-</li>
-<li><p>https解决了哪些问题<br>  信息加密：交互信息无法被窃取，但你的号会因为「自身忘记」账号而没。<br>  校验机制：无法篡改通信内容，篡改了就不能正常显示，但百度「竞价排名」依然可以搜索垃圾广告。<br>  身份证书：证明淘宝是真的淘宝网，但你的钱还是会因为「剁手」而没。</p>
-</li>
-<li><p>https如何解决上面三个问题<br>  混合加密的方式实现信息的机密性，解决了窃听的风险。<br>  摘要算法的方式来实现完整性，它能够为数据生成独一无二的「指纹」，指纹用于校验数据的完整性，解决了篡改的风险。<br>  将服务器公钥放入到数字证书中，解决了冒充的风险。</p>
-</li>
-<li><p>https如何建立的<br>  SSL/TLS 协议基本流程：<br>  客户端向服务器索要并验证服务器的公钥。<br>  双方协商生产「会话秘钥」。<br>  双方采用「会话秘钥」进行加密通信。                                      前两步是ssl/tls的建立过程 也就是握手阶段</p>
-</li>
-</ul>
-<h2 id="html演变"><a href="#html演变" class="headerlink" title="html演变"></a>html演变</h2><ul>
-<li><p>HTTP/1.1 相比 HTTP/1.0 性能上的改进：<br>  使用 TCP 长连接的方式改善了 HTTP/1.0 短连接造成的性能开销。<br>  支持 管道（pipeline）网络传输，只要第一个请求发出去了，不必等其回来，就可以发第二个请求出去，可以减少整体的响应时间。</p>
-</li>
-<li><p>但 HTTP/1.1 还是有性能瓶颈：<br>  请求 / 响应头部（Header）未经压缩就发送，首部信息越多延迟越大。只能压缩 Body 的部分；<br>  发送冗长的首部。每次互相发送相同的首部造成的浪费较多；<br>  服务器是按请求的顺序响应的，如果服务器响应慢，会招致客户端一直请求不到数据，也就是队头阻塞；<br>  没有请求优先级控制；<br>  请求只能从客户端开始，服务器只能被动响应。</p>
-</li>
-<li><p>HTTP/2 协议是基于 HTTPS 的，所以 HTTP/2 的安全性也是有保障的</p>
-<ul>
-<li>头部压缩<br>HTTP/2 会压缩头（Header）如果你同时发出多个请求，他们的头是一样的或是相似的，那么，协议会帮你消除重复的分。<br>这就是所谓的 HPACK 算法：在客户端和服务器同时维护一张头信息表，所有字段都会存入这个表，生成一个索引号，以后就不发送同样字段了，只发送索引号，这样就提高速度了。</li>
-<li>二进制格式<br>HTTP/2 不再像 HTTP/1.1 里的纯文本形式的报文，而是全面采用了二进制格式。<br>头信息和数据体都是二进制，并且统称为帧（frame）：头信息帧和数据帧。<br>这样虽然对人不友好，但是对计算机非常友好，因为计算机只懂二进制，那么收到报文后，无需再将明文的报文转成二进制，而是直接解析二进制报文，这增加了数据传输的效率。</li>
-<li>HTTP/2 的数据包不是按顺序发送的，同一个连接里面连续的数据包，可能属于不同的回应。因此，必须要对数据包做标记，指出它属于哪个回应。<br>每个请求或回应的所有数据包，称为一个数据流（Stream）。<br>每个数据流都标记着一个独一无二的编号，其中规定客户端发出的数据流编号为奇数， 服务器发出的数据流编号为偶数<br>客户端还可以指定数据流的优先级。优先级高的请求，服务器就先响应该请求。</li>
-<li>HTTP/2 是可以在一个连接中并发多个请求或回应，而不用按照顺序一一对应。<br>移除了 HTTP/1.1 中的串行请求，不需要排队等待，也就不会再出现「队头阻塞」问题，降低了延迟，大幅度提高了连接的利用率。<br>举例来说，在一个 TCP 连接里，服务器收到了客户端 A 和 B 的两个请求，如果发现 A 处理过程非常耗时，于是就回应 A 请求已经处理好的部分，接着回应 B 请求，完成后，再回应 A 请求剩下的部分。</li>
-<li>HTTP/2 还在一定程度上改善了传统的「请求 - 应答」工作模式，服务不再是被动地响应，也可以主动向客户端发送消息。<br>举例来说，在浏览器刚请求 HTML 的时候，就提前把可能会用到的 JS、CSS 文件等静态资源主动发给客户端，减少延时的等待，也就是服务器推送（Server Push，也叫 Cache Push）。</li>
-</ul>
-</li>
-<li><p>HTTP/2 有哪些缺陷？HTTP/3 做了哪些优化？</p>
-<ul>
-<li>HTTP/2 主要的问题在于：多个 HTTP 请求在复用一个 TCP 连接，下层的 TCP 协议是不知道有多少个 HTTP 请求的。<br>所以一旦发生了丢包现象，就会触发 TCP 的重传机制，这样在一个 TCP 连接中的所有的 HTTP 请求都必须等待这个丢了的包被重传回来。<br>  HTTP/1.1 中的管道（ pipeline）传输中如果有一个请求阻塞了，那么队列后请求也统统被阻塞住了<br>  HTTP/2 多请求复用一个TCP连接，一旦发生丢包，就会阻塞住所有的 HTTP 请求。</li>
-<li>这都是基于 TCP 传输层的问题，所以 HTTP/3 把 HTTP 下层的 TCP 协议改成了 UDP！<br>UDP 发生是不管顺序，也不管丢包的，所以不会出现 HTTP/1.1 的队头阻塞 和 HTTP/2 的一个丢包全部重传问题。<br>大家都知道 UDP 是不可靠传输的，但基于 UDP 的 QUIC 协议 可以实现类似 TCP 的可靠性传输。<br>  QUIC 有自己的一套机制可以保证传输的可靠性的。当某个流发生丢包时，只会阻塞这个流，其他流不会受到影响。<br>  TL3 升级成了最新的 1.3 版本，头部压缩算法也升级成了 QPack。<br>  HTTPS 要建立一个连接，要花费 6 次交互，先是建立三次握手，然后是 TLS/1.3 的三次握手。QUIC 直接把以往的 TCP 和 TLS/1.3 的 6 次交互合并成了 3 次，减少了交互次数。<br>所以， QUIC 是一个在 UDP 之上的伪 TCP + TLS + HTTP/2 的多路复用的协议。<br>QUIC 是新协议，对于很多网络设备，根本不知道什么是 QUIC，只会当做 UDP，这样会出现新的问题。所以 HTTP/3 现在普及的进度非常的缓慢，不知道未来 UDP 是否能够逆袭 TCP。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>互联网</tag>
-        <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>版本控制工具git</title>
-    <url>/2021/01/13/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7git/</url>
-    <content><![CDATA[<h1 id="版本控制工具"><a href="#版本控制工具" class="headerlink" title="版本控制工具"></a>版本控制工具</h1><ul>
-<li>版本控制工具  <ul>
-<li>在我们的程序开发中，我们通常会不断对程序进行修改，而版本控制工具为我们追踪了多个版本的开发，有了版本控制工具，我们就可以放开手开发，而不用担心之前的版本无法寻回。</li>
-<li>版本控制工具对于我们开发人员来说，通常以下几个功能是很有必要的：<ul>
-<li>版本管理<ul>
-<li>我们可以通过版本控制工具来进行对正在开发项目的的版本管理，可以很方便的回溯到过去的版本</li>
-</ul>
-</li>
-<li>数据备份<ul>
-<li>版本控制工具为我们备份了之前版本的数据记录</li>
-</ul>
-</li>
-<li>权限控制<ul>
-<li>在开发时，不同的开发人员有不同的对项目的管理权限 </li>
-</ul>
-</li>
-<li>历史及记录<ul>
-<li>版本控制工具中记录了开发人员操作的历史与记录</li>
-</ul>
-</li>
-<li>分支管理<ul>
-<li>我们可以在开发时 不只是进行一个主项目的开发，可以独立与主项目 建立分支项目进行独立开发</li>
-</ul>
-</li>
-<li>协同修改<ul>
-<li>不同的开发人员可以一起对一个项目进行开发与维护</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="版本控制工具git"><a href="#版本控制工具git" class="headerlink" title="版本控制工具git"></a>版本控制工具git</h1><ul>
-<li><p>git作为分布式版本控制工具 目前是时间市面上做火热的版本控制工具</p>
-<ul>
-<li>git的优势有很多，如：大部分操作在本地完成，不需要联网等，能够有效、高速的处理从很小到非常大的项目版本管理.</li>
-</ul>
-</li>
-<li><p>git和代码托管中心</p>
-<ul>
-<li><p>局域网环境下 gitlab服务器</p>
-</li>
-<li><p>外网环境下 github 码云</p>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="git命令行操作"><a href="#git命令行操作" class="headerlink" title="git命令行操作"></a>git命令行操作</h1><ul>
-<li><p>这里只介绍git常用操作命令</p>
-</li>
-<li><p>本地库初始化<br>  git init</p>
-</li>
-<li><p>设置签名</p>
-<ul>
-<li><p>用来区分不同开发人员身份</p>
-</li>
-<li><p>项目级别/仓库级别</p>
-<ul>
-<li><p>只在本地库范围内有效<br>git config user.name tom_pro<br>git config user.email <a href="mailto:goodMorning_pro@atguigu.com">goodMorning_pro@atguigu.com</a></p>
-</li>
-<li><p>此时信息保存到  .git/config</p>
-</li>
-</ul>
-</li>
-<li><p>系统用户级别</p>
-<ul>
-<li><p>登录当前操作系统的用户范围<br>git config–global user.name tom_glb<br>git config–global <a href="mailto:goodMorning_pro@atguigu.com_glb">goodMorning_pro@atguigu.com_glb</a></p>
-</li>
-<li><p>此时信息保存到：~/.gitconfig 文件</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>添加，提交以及查看信息操作</p>
-<ul>
-<li><p>状态查看：git status  查看工作区 暂存区状态</p>
-<blockquote>
-<p>查看具体内容 cat<br>新建文件 vim<br>删除文件 rm<br>文件保存并退出的操作：先按esc 再按：+wq<br>ll  查看当前文件状态</p>
-</blockquote>
-</li>
-<li><p>添加操作：git add【name】 将工作区的新建/修改 添加到暂存区</p>
-</li>
-<li><p>提交操作：git commit -m“备注信息”【name】 将暂存区的内容提交到本地库</p>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>git</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python爬虫</title>
-    <url>/2021/01/19/python%E7%88%AC%E8%99%AB/</url>
-    <content><![CDATA[<h1 id="爬虫简介"><a href="#爬虫简介" class="headerlink" title="爬虫简介"></a>爬虫简介</h1><h2 id="爬虫在使用场景中的分类"><a href="#爬虫在使用场景中的分类" class="headerlink" title="爬虫在使用场景中的分类"></a>爬虫在使用场景中的分类</h2><ul>
-<li>通用爬虫<ul>
-<li>抓取系统重要组成部分</li>
-<li>抓取的是一整张页面数据</li>
-</ul>
-</li>
-<li>聚焦爬虫<ul>
-<li>聚焦在通用爬虫的基础之上</li>
-<li>抓取的是页面中特定的局部内容</li>
-</ul>
-</li>
-<li>增量式爬虫<ul>
-<li>检测网站中数据更新的情况</li>
-<li>只会抓取网站中最新更新的数据<h2 id="爬虫是合法还是违法的"><a href="#爬虫是合法还是违法的" class="headerlink" title="爬虫是合法还是违法的"></a>爬虫是合法还是违法的</h2></li>
-</ul>
-</li>
-<li><pre><code>   在法律中不被禁止</code></pre>
-</li>
-<li><pre><code> 具有违法风险</code></pre>
-<ul>
-<li>   爬虫的风险<ul>
-<li><pre><code>   干扰了被访问网站的正常运营</code></pre>
-</li>
-<li><pre><code>   爬虫抓取了受到法律保护的特定类型的数据和信息</code></pre>
-</li>
-</ul>
-</li>
-<li>   善意爬虫 恶意爬虫<h2 id="爬虫是什么"><a href="#爬虫是什么" class="headerlink" title="爬虫是什么"></a>爬虫是什么</h2></li>
-</ul>
-</li>
-<li><pre><code>   通过编写程序 模拟浏览器上网 然后让其取互联网抓取数据的过程</code></pre>
-</li>
-<li>   robots.txt协议</li>
-</ul>
-<h2 id="requests模块"><a href="#requests模块" class="headerlink" title="requests模块"></a>requests模块</h2><ul>
-<li>明确规定了那些数据可以被爬虫爬取，哪些不可以被爬取 君子协议<ul>
-<li>python中原生的一款基于网络请求的模块 功能非常强大 简单快捷 效率极高</li>
-<li>   作用：模拟浏览器发请求</li>
-</ul>
-</li>
-<li> 如何使用<ul>
-<li>   1.指定url</li>
-<li>   2.发起请求</li>
-<li>   3.获取响应数据</li>
-<li>   4.持久化存储    <h2 id="数据解析"><a href="#数据解析" class="headerlink" title="数据解析"></a>数据解析</h2></li>
-</ul>
-</li>
-<li> 数据解析分类<ul>
-<li>   正则</li>
-<li>bs4<ul>
-<li>   1.实例化一个beautifulsoup对象，并且将页面源码数据加载到该对象中</li>
-<li>   2.通过调用beautifulsoup对象中相关的属性或者方法进行标签定位和数据取</li>
-</ul>
-</li>
-<li>xpath<ul>
-<li>最常用最便捷最高效的一种解析方式 通用性也强<ul>
-<li>解析原理<ul>
-<li>   1.实例化一个etree的对象 且需要将被解析的页面源码数据加载到改数据当中</li>
-<li>   2.调用etree对象中的xpath方法结合xpath表达式实现标签的定位和内容的捕获</li>
-</ul>
-</li>
-<li>   环境安装：-pip install lxml</li>
-<li>如何实例化一个etree对象<ul>
-<li>1.将本地的html文档对象中的源码数据加载到etree对象中<pre><code>  etree.parse(filepath)</code></pre>
-</li>
-<li>2.可以将从互联网上获取的源码数据加载到改对象中<pre><code>  etree.HTML('page_text')</code></pre>
-</li>
-</ul>
-</li>
-<li>xpath(‘xpath表达式’)<ul>
-<li>   /：表示的是从根节点开始，表示的是一个层级</li>
-<li>   //：表示的是多个层级。可以从任意位置开始定位</li>
-<li>   属性定位：//tag[@class=‘class名’]</li>
-<li>   索引定位：//tag[@class=‘class名’]/tag2[x] 索引是从1开始的</li>
-<li>   取文本：/text()[0](因为返回的是一个列表 所以加上[0])</li>
-<li>   取属性：/@属性值</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li> 数据解析原理<ul>
-<li>   解析的局部的文本内容都会在标签之间或标签对应的属性中进行存储</li>
-<li>   1.进行标签定位</li>
-<li>   2.标签或者标签对应的属性中存储的数据值进行提取（解析）</li>
-</ul>
-</li>
-<li> 编码流程<ul>
-<li>   1.指定url</li>
-<li>   2.发起请求</li>
-<li>   3.获取响应数据</li>
-<li>   4.数据解析</li>
-<li>   5.持久化存储</li>
-</ul>
-</li>
-</ul>
-<h2 id="验证码"><a href="#验证码" class="headerlink" title="验证码"></a>验证码</h2><ul>
-<li> 验证码识别<ul>
-<li>   反爬机制：验证码 识别验证码图片中的数据，用于模拟登录操作</li>
-<li>识别验证码<ul>
-<li>   1.人工肉眼识别</li>
-<li>2.第三方自动识别<pre><code>  云打码
-  超级鹰</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="request高级"><a href="#request高级" class="headerlink" title="request高级"></a>request高级</h2><ul>
-<li> 代理<pre><code>  破解封ip这种反爬机制</code></pre>
-<ul>
-<li>什么是代理<pre><code>  代理服务器</code></pre>
-</li>
-<li>代理的作用<pre><code>  突破自身ip的限制
-  隐藏自身真实ip</code></pre>
-</li>
-<li>代理相关网站<pre><code>  块代理
-  西祠代理
-  西祠代理
-  www。goubanjia。com</code></pre>
-</li>
-<li>代理ip类型<pre><code>  http
-  https</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="异步爬虫"><a href="#异步爬虫" class="headerlink" title="异步爬虫"></a>异步爬虫</h2><p>-之后的内容正在学习中</p>
-<h1 id="简单爬虫实例"><a href="#简单爬虫实例" class="headerlink" title="简单爬虫实例"></a>简单爬虫实例</h1><ul>
-<li>以下几个例子是通过学习爬虫并通过python写出的简单练习，均为新手练习 在此记录一下：</li>
-</ul>
-<h3 id="肯德基餐厅信息查询"><a href="#肯德基餐厅信息查询" class="headerlink" title="肯德基餐厅信息查询"></a>肯德基餐厅信息查询</h3><ul>
-<li>可以通过输入要检索的城市名称来进行指定信息扒取<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url='http://www.kfc.com.cn/kfccda/ashx/GetStoreList.ashx?op=keyword'</span><br><span class="line">city=input("请输入要爬取的城市名称")</span><br><span class="line">index=input("q请输入要爬取的页码")</span><br><span class="line">keyword={</span><br><span class="line">'cname':'' ,</span><br><span class="line">'pid':'' ,</span><br><span class="line">'keyword': city,</span><br><span class="line">'pageIndex':index,</span><br><span class="line">'pageSize':'10',</span><br><span class="line">}</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">response=requests.post(url=url,data=keyword,headers=headers)</span><br><span class="line">response_text=response.text</span><br><span class="line">print(response_text)</span><br><span class="line">filename=city+'肯德基餐厅信息.text'</span><br><span class="line">fp=open(filename,'a',encoding='utf-8')</span><br><span class="line">fp.write('\n')</span><br><span class="line">fp.write(response_text)</span><br><span class="line">print("爬取成功")</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="搜狗浏览器搜索页面的扒取"><a href="#搜狗浏览器搜索页面的扒取" class="headerlink" title="搜狗浏览器搜索页面的扒取"></a>搜狗浏览器搜索页面的扒取</h3></li>
-<li>扒取到的是一整张搜索页面<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url='https://www.sogou.com/web'</span><br><span class="line">kw=input("请输入要爬取的内容：")</span><br><span class="line">uag={</span><br><span class="line">    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">quar={</span><br><span class="line">    'query':kw</span><br><span class="line">}</span><br><span class="line">respon=requests.get(url=url,params=quar,headers=uag)</span><br><span class="line">filename=kw+'.html'</span><br><span class="line">respon_text=respon.text</span><br><span class="line">with open(filename,'w',encoding='utf-8') as fp:</span><br><span class="line">    fp.write(respon_text)</span><br><span class="line">    print(filename ,"保存成功")</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="豆瓣电影排行榜数据扒取"><a href="#豆瓣电影排行榜数据扒取" class="headerlink" title="豆瓣电影排行榜数据扒取"></a>豆瓣电影排行榜数据扒取</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line">url='https://movie.douban.com/j/chart/top_list'</span><br><span class="line">list={</span><br><span class="line">    'type': '24',</span><br><span class="line">    'interval_id':'100:90',</span><br><span class="line">    'action':'',</span><br><span class="line">    'start': '0',</span><br><span class="line">    'limit': '200',</span><br><span class="line">}</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">response=requests.get(url=url,params=list,headers=headers)</span><br><span class="line">name_list=response.json()</span><br><span class="line">fp=open('豆瓣电影排行榜.json','w',encoding='utf-8')</span><br><span class="line">json.dump(name_list,fp=fp,ensure_ascii=False)</span><br><span class="line">print("爬取完成")</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="百度搜索结果扒取"><a href="#百度搜索结果扒取" class="headerlink" title="百度搜索结果扒取"></a>百度搜索结果扒取</h3></li>
-<li>可以自主输入要扒取的内容<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line">#获取url</span><br><span class="line">post_url='https://fanyi.baidu.com/sug'</span><br><span class="line"></span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">search=input("请输入你要搜索的对象：")</span><br><span class="line">name={</span><br><span class="line">    'kw':search</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">sponse=requests.post(url=post_url,data=name,headers=headers)</span><br><span class="line">dictobj=sponse.json()</span><br><span class="line">print(dictobj)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">filename='搜索结果.json'</span><br><span class="line">fp=open(filename,"a",encoding='utf-8')</span><br><span class="line">fp.write('\n')</span><br><span class="line">json.dump(dictobj,fp=fp,ensure_ascii=False)</span><br><span class="line"></span><br><span class="line">print("搜索完毕，结果已输出")</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="对糗事图片网站图片的批量扒取"><a href="#对糗事图片网站图片的批量扒取" class="headerlink" title="对糗事图片网站图片的批量扒取"></a>对糗事图片网站图片的批量扒取</h3></li>
-<li>纯粹的批量扒取图片下载<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import os</span><br><span class="line">if not os.path.exists('./img_list'):</span><br><span class="line">    os.mkdir('./img_list')</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">for j in range(1,3):</span><br><span class="line"></span><br><span class="line">    url='http://xiaohua.zol.com.cn/qutu/diaosi/%d.html'</span><br><span class="line">    new_url=format(url%j)</span><br><span class="line">    respons=requests.get(url=new_url,headers=headers).text</span><br><span class="line">    ex='&lt;div class="summary-text"&gt;.*?&lt;img ?l?o?a?dsrc="(.*?)" alt.*?&lt;/div&gt;'</span><br><span class="line">    img_list=re.findall(ex,respons,re.S)</span><br><span class="line">    print(img_list)</span><br><span class="line">    for src in img_list:</span><br><span class="line">        imgdata=  requests.get(url=src,headers=headers).content</span><br><span class="line">        img_name=src.split('/')[-1]</span><br><span class="line">        img_path= './img_list/'+img_name</span><br><span class="line">        fp=open(img_path,'wb')</span><br><span class="line">        fp.write(imgdata)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="国家药品监督管理总局中居于中华人民共和国化妆品生产许可证相关数据"><a href="#国家药品监督管理总局中居于中华人民共和国化妆品生产许可证相关数据" class="headerlink" title="国家药品监督管理总局中居于中华人民共和国化妆品生产许可证相关数据"></a>国家药品监督管理总局中居于中华人民共和国化妆品生产许可证相关数据</h3></li>
-<li>纯粹练习之作<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">url ='http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsList'</span><br><span class="line">for l in range(1,6):</span><br><span class="line">    page=str(l)</span><br><span class="line">    data={</span><br><span class="line">    'on': 'true',</span><br><span class="line">    'page': page,</span><br><span class="line">    'pageSize': '15',</span><br><span class="line">    'productName': '',</span><br><span class="line">    'conditionType': '1',</span><br><span class="line">    'applyname':'' ,</span><br><span class="line">    'applysn': '',</span><br><span class="line">    }</span><br><span class="line">    list_id=[]</span><br><span class="line">    response=requests.post(url=url,data=data,headers=headers).json()</span><br><span class="line">    print(response)</span><br><span class="line">    for i in response['list']:</span><br><span class="line">        list_id.append(i['ID'])</span><br><span class="line"></span><br><span class="line">    print(list_id)</span><br><span class="line">    name_url='http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsById'</span><br><span class="line">    for j in list_id:</span><br><span class="line"></span><br><span class="line">        data2={</span><br><span class="line">            'id':j</span><br><span class="line">        }</span><br><span class="line">        fp=open("药监局数据.json",'a')</span><br><span class="line">        fp.write('\n')</span><br><span class="line">        response2=requests.post(url=name_url,data=data2,headers=headers).json()</span><br><span class="line">        json.dump(response2,fp=fp,ensure_ascii=False)</span><br><span class="line">print("爬取完毕")</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="三个图片网站的批量下载"><a href="#三个图片网站的批量下载" class="headerlink" title="三个图片网站的批量下载"></a>三个图片网站的批量下载</h3></li>
-<li>大同小异的图片扒取练习<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">from lxml import etree</span><br><span class="line">import os</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">url='http://pic.netbian.com/4kmeinv/'</span><br><span class="line"># 获取响应</span><br><span class="line">response=requests.get(url=url,headers=headers).text</span><br><span class="line"># print(response)</span><br><span class="line"># 数据解析</span><br><span class="line">tree=etree.HTML(response)</span><br><span class="line">li_list=tree.xpath('//div[@class="slist"]/ul/li')</span><br><span class="line">print(li_list)</span><br><span class="line"># 创建一个文件夹</span><br><span class="line">if not os.path.exists('./picture'):</span><br><span class="line">    os.mkdir('./picture')</span><br><span class="line">#     遍历 再解析</span><br><span class="line">for i in li_list:</span><br><span class="line">    img_src='http://pic.netbian.com'+i.xpath('./a/img/@src')[0]</span><br><span class="line">    img_name=i.xpath('./a/img/@alt')[0]+'.jpg'</span><br><span class="line">#     通用请求中文乱码解决方案</span><br><span class="line">    img_name=img_name.encode('iso-8859-1').decode('gbk')</span><br><span class="line">#存储文件</span><br><span class="line">    img_data=requests.get(url=img_src,headers=headers).content</span><br><span class="line">    img_path='picture/'+img_name</span><br><span class="line">    with open(img_path,'wb') as fp:</span><br><span class="line">        fp.write(img_data)</span><br><span class="line">        print(img_name,'下载成功')</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import os</span><br><span class="line">import requests</span><br><span class="line">from lxml import etree</span><br><span class="line">if not os.path.exists('./图片3'):</span><br><span class="line">    os.mkdir('./图片3')</span><br><span class="line">url='https://sc.chinaz.com/tupian/xingganmeinvtupian.html'</span><br><span class="line">headers={</span><br><span class="line">        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">    }</span><br><span class="line">response=requests.get(url=url,headers=headers).text</span><br><span class="line">tree=etree.HTML(response)</span><br><span class="line">img_src=tree.xpath('//*[@id="container"]/div/div/a/@href')</span><br><span class="line">img_list=[</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line">for j in img_src:</span><br><span class="line">    img_src2='https:'+j</span><br><span class="line">    img_list.append(img_src2)</span><br><span class="line">print(img_list)</span><br><span class="line">for inn in img_list:</span><br><span class="line">    response2=requests.get(url=inn,headers=headers).text</span><br><span class="line">    tree2=etree.HTML(response2)</span><br><span class="line">    img_u=tree2.xpath('//div[@class="downbody"]/div[3]/a[1]/@href')[0]</span><br><span class="line">    print(img_u)</span><br><span class="line">    response3=requests.get(url=img_u,headers=headers).content</span><br><span class="line">    img_name=inn.split('/')[-1]+'.rar'</span><br><span class="line">    img_path='./图片3/'+img_name</span><br><span class="line">    with open(img_path,'wb') as fp:</span><br><span class="line">        fp.write(response3)</span><br><span class="line">        print("下载完成")</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import os</span><br><span class="line">from lxml import etree</span><br><span class="line">import requests</span><br><span class="line">if not os.path.exists('./图片4'):</span><br><span class="line">    os.mkdir('./图片4')</span><br><span class="line">headers={</span><br><span class="line">        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">    }</span><br><span class="line">url='https://www.game234.com/meizi/index_%d.html'</span><br><span class="line">for k in range(2,10):</span><br><span class="line">    new_url=format(url%k)</span><br><span class="line">    sponse=requests.get(url=new_url,headers=headers).text</span><br><span class="line">    tree=etree.HTML(sponse)</span><br><span class="line">    img_p=tree.xpath('//*[@id="sortable"]/div/div/a/@href')</span><br><span class="line">    for i in img_p:</span><br><span class="line">        img_src='https://www.game234.com'+i</span><br><span class="line">        sponse2=requests.get(url=img_src,headers=headers).text</span><br><span class="line">        tree2=etree.HTML(sponse2)</span><br><span class="line">        img_q=tree2.xpath('//*[@id="article-box"]/div[2]/img/@src')</span><br><span class="line">        print(img_q)</span><br><span class="line">        for j in img_q:</span><br><span class="line">            img_list=j</span><br><span class="line">            response3=requests.get(url=j,headers=headers).content</span><br><span class="line">            img_name=j.split('/')[-1]</span><br><span class="line">            img_path='./图片4/'+img_name</span><br><span class="line">            with open(img_path,'wb') as fp:</span><br><span class="line">                fp.write(response3)</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>python</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>javascript数据结构 栈结构（stack）</title>
-    <url>/2021/01/23/javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%88%E7%BB%93%E6%9E%84%EF%BC%88stack%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="JavaScript栈结构（Stack）"><a href="#JavaScript栈结构（Stack）" class="headerlink" title="JavaScript栈结构（Stack）"></a>JavaScript栈结构（Stack）</h1><h2 id="一-什么是数据结构"><a href="#一-什么是数据结构" class="headerlink" title="一 什么是数据结构"></a>一 什么是数据结构</h2><ul>
-<li>数据结构是在计算机中 存储和管理组织数据的方式</li>
-<li>数据结构与语言无关 常见的编程语言都有数据结构<!--  -->
-
-</li>
-</ul>
-<h3 id="常见的数据结构"><a href="#常见的数据结构" class="headerlink" title="常见的数据结构"></a>常见的数据结构</h3><ul>
-<li><p>常见的数据结构：</p>
-<ul>
-<li>数组（Aarray）</li>
-<li>栈（Stack）</li>
-<li>链表（Linked List）</li>
-<li>图（Graph）</li>
-<li>散列表（Hash）</li>
-<li>队列（Queue）</li>
-<li>树（Tree）</li>
-<li>堆（Heap）</li>
-</ul>
-</li>
-</ul>
-<h2 id="什么是算法"><a href="#什么是算法" class="headerlink" title="什么是算法"></a>什么是算法</h2><ul>
-<li>算法定义<ul>
-<li>一个有限指令集 不依赖于语言</li>
-<li>接受一些输入（有些情况不需要输入）</li>
-<li>产生输出</li>
-<li>一定在优先步骤后终止</li>
-</ul>
-</li>
-<li>在解决问题过程中  不仅数据的存储风扇会影响效率 算法的优劣也影响着效率</li>
-</ul>
-<h1 id="栈结构"><a href="#栈结构" class="headerlink" title="栈结构"></a>栈结构</h1><ul>
-<li><p>数组是一个线性结构，并且可以在数组的任意位置插入和删除元素。而栈和队列就是比较常见的受限的线性结构</p>
-</li>
-<li><p>栈的特点为先进后出，后进先出（LIFO：last in first out）。</p>
-</li>
-<li><p>栈常见的操作：</p>
-<ul>
-<li>push（element）：添加一个新元素到栈顶位置；</li>
-<li>pop（）：移除栈顶的元素，同时返回被移除的元素；</li>
-<li>peek（）：返回栈顶的元素，不对栈做任何修改（该方法不会移除栈顶的元素，仅仅返回它）；</li>
-<li>isEmpty（）：如果栈里没有任何元素就返回true，否则返回false；</li>
-<li>size（）：返回栈里的元素个数。这个方法和数组的length属性类似；</li>
-<li>toString（）：将栈结构的内容以字符串的形式返回。</li>
-</ul>
-</li>
-<li><p> 封装栈类</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">// 栈的实现</span><br><span class="line">function Stack(){</span><br><span class="line">    // 封装属性</span><br><span class="line">    this.items=[];</span><br><span class="line"></span><br><span class="line">    // 封装方法</span><br><span class="line"></span><br><span class="line">    // 1.栈的插入</span><br><span class="line">    Stack.prototype.push=function(element){</span><br><span class="line">        this.items.push(element);</span><br><span class="line">    }</span><br><span class="line">    // 2.栈的取出</span><br><span class="line">    Stack.prototype.pop=function(){</span><br><span class="line">        return this.items.pop();</span><br><span class="line">    }</span><br><span class="line">    // 查看栈的顶端</span><br><span class="line">    Stack.prototype.front=function(){</span><br><span class="line">        return this.items[this.items.length-1];</span><br><span class="line">    }</span><br><span class="line">    // 4.查看栈的长度</span><br><span class="line">    Stack.prototype.size=function(){</span><br><span class="line">        return this.items.length;</span><br><span class="line">    }</span><br><span class="line">    // 5.toString方法</span><br><span class="line">    Stack.prototype.toString=function(){</span><br><span class="line"></span><br><span class="line">        var retstring='';</span><br><span class="line">        for(i=0;i&lt;this.items.length;i++){</span><br><span class="line">            retstring+=this.items[i]+' ';</span><br><span class="line">        }</span><br><span class="line">        return retstring;</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    //  4.判断栈是否为空</span><br><span class="line">    Stack.prototype.isempty=function(){</span><br><span class="line">        return  this.items.length==0</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>测试代码</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">var stack=new Stack();</span><br><span class="line">stack.push('dasda')</span><br><span class="line">stack.push('dfsdfda')</span><br><span class="line">stack.push('fga')</span><br><span class="line">stack.push('hbf')</span><br><span class="line">console.log(stack.items)</span><br><span class="line">stack.pop();</span><br><span class="line">console.log(stack.items)</span><br><span class="line">console.log(stack.front())</span><br><span class="line">console.log(stack.size())</span><br><span class="line">console.log(stack.toString())</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>结果<br><img src="/images/asd.png" alt="图片"></p>
-</li>
-<li><p>使用栈结构实现二进制转换</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">function toer(num){</span><br><span class="line">        var stack=new Stack();</span><br><span class="line"></span><br><span class="line">        while ((num&gt;0)) {</span><br><span class="line"></span><br><span class="line">            stack.push(num%2);</span><br><span class="line">            num=Math.floor(num/2) </span><br><span class="line">            </span><br><span class="line">        }</span><br><span class="line">        var newnum='';</span><br><span class="line">        while (!stack.isempty()) {</span><br><span class="line">            newnum+=stack.pop()</span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">        }</span><br><span class="line">        return newnum;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>数据结构</tag>
-        <tag>javascript</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>javascript数据结构 队列结构（Queue）</title>
-    <url>/2021/01/24/%EF%BC%88Queue%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="JavaScript实现队列结构（Queue）"><a href="#JavaScript实现队列结构（Queue）" class="headerlink" title="JavaScript实现队列结构（Queue）"></a>JavaScript实现队列结构（Queue）</h1><!-- -->
-<ul>
-<li><p>队列是一种受限的线性表，特点为先进先出（FIFO：first in first out）<br><img src="/images/%E9%98%9F%E5%88%97%E7%9A%84%E7%BB%93%E6%9E%84.png" alt="图片"></p>
-</li>
-<li><p>在表的末尾进行添加 再表的前端进行删除</p>
-</li>
-<li><p>队列和栈一样 有两种方式实现，本章介绍使用数组实现的队列</p>
-<h1 id="队列的常见操作："><a href="#队列的常见操作：" class="headerlink" title="队列的常见操作："></a>队列的常见操作：</h1></li>
-<li><p>enqueue（element）：向队列尾部添加一个（或多个）新的项；</p>
-</li>
-<li><p>dequeue（）：移除队列的第一（即排在队列最前面的）项，并返回被移除的元素；</p>
-</li>
-<li><p>front（）：返回队列中的第一个元素——最先被添加，也将是最先被移除的元素。队列不做任何变动（不移除元素，只返回元素信息与Stack类的peek方法非常类似）；</p>
-</li>
-<li><p>isEmpty（）：如果队列中不包含任何元素，返回true，否则返回false；</p>
-</li>
-<li><p>size（）：返回队列包含的元素个数，与数组的length属性类似；</p>
-</li>
-<li><p>toString（）：将队列中的内容，转成字符串形式；</p>
-</li>
-</ul>
-<p>#封装队列</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">// 封装一个队列</span><br><span class="line">function queue(){</span><br><span class="line">    // 属性</span><br><span class="line">    this.items=[];</span><br><span class="line">    // 方法</span><br><span class="line">    // 队列中添加一个元素</span><br><span class="line">   queue.prototype.enqueue=function(element){</span><br><span class="line">        this.items.push(element)</span><br><span class="line">    }</span><br><span class="line">    // 队列中移除一个元素</span><br><span class="line">    queue.prototype.dequeue=function(){</span><br><span class="line">      return  this.items.shift()</span><br><span class="line">    }</span><br><span class="line">    // 查看队列前端的元素</span><br><span class="line">    queue.prototype.front=function(){</span><br><span class="line">        return this.items[0]</span><br><span class="line">    }</span><br><span class="line">    // 查看队列长度</span><br><span class="line">    queue.prototype.size=function(){</span><br><span class="line">       return this.items.length</span><br><span class="line">    }</span><br><span class="line">    // 检查队列是否为空</span><br><span class="line">    queue.prototype.isEmpty=function(){</span><br><span class="line">        return this.items[this.items.length]==0</span><br><span class="line">    }</span><br><span class="line">    // 队列的toString方法</span><br><span class="line">    queue.prototype.toString=function(){</span><br><span class="line">        var resstring='';</span><br><span class="line">        for(var i=0;i&lt;this.items.length;i++){</span><br><span class="line">            resstring+=this.items[i]+'      ';</span><br><span class="line">        }</span><br><span class="line">        return resstring;</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="使用队列实现击鼓传花"><a href="#使用队列实现击鼓传花" class="headerlink" title="使用队列实现击鼓传花"></a>使用队列实现击鼓传花</h2><ul>
-<li> 使用队列实现小游戏：击鼓传花，传入一组数据和设定的数字num，循环遍历数组内元素，遍历到的元素为指定数字num时将该元素删除，直至数组剩下一个元素。</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">// 击鼓传花</span><br><span class="line"></span><br><span class="line">  var passgame=function(namelist,num){</span><br><span class="line">      // 1.调用队列</span><br><span class="line">      var queue1=new queue()</span><br><span class="line"></span><br><span class="line">      // 2.将名字加入到队列中</span><br><span class="line">      for(i=0;i&lt;namelist.length;i++){</span><br><span class="line">          queue1.enqueue(namelist[i])</span><br><span class="line">      }</span><br><span class="line">      // 3.开始数数字</span><br><span class="line"></span><br><span class="line">      while (queue1.size()&gt;1) {</span><br><span class="line">          for(i=0;i&lt;num-1;i++){</span><br><span class="line">              queue1.enqueue(queue1.dequeue())</span><br><span class="line">          }</span><br><span class="line">          queue1.dequeue();</span><br><span class="line">          </span><br><span class="line">      }</span><br><span class="line">       alert(queue1.size())</span><br><span class="line">     return queue1.front()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  }</span><br><span class="line">  // 测试程序</span><br><span class="line">  names=['dwdw','dth','zad','wwf','jtg']</span><br><span class="line">  alert(passgame(names,3))</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="优先级队列"><a href="#优先级队列" class="headerlink" title="优先级队列"></a>优先级队列</h1><ul>
-<li>优先级队列主要考虑的问题为：<ul>
-<li>每个元素不再只是一个数据，还包含数据的优先级；</li>
-<li>在添加数据过程中，根据优先级放入到正确位置；</li>
-<li>优先级队列在封装方法时 特别要考虑的就是插入方法 其他方法的实现与普通队列并无区别</li>
-</ul>
-</li>
-</ul>
-<h2 id="优先级队列的封装"><a href="#优先级队列的封装" class="headerlink" title="优先级队列的封装"></a>优先级队列的封装</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">function Prorioqueue(){</span><br><span class="line">        // 在prioriqueue内部重新创建了一个类 可以理解为内部类</span><br><span class="line">        function Queueelement(element,prorio){</span><br><span class="line">            this.element=element;</span><br><span class="line">            this.prorio=prorio;</span><br><span class="line">        }</span><br><span class="line">     //封装属性</span><br><span class="line">    this.items=[];</span><br><span class="line"></span><br><span class="line">    // 封装方法</span><br><span class="line"></span><br><span class="line">    Prorioqueue.prototype.enqueue=function(element,prorio){</span><br><span class="line"></span><br><span class="line">        var queueelement=new Queueelement(element,prorio)</span><br><span class="line"></span><br><span class="line">        if(this.items==0){</span><br><span class="line">            this.items.push(queueelement)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        }else{</span><br><span class="line">            var add=false;</span><br><span class="line">            for(i=0;i&lt;this.items.length;i++){</span><br><span class="line">                if (queueelement.prorio&lt;this.items[i].prorio) {</span><br><span class="line">                    this.items.splice(i,0,queueelement)</span><br><span class="line">                    add=true;</span><br><span class="line">                    break;</span><br><span class="line">                        </span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        if(!add){</span><br><span class="line">             this.items.push(queueelement)</span><br><span class="line">         }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    // 队列中移除一个元素</span><br><span class="line">     Prorioqueue.prototype.dequeue=function(){</span><br><span class="line">      return  this.items.shift()</span><br><span class="line">    }</span><br><span class="line">    // 查看队列前端的元素</span><br><span class="line">    Prorioqueue.prototype.front=function(){</span><br><span class="line">        return this.items[0]</span><br><span class="line">    }</span><br><span class="line">    // 查看队列长度</span><br><span class="line">    Prorioqueue.prototype.size=function(){</span><br><span class="line">       return this.items.length</span><br><span class="line">    }</span><br><span class="line">    // 检查队列是否为空</span><br><span class="line">    Prorioqueue.prototype.isEmpty=function(){</span><br><span class="line">        return this.items[this.items.length]==0</span><br><span class="line">    }</span><br><span class="line">    // 队列的toString方法</span><br><span class="line">    Prorioqueue.prototype.toString=function(){</span><br><span class="line">    var resstring='';</span><br><span class="line">    for(var i=0;i&lt;this.items.length;i++){</span><br><span class="line">        resstring+=this.items[i].element+'-'+this.items[i].prorio;</span><br><span class="line">        }</span><br><span class="line">        return resstring;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
-
-]]></content>
-      <tags>
-        <tag>数据结构</tag>
-        <tag>javascript</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaScript实现集合与字典</title>
-    <url>/2021/01/26/JavaScript%E5%AE%9E%E7%8E%B0%E9%9B%86%E5%90%88%E4%B8%8E%E5%AD%97%E5%85%B8/</url>
-    <content><![CDATA[<h1 id="JavaScript实现集合与字典"><a href="#JavaScript实现集合与字典" class="headerlink" title="JavaScript实现集合与字典"></a>JavaScript实现集合与字典</h1><h2 id="一、集合结构"><a href="#一、集合结构" class="headerlink" title="一、集合结构"></a>一、集合结构</h2><ul>
-<li><p>集合比较常见的实现方式是哈希表，这里使用JavaScript的Object类进行封装。</p>
-</li>
-<li><p>集合通常是由一组无序的、不能重复的元素构成。</p>
-</li>
-<li><p>数学中常指的集合中的元素是可以重复的，但是计算机中集合的元素不能重复。</p>
-</li>
-<li><p>集合是特殊的数组：</p>
-<ul>
-<li>特殊之处在于里面的元素没有顺序，也不能重复。<br>没有顺序意味着不能通过下标值进行访问，不能重复意味着相同的对象在集合中只会存在一份。</li>
-</ul>
-</li>
-<li><p>实现集合类：</p>
-<ul>
-<li>在ES6中的Set类就是一个集合类，这里我们重新封装一个Set类，了解集合的底层实现。</li>
-<li>JavaScript中的Object类中的key就是一个集合，可以使用它来封装集合类Set。</li>
-</ul>
-</li>
-<li><p>集合常见的操作：</p>
-<ul>
-<li><p>add（value）：向集合添加一个新的项；</p>
-</li>
-<li><p>remove（value）：从集合中移除一个值；</p>
-</li>
-<li><p>has（value）：如果值在集合中，返回true，否则返回false；</p>
-</li>
-<li><p>clear（）：移除集合中的所有项；</p>
-</li>
-<li><p>size（）：返回集合所包含元素的数量，与数组的length属性相似；</p>
-</li>
-<li><p>values（）：返回一个包含集合中所有值的数组；</p>
-<h2 id="集合的实现"><a href="#集合的实现" class="headerlink" title="集合的实现"></a>集合的实现</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">//封装集合类</span><br><span class="line"> function Set(){</span><br><span class="line">     // 属性</span><br><span class="line">     this.items={}</span><br><span class="line">     // 方法</span><br><span class="line">     // 1.add方法</span><br><span class="line">     Set.prototype.add=function(value){</span><br><span class="line">         // 将元素添加到元素中</span><br><span class="line">         // 判断当前集合中是否含有该元素</span><br><span class="line">         if(this.has(value)){</span><br><span class="line">          return false</span><br><span class="line">         }</span><br><span class="line">         this.items[value]=value</span><br><span class="line">         return true</span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // has方法</span><br><span class="line">     Set.prototype.has=function(value){</span><br><span class="line">         return this.items.hasOwnProperty(value)</span><br><span class="line">     }</span><br><span class="line">     // remove方法</span><br><span class="line">     Set.prototype.remove=function(value){</span><br><span class="line">         if(!this.has(value)){</span><br><span class="line">            return false</span><br><span class="line">         }</span><br><span class="line">         // 将元素从集合中删除</span><br><span class="line">         delete this.items[value]</span><br><span class="line">         return true</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // clear方法</span><br><span class="line">     Set.prototype.clear=function(value){</span><br><span class="line">        this.items={}</span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // size方法</span><br><span class="line">     Set.prototype.size=function(value){</span><br><span class="line">        return Object.keys(this.items).length</span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // values方法 获取集合中所有的值</span><br><span class="line">     Set.prototype.values=function(value){</span><br><span class="line">        return Object.keys(this.items)</span><br><span class="line">        </span><br><span class="line">     }</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="集合间的操作"><a href="#集合间的操作" class="headerlink" title="集合间的操作"></a>集合间的操作</h1></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>并集：对于给定的两个集合，返回一个包含两个集合中所有元素的新集合；</li>
-<li>交集：对于给定的两个集合，返回一个包含两个集合中共有元素的新集合；</li>
-<li>差集：对于给定的两个集合，返回一个包含所有存在于第一个集合且不存在于第二个集合的元素的新集合；</li>
-<li>子集：验证一个给定集合是否是另一个集合的子集；<br><img src="/images/2.png" alt="图片"></li>
-</ul>
-<h2 id="并集的实现："><a href="#并集的实现：" class="headerlink" title="并集的实现："></a>并集的实现：</h2><ul>
-<li><p>实现思路：创建集合C代表集合A和集合B的并集，先将集合A中的所有元素添加到集合C中，再遍历集合B，如果是集合C所没有的元素就把它添加到集合C中。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Set.prototype.union = otherSet =&gt; {</span><br><span class="line">     // this:集合对象A</span><br><span class="line">     // otherSet:集合对象B</span><br><span class="line">     //1.创建一个新的集合</span><br><span class="line">     let unionSet = new Set()</span><br><span class="line"></span><br><span class="line">     //2.将A集合中的所有元素添加到新集合中</span><br><span class="line">     let values = this.values()</span><br><span class="line">     // for(let i of values){</span><br><span class="line">     //   unionSet.add(i)</span><br><span class="line">     // }</span><br><span class="line">     for(let i = 0;i &lt; values.length;i++){</span><br><span class="line">       unionSet.add(values[i])</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">     //3.取出B集合中的元素,判断是否需要加到新集合中</span><br><span class="line">     values = otherSet.values()</span><br><span class="line">     // for(let i of values){</span><br><span class="line">     //   //由于集合的add方法已经对重复的元素进行了判断,所以这里可以直接添加</span><br><span class="line">     //   unionSet.add(i)</span><br><span class="line">     // }</span><br><span class="line">     for(let i = 0;i &lt; values.length;i++){</span><br><span class="line">       unionSet.add(values[i])</span><br><span class="line">     }</span><br><span class="line">     return unionSet</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="交集的实现："><a href="#交集的实现：" class="headerlink" title="交集的实现："></a>交集的实现：</h2></li>
-<li><p>实现思路：遍历集合A，当取得的元素也存在于集合B时，就把该元素添加到另一个集合C中。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Set.prototype.intersection = otherSet =&gt; {</span><br><span class="line">     // this:集合A</span><br><span class="line">     // otherSet:集合B</span><br><span class="line">     //1.创建新的集合</span><br><span class="line">     let intersectionSet = new Set()</span><br><span class="line">     </span><br><span class="line">     //2.从A中取出一个元素，判断是否同时存在于集合B中，是则放入新集合中</span><br><span class="line">     let values = this.values()</span><br><span class="line">     for(let i =0 ; i &lt; values.length; i++){</span><br><span class="line">       let item = values[i]</span><br><span class="line">       if (otherSet.has(item)) {</span><br><span class="line">         intersectionSet.add(item)</span><br><span class="line">       }</span><br><span class="line">     }</span><br><span class="line">     return intersectionSet</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="差集的实现："><a href="#差集的实现：" class="headerlink" title="差集的实现："></a>差集的实现：</h2></li>
-<li><p>实现思路：遍历集合A，当取得的元素不存在于集合B时，就把该元素添加到另一个集合C中。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Set.prototype.diffrence = otherSet =&gt; {</span><br><span class="line">        //this:集合A</span><br><span class="line">        //otherSet:集合B</span><br><span class="line">        //1.创建新的集合</span><br><span class="line">        var diffrenceSet = new Set()</span><br><span class="line"></span><br><span class="line">        //2.取出A集合中的每一个元素，判断是否同时存在于B中，不存在则添加到新集合中</span><br><span class="line">        var values = this.values()</span><br><span class="line">        for(var i = 0;i &lt; values.length; i++){</span><br><span class="line">          var item = values[i]</span><br><span class="line">          if (!otherSet.has(item)) {</span><br><span class="line">            diffrenceSet.add(item)</span><br><span class="line">          }</span><br><span class="line">        }</span><br><span class="line">        return diffrenceSet</span><br><span class="line">      }</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="子集的实现："><a href="#子集的实现：" class="headerlink" title="子集的实现："></a>子集的实现：</h2></li>
-<li><p>实现思路：遍历集合A，当取得的元素中有一个不存在于集合B时，就说明集合A不是集合B的子集，返回false。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Set.prototype.subset = otherSet =&gt; {</span><br><span class="line">       //this:集合A</span><br><span class="line">       //otherSet：集合B</span><br><span class="line">       //遍历集合A中的所有元素，如果发现，集合A中的元素，在集合B中不存在，那么放回false，如果遍历完整个集合A没有返回false，就返回true</span><br><span class="line">       let values = this.values()</span><br><span class="line">       for(let i = 0; i &lt; values.length; i++){</span><br><span class="line">         let item = values[i]</span><br><span class="line">         if(!otherSet.has(item)){</span><br><span class="line">           return false</span><br><span class="line">         }</span><br><span class="line">       }</span><br><span class="line">       return true</span><br><span class="line">     }</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="字典结构"><a href="#字典结构" class="headerlink" title="字典结构"></a>字典结构</h1></li>
-<li><p>字典的特点：</p>
-</li>
-<li><p>字典存储的是键值对，主要特点是一一对应；</p>
-<ul>
-<li>比如保存一个人的信息：数组形式：[19，‘Tom’，1.65]，可通过下标值取出信息；字典形式：{“age”：19，”name”：”Tom”，”height”：165}，可以通过key取出value。<br>此外，在字典中key是不能重复且无序的，而Value可以重复。</li>
-</ul>
-</li>
-<li><p>字典和映射的关系：</p>
-<ul>
-<li>有些编程语言中称这种映射关系为字典，如Swift中的Dictonary，Python中的dict；</li>
-<li>有些编程语言中称这种映射关系为Map，比如Java中的HashMap&amp;TreeMap等；</li>
-</ul>
-</li>
-<li><p>字典类常见的操作：</p>
-<ul>
-<li>set(key,value)：向字典中添加新元素。</li>
-<li>remove(key)：通过使用键值来从字典中移除键值对应的数据值。</li>
-<li>has(key)：如果某个键值存在于这个字典中，则返回true，反之则返回false。</li>
-<li>get(key)：通过键值查找特定的数值并返回。</li>
-<li>clear()：将这个字典中的所有元素全部删除。</li>
-<li>size()：返回字典所包含元素的数量。与数组的length属性类似。</li>
-<li>keys()：将字典所包含的所有键名以数组形式返回。</li>
-<li>values()：将字典所包含的所有数值以数组形式返回。<h2 id="封装字典"><a href="#封装字典" class="headerlink" title="封装字典"></a>封装字典</h2></li>
-</ul>
-</li>
-<li><p>字典类可以基于JavaScript中的对象结构来实现，这里直接实现字典类中的常用方法。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">//封装字典类</span><br><span class="line">function Dictionary(){</span><br><span class="line">  //字典属性</span><br><span class="line">  this.items = {}</span><br><span class="line"></span><br><span class="line">  //字典操作方法</span><br><span class="line">  //一.在字典中添加键值对</span><br><span class="line">  Dictionary.prototype.set = function(key, value){</span><br><span class="line">    this.items[key] = value</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //二.判断字典中是否有某个key</span><br><span class="line">  Dictionary.prototype.has = function(key){</span><br><span class="line">    return this.items.hasOwnProperty(key)</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //三.从字典中移除元素</span><br><span class="line">  Dictionary.prototype.remove = function(key){</span><br><span class="line">    //1.判断字典中是否有这个key</span><br><span class="line">    if(!this.has(key)) return false</span><br><span class="line"></span><br><span class="line">    //2.从字典中删除key</span><br><span class="line">    delete this.items[key]</span><br><span class="line">    return true</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //四.根据key获取value</span><br><span class="line">  Dictionary.prototype.get = function(key){</span><br><span class="line">    return this.has(key) ? this.items[key] : undefined</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //五.获取所有keys</span><br><span class="line">  Dictionary.prototype.keys = function(){</span><br><span class="line">    return Object.keys(this.items)</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //六.size方法</span><br><span class="line">  Dictionary.prototype.keys = function(){</span><br><span class="line">    return this.keys().length</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //七.clear方法</span><br><span class="line">  Dictionary.prototype.clear = function(){</span><br><span class="line">    this.items = {}</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>数据结构</tag>
-        <tag>javascript</tag>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript单向链表的实现</title>
     <url>/2021/01/29/JavaScript%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<h1 id="javascript实现单向链表"><a href="#javascript实现单向链表" class="headerlink" title="javascript实现单向链表"></a>javascript实现单向链表</h1><ul>
@@ -1013,8 +208,817 @@
       </tags>
   </entry>
   <entry>
+    <title>JavaScript实现集合与字典</title>
+    <url>/2021/01/26/JavaScript%E5%AE%9E%E7%8E%B0%E9%9B%86%E5%90%88%E4%B8%8E%E5%AD%97%E5%85%B8/</url>
+    <content><![CDATA[<h1 id="JavaScript实现集合与字典"><a href="#JavaScript实现集合与字典" class="headerlink" title="JavaScript实现集合与字典"></a>JavaScript实现集合与字典</h1><h2 id="一、集合结构"><a href="#一、集合结构" class="headerlink" title="一、集合结构"></a>一、集合结构</h2><ul>
+<li><p>集合比较常见的实现方式是哈希表，这里使用JavaScript的Object类进行封装。</p>
+</li>
+<li><p>集合通常是由一组无序的、不能重复的元素构成。</p>
+</li>
+<li><p>数学中常指的集合中的元素是可以重复的，但是计算机中集合的元素不能重复。</p>
+</li>
+<li><p>集合是特殊的数组：</p>
+<ul>
+<li>特殊之处在于里面的元素没有顺序，也不能重复。<br>没有顺序意味着不能通过下标值进行访问，不能重复意味着相同的对象在集合中只会存在一份。</li>
+</ul>
+</li>
+<li><p>实现集合类：</p>
+<ul>
+<li>在ES6中的Set类就是一个集合类，这里我们重新封装一个Set类，了解集合的底层实现。</li>
+<li>JavaScript中的Object类中的key就是一个集合，可以使用它来封装集合类Set。</li>
+</ul>
+</li>
+<li><p>集合常见的操作：</p>
+<ul>
+<li><p>add（value）：向集合添加一个新的项；</p>
+</li>
+<li><p>remove（value）：从集合中移除一个值；</p>
+</li>
+<li><p>has（value）：如果值在集合中，返回true，否则返回false；</p>
+</li>
+<li><p>clear（）：移除集合中的所有项；</p>
+</li>
+<li><p>size（）：返回集合所包含元素的数量，与数组的length属性相似；</p>
+</li>
+<li><p>values（）：返回一个包含集合中所有值的数组；</p>
+<h2 id="集合的实现"><a href="#集合的实现" class="headerlink" title="集合的实现"></a>集合的实现</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">//封装集合类</span><br><span class="line"> function Set(){</span><br><span class="line">     // 属性</span><br><span class="line">     this.items={}</span><br><span class="line">     // 方法</span><br><span class="line">     // 1.add方法</span><br><span class="line">     Set.prototype.add=function(value){</span><br><span class="line">         // 将元素添加到元素中</span><br><span class="line">         // 判断当前集合中是否含有该元素</span><br><span class="line">         if(this.has(value)){</span><br><span class="line">          return false</span><br><span class="line">         }</span><br><span class="line">         this.items[value]=value</span><br><span class="line">         return true</span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // has方法</span><br><span class="line">     Set.prototype.has=function(value){</span><br><span class="line">         return this.items.hasOwnProperty(value)</span><br><span class="line">     }</span><br><span class="line">     // remove方法</span><br><span class="line">     Set.prototype.remove=function(value){</span><br><span class="line">         if(!this.has(value)){</span><br><span class="line">            return false</span><br><span class="line">         }</span><br><span class="line">         // 将元素从集合中删除</span><br><span class="line">         delete this.items[value]</span><br><span class="line">         return true</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // clear方法</span><br><span class="line">     Set.prototype.clear=function(value){</span><br><span class="line">        this.items={}</span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // size方法</span><br><span class="line">     Set.prototype.size=function(value){</span><br><span class="line">        return Object.keys(this.items).length</span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // values方法 获取集合中所有的值</span><br><span class="line">     Set.prototype.values=function(value){</span><br><span class="line">        return Object.keys(this.items)</span><br><span class="line">        </span><br><span class="line">     }</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="集合间的操作"><a href="#集合间的操作" class="headerlink" title="集合间的操作"></a>集合间的操作</h1></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>并集：对于给定的两个集合，返回一个包含两个集合中所有元素的新集合；</li>
+<li>交集：对于给定的两个集合，返回一个包含两个集合中共有元素的新集合；</li>
+<li>差集：对于给定的两个集合，返回一个包含所有存在于第一个集合且不存在于第二个集合的元素的新集合；</li>
+<li>子集：验证一个给定集合是否是另一个集合的子集；<br><img src="/images/2.png" alt="图片"></li>
+</ul>
+<h2 id="并集的实现："><a href="#并集的实现：" class="headerlink" title="并集的实现："></a>并集的实现：</h2><ul>
+<li><p>实现思路：创建集合C代表集合A和集合B的并集，先将集合A中的所有元素添加到集合C中，再遍历集合B，如果是集合C所没有的元素就把它添加到集合C中。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Set.prototype.union = otherSet =&gt; {</span><br><span class="line">     // this:集合对象A</span><br><span class="line">     // otherSet:集合对象B</span><br><span class="line">     //1.创建一个新的集合</span><br><span class="line">     let unionSet = new Set()</span><br><span class="line"></span><br><span class="line">     //2.将A集合中的所有元素添加到新集合中</span><br><span class="line">     let values = this.values()</span><br><span class="line">     // for(let i of values){</span><br><span class="line">     //   unionSet.add(i)</span><br><span class="line">     // }</span><br><span class="line">     for(let i = 0;i &lt; values.length;i++){</span><br><span class="line">       unionSet.add(values[i])</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">     //3.取出B集合中的元素,判断是否需要加到新集合中</span><br><span class="line">     values = otherSet.values()</span><br><span class="line">     // for(let i of values){</span><br><span class="line">     //   //由于集合的add方法已经对重复的元素进行了判断,所以这里可以直接添加</span><br><span class="line">     //   unionSet.add(i)</span><br><span class="line">     // }</span><br><span class="line">     for(let i = 0;i &lt; values.length;i++){</span><br><span class="line">       unionSet.add(values[i])</span><br><span class="line">     }</span><br><span class="line">     return unionSet</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="交集的实现："><a href="#交集的实现：" class="headerlink" title="交集的实现："></a>交集的实现：</h2></li>
+<li><p>实现思路：遍历集合A，当取得的元素也存在于集合B时，就把该元素添加到另一个集合C中。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Set.prototype.intersection = otherSet =&gt; {</span><br><span class="line">     // this:集合A</span><br><span class="line">     // otherSet:集合B</span><br><span class="line">     //1.创建新的集合</span><br><span class="line">     let intersectionSet = new Set()</span><br><span class="line">     </span><br><span class="line">     //2.从A中取出一个元素，判断是否同时存在于集合B中，是则放入新集合中</span><br><span class="line">     let values = this.values()</span><br><span class="line">     for(let i =0 ; i &lt; values.length; i++){</span><br><span class="line">       let item = values[i]</span><br><span class="line">       if (otherSet.has(item)) {</span><br><span class="line">         intersectionSet.add(item)</span><br><span class="line">       }</span><br><span class="line">     }</span><br><span class="line">     return intersectionSet</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="差集的实现："><a href="#差集的实现：" class="headerlink" title="差集的实现："></a>差集的实现：</h2></li>
+<li><p>实现思路：遍历集合A，当取得的元素不存在于集合B时，就把该元素添加到另一个集合C中。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Set.prototype.diffrence = otherSet =&gt; {</span><br><span class="line">        //this:集合A</span><br><span class="line">        //otherSet:集合B</span><br><span class="line">        //1.创建新的集合</span><br><span class="line">        var diffrenceSet = new Set()</span><br><span class="line"></span><br><span class="line">        //2.取出A集合中的每一个元素，判断是否同时存在于B中，不存在则添加到新集合中</span><br><span class="line">        var values = this.values()</span><br><span class="line">        for(var i = 0;i &lt; values.length; i++){</span><br><span class="line">          var item = values[i]</span><br><span class="line">          if (!otherSet.has(item)) {</span><br><span class="line">            diffrenceSet.add(item)</span><br><span class="line">          }</span><br><span class="line">        }</span><br><span class="line">        return diffrenceSet</span><br><span class="line">      }</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="子集的实现："><a href="#子集的实现：" class="headerlink" title="子集的实现："></a>子集的实现：</h2></li>
+<li><p>实现思路：遍历集合A，当取得的元素中有一个不存在于集合B时，就说明集合A不是集合B的子集，返回false。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Set.prototype.subset = otherSet =&gt; {</span><br><span class="line">       //this:集合A</span><br><span class="line">       //otherSet：集合B</span><br><span class="line">       //遍历集合A中的所有元素，如果发现，集合A中的元素，在集合B中不存在，那么放回false，如果遍历完整个集合A没有返回false，就返回true</span><br><span class="line">       let values = this.values()</span><br><span class="line">       for(let i = 0; i &lt; values.length; i++){</span><br><span class="line">         let item = values[i]</span><br><span class="line">         if(!otherSet.has(item)){</span><br><span class="line">           return false</span><br><span class="line">         }</span><br><span class="line">       }</span><br><span class="line">       return true</span><br><span class="line">     }</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="字典结构"><a href="#字典结构" class="headerlink" title="字典结构"></a>字典结构</h1></li>
+<li><p>字典的特点：</p>
+</li>
+<li><p>字典存储的是键值对，主要特点是一一对应；</p>
+<ul>
+<li>比如保存一个人的信息：数组形式：[19，‘Tom’，1.65]，可通过下标值取出信息；字典形式：{“age”：19，”name”：”Tom”，”height”：165}，可以通过key取出value。<br>此外，在字典中key是不能重复且无序的，而Value可以重复。</li>
+</ul>
+</li>
+<li><p>字典和映射的关系：</p>
+<ul>
+<li>有些编程语言中称这种映射关系为字典，如Swift中的Dictonary，Python中的dict；</li>
+<li>有些编程语言中称这种映射关系为Map，比如Java中的HashMap&amp;TreeMap等；</li>
+</ul>
+</li>
+<li><p>字典类常见的操作：</p>
+<ul>
+<li>set(key,value)：向字典中添加新元素。</li>
+<li>remove(key)：通过使用键值来从字典中移除键值对应的数据值。</li>
+<li>has(key)：如果某个键值存在于这个字典中，则返回true，反之则返回false。</li>
+<li>get(key)：通过键值查找特定的数值并返回。</li>
+<li>clear()：将这个字典中的所有元素全部删除。</li>
+<li>size()：返回字典所包含元素的数量。与数组的length属性类似。</li>
+<li>keys()：将字典所包含的所有键名以数组形式返回。</li>
+<li>values()：将字典所包含的所有数值以数组形式返回。<h2 id="封装字典"><a href="#封装字典" class="headerlink" title="封装字典"></a>封装字典</h2></li>
+</ul>
+</li>
+<li><p>字典类可以基于JavaScript中的对象结构来实现，这里直接实现字典类中的常用方法。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">//封装字典类</span><br><span class="line">function Dictionary(){</span><br><span class="line">  //字典属性</span><br><span class="line">  this.items = {}</span><br><span class="line"></span><br><span class="line">  //字典操作方法</span><br><span class="line">  //一.在字典中添加键值对</span><br><span class="line">  Dictionary.prototype.set = function(key, value){</span><br><span class="line">    this.items[key] = value</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //二.判断字典中是否有某个key</span><br><span class="line">  Dictionary.prototype.has = function(key){</span><br><span class="line">    return this.items.hasOwnProperty(key)</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //三.从字典中移除元素</span><br><span class="line">  Dictionary.prototype.remove = function(key){</span><br><span class="line">    //1.判断字典中是否有这个key</span><br><span class="line">    if(!this.has(key)) return false</span><br><span class="line"></span><br><span class="line">    //2.从字典中删除key</span><br><span class="line">    delete this.items[key]</span><br><span class="line">    return true</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //四.根据key获取value</span><br><span class="line">  Dictionary.prototype.get = function(key){</span><br><span class="line">    return this.has(key) ? this.items[key] : undefined</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //五.获取所有keys</span><br><span class="line">  Dictionary.prototype.keys = function(){</span><br><span class="line">    return Object.keys(this.items)</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //六.size方法</span><br><span class="line">  Dictionary.prototype.keys = function(){</span><br><span class="line">    return this.keys().length</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //七.clear方法</span><br><span class="line">  Dictionary.prototype.clear = function(){</span><br><span class="line">    this.items = {}</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>javascript</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>javascript数据结构 栈结构（stack）</title>
+    <url>/2021/01/23/javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%88%E7%BB%93%E6%9E%84%EF%BC%88stack%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="JavaScript栈结构（Stack）"><a href="#JavaScript栈结构（Stack）" class="headerlink" title="JavaScript栈结构（Stack）"></a>JavaScript栈结构（Stack）</h1><h2 id="一-什么是数据结构"><a href="#一-什么是数据结构" class="headerlink" title="一 什么是数据结构"></a>一 什么是数据结构</h2><ul>
+<li>数据结构是在计算机中 存储和管理组织数据的方式</li>
+<li>数据结构与语言无关 常见的编程语言都有数据结构<!--  -->
+
+</li>
+</ul>
+<h3 id="常见的数据结构"><a href="#常见的数据结构" class="headerlink" title="常见的数据结构"></a>常见的数据结构</h3><ul>
+<li><p>常见的数据结构：</p>
+<ul>
+<li>数组（Aarray）</li>
+<li>栈（Stack）</li>
+<li>链表（Linked List）</li>
+<li>图（Graph）</li>
+<li>散列表（Hash）</li>
+<li>队列（Queue）</li>
+<li>树（Tree）</li>
+<li>堆（Heap）</li>
+</ul>
+</li>
+</ul>
+<h2 id="什么是算法"><a href="#什么是算法" class="headerlink" title="什么是算法"></a>什么是算法</h2><ul>
+<li>算法定义<ul>
+<li>一个有限指令集 不依赖于语言</li>
+<li>接受一些输入（有些情况不需要输入）</li>
+<li>产生输出</li>
+<li>一定在优先步骤后终止</li>
+</ul>
+</li>
+<li>在解决问题过程中  不仅数据的存储风扇会影响效率 算法的优劣也影响着效率</li>
+</ul>
+<h1 id="栈结构"><a href="#栈结构" class="headerlink" title="栈结构"></a>栈结构</h1><ul>
+<li><p>数组是一个线性结构，并且可以在数组的任意位置插入和删除元素。而栈和队列就是比较常见的受限的线性结构</p>
+</li>
+<li><p>栈的特点为先进后出，后进先出（LIFO：last in first out）。</p>
+</li>
+<li><p>栈常见的操作：</p>
+<ul>
+<li>push（element）：添加一个新元素到栈顶位置；</li>
+<li>pop（）：移除栈顶的元素，同时返回被移除的元素；</li>
+<li>peek（）：返回栈顶的元素，不对栈做任何修改（该方法不会移除栈顶的元素，仅仅返回它）；</li>
+<li>isEmpty（）：如果栈里没有任何元素就返回true，否则返回false；</li>
+<li>size（）：返回栈里的元素个数。这个方法和数组的length属性类似；</li>
+<li>toString（）：将栈结构的内容以字符串的形式返回。</li>
+</ul>
+</li>
+<li><p> 封装栈类</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">// 栈的实现</span><br><span class="line">function Stack(){</span><br><span class="line">    // 封装属性</span><br><span class="line">    this.items=[];</span><br><span class="line"></span><br><span class="line">    // 封装方法</span><br><span class="line"></span><br><span class="line">    // 1.栈的插入</span><br><span class="line">    Stack.prototype.push=function(element){</span><br><span class="line">        this.items.push(element);</span><br><span class="line">    }</span><br><span class="line">    // 2.栈的取出</span><br><span class="line">    Stack.prototype.pop=function(){</span><br><span class="line">        return this.items.pop();</span><br><span class="line">    }</span><br><span class="line">    // 查看栈的顶端</span><br><span class="line">    Stack.prototype.front=function(){</span><br><span class="line">        return this.items[this.items.length-1];</span><br><span class="line">    }</span><br><span class="line">    // 4.查看栈的长度</span><br><span class="line">    Stack.prototype.size=function(){</span><br><span class="line">        return this.items.length;</span><br><span class="line">    }</span><br><span class="line">    // 5.toString方法</span><br><span class="line">    Stack.prototype.toString=function(){</span><br><span class="line"></span><br><span class="line">        var retstring='';</span><br><span class="line">        for(i=0;i&lt;this.items.length;i++){</span><br><span class="line">            retstring+=this.items[i]+' ';</span><br><span class="line">        }</span><br><span class="line">        return retstring;</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    //  4.判断栈是否为空</span><br><span class="line">    Stack.prototype.isempty=function(){</span><br><span class="line">        return  this.items.length==0</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>测试代码</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">var stack=new Stack();</span><br><span class="line">stack.push('dasda')</span><br><span class="line">stack.push('dfsdfda')</span><br><span class="line">stack.push('fga')</span><br><span class="line">stack.push('hbf')</span><br><span class="line">console.log(stack.items)</span><br><span class="line">stack.pop();</span><br><span class="line">console.log(stack.items)</span><br><span class="line">console.log(stack.front())</span><br><span class="line">console.log(stack.size())</span><br><span class="line">console.log(stack.toString())</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>结果<br><img src="/images/asd.png" alt="图片"></p>
+</li>
+<li><p>使用栈结构实现二进制转换</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">function toer(num){</span><br><span class="line">        var stack=new Stack();</span><br><span class="line"></span><br><span class="line">        while ((num&gt;0)) {</span><br><span class="line"></span><br><span class="line">            stack.push(num%2);</span><br><span class="line">            num=Math.floor(num/2) </span><br><span class="line">            </span><br><span class="line">        }</span><br><span class="line">        var newnum='';</span><br><span class="line">        while (!stack.isempty()) {</span><br><span class="line">            newnum+=stack.pop()</span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">        }</span><br><span class="line">        return newnum;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>javascript</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python爬虫</title>
+    <url>/2021/01/19/python%E7%88%AC%E8%99%AB/</url>
+    <content><![CDATA[<h1 id="爬虫简介"><a href="#爬虫简介" class="headerlink" title="爬虫简介"></a>爬虫简介</h1><h2 id="爬虫在使用场景中的分类"><a href="#爬虫在使用场景中的分类" class="headerlink" title="爬虫在使用场景中的分类"></a>爬虫在使用场景中的分类</h2><ul>
+<li>通用爬虫<ul>
+<li>抓取系统重要组成部分</li>
+<li>抓取的是一整张页面数据</li>
+</ul>
+</li>
+<li>聚焦爬虫<ul>
+<li>聚焦在通用爬虫的基础之上</li>
+<li>抓取的是页面中特定的局部内容</li>
+</ul>
+</li>
+<li>增量式爬虫<ul>
+<li>检测网站中数据更新的情况</li>
+<li>只会抓取网站中最新更新的数据<h2 id="爬虫是合法还是违法的"><a href="#爬虫是合法还是违法的" class="headerlink" title="爬虫是合法还是违法的"></a>爬虫是合法还是违法的</h2></li>
+</ul>
+</li>
+<li><pre><code>   在法律中不被禁止</code></pre>
+</li>
+<li><pre><code> 具有违法风险</code></pre>
+<ul>
+<li>   爬虫的风险<ul>
+<li><pre><code>   干扰了被访问网站的正常运营</code></pre>
+</li>
+<li><pre><code>   爬虫抓取了受到法律保护的特定类型的数据和信息</code></pre>
+</li>
+</ul>
+</li>
+<li>   善意爬虫 恶意爬虫<h2 id="爬虫是什么"><a href="#爬虫是什么" class="headerlink" title="爬虫是什么"></a>爬虫是什么</h2></li>
+</ul>
+</li>
+<li><pre><code>   通过编写程序 模拟浏览器上网 然后让其取互联网抓取数据的过程</code></pre>
+</li>
+<li>   robots.txt协议</li>
+</ul>
+<h2 id="requests模块"><a href="#requests模块" class="headerlink" title="requests模块"></a>requests模块</h2><ul>
+<li>明确规定了那些数据可以被爬虫爬取，哪些不可以被爬取 君子协议<ul>
+<li>python中原生的一款基于网络请求的模块 功能非常强大 简单快捷 效率极高</li>
+<li>   作用：模拟浏览器发请求</li>
+</ul>
+</li>
+<li> 如何使用<ul>
+<li>   1.指定url</li>
+<li>   2.发起请求</li>
+<li>   3.获取响应数据</li>
+<li>   4.持久化存储    <h2 id="数据解析"><a href="#数据解析" class="headerlink" title="数据解析"></a>数据解析</h2></li>
+</ul>
+</li>
+<li> 数据解析分类<ul>
+<li>   正则</li>
+<li>bs4<ul>
+<li>   1.实例化一个beautifulsoup对象，并且将页面源码数据加载到该对象中</li>
+<li>   2.通过调用beautifulsoup对象中相关的属性或者方法进行标签定位和数据取</li>
+</ul>
+</li>
+<li>xpath<ul>
+<li>最常用最便捷最高效的一种解析方式 通用性也强<ul>
+<li>解析原理<ul>
+<li>   1.实例化一个etree的对象 且需要将被解析的页面源码数据加载到改数据当中</li>
+<li>   2.调用etree对象中的xpath方法结合xpath表达式实现标签的定位和内容的捕获</li>
+</ul>
+</li>
+<li>   环境安装：-pip install lxml</li>
+<li>如何实例化一个etree对象<ul>
+<li>1.将本地的html文档对象中的源码数据加载到etree对象中<pre><code>  etree.parse(filepath)</code></pre>
+</li>
+<li>2.可以将从互联网上获取的源码数据加载到改对象中<pre><code>  etree.HTML('page_text')</code></pre>
+</li>
+</ul>
+</li>
+<li>xpath(‘xpath表达式’)<ul>
+<li>   /：表示的是从根节点开始，表示的是一个层级</li>
+<li>   //：表示的是多个层级。可以从任意位置开始定位</li>
+<li>   属性定位：//tag[@class=‘class名’]</li>
+<li>   索引定位：//tag[@class=‘class名’]/tag2[x] 索引是从1开始的</li>
+<li>   取文本：/text()[0](因为返回的是一个列表 所以加上[0])</li>
+<li>   取属性：/@属性值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> 数据解析原理<ul>
+<li>   解析的局部的文本内容都会在标签之间或标签对应的属性中进行存储</li>
+<li>   1.进行标签定位</li>
+<li>   2.标签或者标签对应的属性中存储的数据值进行提取（解析）</li>
+</ul>
+</li>
+<li> 编码流程<ul>
+<li>   1.指定url</li>
+<li>   2.发起请求</li>
+<li>   3.获取响应数据</li>
+<li>   4.数据解析</li>
+<li>   5.持久化存储</li>
+</ul>
+</li>
+</ul>
+<h2 id="验证码"><a href="#验证码" class="headerlink" title="验证码"></a>验证码</h2><ul>
+<li> 验证码识别<ul>
+<li>   反爬机制：验证码 识别验证码图片中的数据，用于模拟登录操作</li>
+<li>识别验证码<ul>
+<li>   1.人工肉眼识别</li>
+<li>2.第三方自动识别<pre><code>  云打码
+  超级鹰</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="request高级"><a href="#request高级" class="headerlink" title="request高级"></a>request高级</h2><ul>
+<li> 代理<pre><code>  破解封ip这种反爬机制</code></pre>
+<ul>
+<li>什么是代理<pre><code>  代理服务器</code></pre>
+</li>
+<li>代理的作用<pre><code>  突破自身ip的限制
+  隐藏自身真实ip</code></pre>
+</li>
+<li>代理相关网站<pre><code>  块代理
+  西祠代理
+  西祠代理
+  www。goubanjia。com</code></pre>
+</li>
+<li>代理ip类型<pre><code>  http
+  https</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="异步爬虫"><a href="#异步爬虫" class="headerlink" title="异步爬虫"></a>异步爬虫</h2><p>-之后的内容正在学习中</p>
+<h1 id="简单爬虫实例"><a href="#简单爬虫实例" class="headerlink" title="简单爬虫实例"></a>简单爬虫实例</h1><ul>
+<li>以下几个例子是通过学习爬虫并通过python写出的简单练习，均为新手练习 在此记录一下：</li>
+</ul>
+<h3 id="肯德基餐厅信息查询"><a href="#肯德基餐厅信息查询" class="headerlink" title="肯德基餐厅信息查询"></a>肯德基餐厅信息查询</h3><ul>
+<li>可以通过输入要检索的城市名称来进行指定信息扒取<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url='http://www.kfc.com.cn/kfccda/ashx/GetStoreList.ashx?op=keyword'</span><br><span class="line">city=input("请输入要爬取的城市名称")</span><br><span class="line">index=input("q请输入要爬取的页码")</span><br><span class="line">keyword={</span><br><span class="line">'cname':'' ,</span><br><span class="line">'pid':'' ,</span><br><span class="line">'keyword': city,</span><br><span class="line">'pageIndex':index,</span><br><span class="line">'pageSize':'10',</span><br><span class="line">}</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">response=requests.post(url=url,data=keyword,headers=headers)</span><br><span class="line">response_text=response.text</span><br><span class="line">print(response_text)</span><br><span class="line">filename=city+'肯德基餐厅信息.text'</span><br><span class="line">fp=open(filename,'a',encoding='utf-8')</span><br><span class="line">fp.write('\n')</span><br><span class="line">fp.write(response_text)</span><br><span class="line">print("爬取成功")</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="搜狗浏览器搜索页面的扒取"><a href="#搜狗浏览器搜索页面的扒取" class="headerlink" title="搜狗浏览器搜索页面的扒取"></a>搜狗浏览器搜索页面的扒取</h3></li>
+<li>扒取到的是一整张搜索页面<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url='https://www.sogou.com/web'</span><br><span class="line">kw=input("请输入要爬取的内容：")</span><br><span class="line">uag={</span><br><span class="line">    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">quar={</span><br><span class="line">    'query':kw</span><br><span class="line">}</span><br><span class="line">respon=requests.get(url=url,params=quar,headers=uag)</span><br><span class="line">filename=kw+'.html'</span><br><span class="line">respon_text=respon.text</span><br><span class="line">with open(filename,'w',encoding='utf-8') as fp:</span><br><span class="line">    fp.write(respon_text)</span><br><span class="line">    print(filename ,"保存成功")</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="豆瓣电影排行榜数据扒取"><a href="#豆瓣电影排行榜数据扒取" class="headerlink" title="豆瓣电影排行榜数据扒取"></a>豆瓣电影排行榜数据扒取</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line">url='https://movie.douban.com/j/chart/top_list'</span><br><span class="line">list={</span><br><span class="line">    'type': '24',</span><br><span class="line">    'interval_id':'100:90',</span><br><span class="line">    'action':'',</span><br><span class="line">    'start': '0',</span><br><span class="line">    'limit': '200',</span><br><span class="line">}</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">response=requests.get(url=url,params=list,headers=headers)</span><br><span class="line">name_list=response.json()</span><br><span class="line">fp=open('豆瓣电影排行榜.json','w',encoding='utf-8')</span><br><span class="line">json.dump(name_list,fp=fp,ensure_ascii=False)</span><br><span class="line">print("爬取完成")</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="百度搜索结果扒取"><a href="#百度搜索结果扒取" class="headerlink" title="百度搜索结果扒取"></a>百度搜索结果扒取</h3></li>
+<li>可以自主输入要扒取的内容<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line">#获取url</span><br><span class="line">post_url='https://fanyi.baidu.com/sug'</span><br><span class="line"></span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">search=input("请输入你要搜索的对象：")</span><br><span class="line">name={</span><br><span class="line">    'kw':search</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">sponse=requests.post(url=post_url,data=name,headers=headers)</span><br><span class="line">dictobj=sponse.json()</span><br><span class="line">print(dictobj)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">filename='搜索结果.json'</span><br><span class="line">fp=open(filename,"a",encoding='utf-8')</span><br><span class="line">fp.write('\n')</span><br><span class="line">json.dump(dictobj,fp=fp,ensure_ascii=False)</span><br><span class="line"></span><br><span class="line">print("搜索完毕，结果已输出")</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="对糗事图片网站图片的批量扒取"><a href="#对糗事图片网站图片的批量扒取" class="headerlink" title="对糗事图片网站图片的批量扒取"></a>对糗事图片网站图片的批量扒取</h3></li>
+<li>纯粹的批量扒取图片下载<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import os</span><br><span class="line">if not os.path.exists('./img_list'):</span><br><span class="line">    os.mkdir('./img_list')</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">for j in range(1,3):</span><br><span class="line"></span><br><span class="line">    url='http://xiaohua.zol.com.cn/qutu/diaosi/%d.html'</span><br><span class="line">    new_url=format(url%j)</span><br><span class="line">    respons=requests.get(url=new_url,headers=headers).text</span><br><span class="line">    ex='&lt;div class="summary-text"&gt;.*?&lt;img ?l?o?a?dsrc="(.*?)" alt.*?&lt;/div&gt;'</span><br><span class="line">    img_list=re.findall(ex,respons,re.S)</span><br><span class="line">    print(img_list)</span><br><span class="line">    for src in img_list:</span><br><span class="line">        imgdata=  requests.get(url=src,headers=headers).content</span><br><span class="line">        img_name=src.split('/')[-1]</span><br><span class="line">        img_path= './img_list/'+img_name</span><br><span class="line">        fp=open(img_path,'wb')</span><br><span class="line">        fp.write(imgdata)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="国家药品监督管理总局中居于中华人民共和国化妆品生产许可证相关数据"><a href="#国家药品监督管理总局中居于中华人民共和国化妆品生产许可证相关数据" class="headerlink" title="国家药品监督管理总局中居于中华人民共和国化妆品生产许可证相关数据"></a>国家药品监督管理总局中居于中华人民共和国化妆品生产许可证相关数据</h3></li>
+<li>纯粹练习之作<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">url ='http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsList'</span><br><span class="line">for l in range(1,6):</span><br><span class="line">    page=str(l)</span><br><span class="line">    data={</span><br><span class="line">    'on': 'true',</span><br><span class="line">    'page': page,</span><br><span class="line">    'pageSize': '15',</span><br><span class="line">    'productName': '',</span><br><span class="line">    'conditionType': '1',</span><br><span class="line">    'applyname':'' ,</span><br><span class="line">    'applysn': '',</span><br><span class="line">    }</span><br><span class="line">    list_id=[]</span><br><span class="line">    response=requests.post(url=url,data=data,headers=headers).json()</span><br><span class="line">    print(response)</span><br><span class="line">    for i in response['list']:</span><br><span class="line">        list_id.append(i['ID'])</span><br><span class="line"></span><br><span class="line">    print(list_id)</span><br><span class="line">    name_url='http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsById'</span><br><span class="line">    for j in list_id:</span><br><span class="line"></span><br><span class="line">        data2={</span><br><span class="line">            'id':j</span><br><span class="line">        }</span><br><span class="line">        fp=open("药监局数据.json",'a')</span><br><span class="line">        fp.write('\n')</span><br><span class="line">        response2=requests.post(url=name_url,data=data2,headers=headers).json()</span><br><span class="line">        json.dump(response2,fp=fp,ensure_ascii=False)</span><br><span class="line">print("爬取完毕")</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="三个图片网站的批量下载"><a href="#三个图片网站的批量下载" class="headerlink" title="三个图片网站的批量下载"></a>三个图片网站的批量下载</h3></li>
+<li>大同小异的图片扒取练习<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">from lxml import etree</span><br><span class="line">import os</span><br><span class="line">headers={</span><br><span class="line">    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">}</span><br><span class="line">url='http://pic.netbian.com/4kmeinv/'</span><br><span class="line"># 获取响应</span><br><span class="line">response=requests.get(url=url,headers=headers).text</span><br><span class="line"># print(response)</span><br><span class="line"># 数据解析</span><br><span class="line">tree=etree.HTML(response)</span><br><span class="line">li_list=tree.xpath('//div[@class="slist"]/ul/li')</span><br><span class="line">print(li_list)</span><br><span class="line"># 创建一个文件夹</span><br><span class="line">if not os.path.exists('./picture'):</span><br><span class="line">    os.mkdir('./picture')</span><br><span class="line">#     遍历 再解析</span><br><span class="line">for i in li_list:</span><br><span class="line">    img_src='http://pic.netbian.com'+i.xpath('./a/img/@src')[0]</span><br><span class="line">    img_name=i.xpath('./a/img/@alt')[0]+'.jpg'</span><br><span class="line">#     通用请求中文乱码解决方案</span><br><span class="line">    img_name=img_name.encode('iso-8859-1').decode('gbk')</span><br><span class="line">#存储文件</span><br><span class="line">    img_data=requests.get(url=img_src,headers=headers).content</span><br><span class="line">    img_path='picture/'+img_name</span><br><span class="line">    with open(img_path,'wb') as fp:</span><br><span class="line">        fp.write(img_data)</span><br><span class="line">        print(img_name,'下载成功')</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import os</span><br><span class="line">import requests</span><br><span class="line">from lxml import etree</span><br><span class="line">if not os.path.exists('./图片3'):</span><br><span class="line">    os.mkdir('./图片3')</span><br><span class="line">url='https://sc.chinaz.com/tupian/xingganmeinvtupian.html'</span><br><span class="line">headers={</span><br><span class="line">        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">    }</span><br><span class="line">response=requests.get(url=url,headers=headers).text</span><br><span class="line">tree=etree.HTML(response)</span><br><span class="line">img_src=tree.xpath('//*[@id="container"]/div/div/a/@href')</span><br><span class="line">img_list=[</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line">for j in img_src:</span><br><span class="line">    img_src2='https:'+j</span><br><span class="line">    img_list.append(img_src2)</span><br><span class="line">print(img_list)</span><br><span class="line">for inn in img_list:</span><br><span class="line">    response2=requests.get(url=inn,headers=headers).text</span><br><span class="line">    tree2=etree.HTML(response2)</span><br><span class="line">    img_u=tree2.xpath('//div[@class="downbody"]/div[3]/a[1]/@href')[0]</span><br><span class="line">    print(img_u)</span><br><span class="line">    response3=requests.get(url=img_u,headers=headers).content</span><br><span class="line">    img_name=inn.split('/')[-1]+'.rar'</span><br><span class="line">    img_path='./图片3/'+img_name</span><br><span class="line">    with open(img_path,'wb') as fp:</span><br><span class="line">        fp.write(response3)</span><br><span class="line">        print("下载完成")</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">import os</span><br><span class="line">from lxml import etree</span><br><span class="line">import requests</span><br><span class="line">if not os.path.exists('./图片4'):</span><br><span class="line">    os.mkdir('./图片4')</span><br><span class="line">headers={</span><br><span class="line">        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'</span><br><span class="line">    }</span><br><span class="line">url='https://www.game234.com/meizi/index_%d.html'</span><br><span class="line">for k in range(2,10):</span><br><span class="line">    new_url=format(url%k)</span><br><span class="line">    sponse=requests.get(url=new_url,headers=headers).text</span><br><span class="line">    tree=etree.HTML(sponse)</span><br><span class="line">    img_p=tree.xpath('//*[@id="sortable"]/div/div/a/@href')</span><br><span class="line">    for i in img_p:</span><br><span class="line">        img_src='https://www.game234.com'+i</span><br><span class="line">        sponse2=requests.get(url=img_src,headers=headers).text</span><br><span class="line">        tree2=etree.HTML(sponse2)</span><br><span class="line">        img_q=tree2.xpath('//*[@id="article-box"]/div[2]/img/@src')</span><br><span class="line">        print(img_q)</span><br><span class="line">        for j in img_q:</span><br><span class="line">            img_list=j</span><br><span class="line">            response3=requests.get(url=j,headers=headers).content</span><br><span class="line">            img_name=j.split('/')[-1]</span><br><span class="line">            img_path='./图片4/'+img_name</span><br><span class="line">            with open(img_path,'wb') as fp:</span><br><span class="line">                fp.write(response3)</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css拓展语言 sass</title>
+    <url>/2021/01/13/sass/</url>
+    <content><![CDATA[<h1 id="css拓展语言css"><a href="#css拓展语言css" class="headerlink" title="css拓展语言css"></a>css拓展语言css</h1><ul>
+<li><p>sass一种帮助你简化css工作流程的方式 帮助你更容易维护和开发css内容</p>
+</li>
+<li><p>sass是目前为止世界上最成熟 稳定和强大的专业级css拓展语言</p>
+</li>
+<li><p>sass是用ruby语言写的，但是两者的语法没有关系</p>
+</li>
+</ul>
+<h2 id="sass语法"><a href="#sass语法" class="headerlink" title="sass语法"></a>sass语法</h2><ul>
+<li><p>sass文件后缀名<br>  sass后缀名有两种 一种后缀名为sass 不适用大括号与分号<br>  另一种是scss文件 这种和平时使用的css文件差不多 使用大括号与分号 </p>
+</li>
+<li><p>使用变量<br>  sass最重要的特性就是为css引入了变量 我们可以吧反复使用的css属性值定义为变量 然后通过变量名来引用他们 二无需重复书写这一过程</p>
+<ul>
+<li><p>sass使用$符号来标识变量</p>
+</li>
+<li><p>变量声明：$highlight-color: #F90;<br>  这意味着变量$highlight-color现在的值是#f90<br>  任何可以用作css的属性值的赋值都可以用作sass的变量值 甚至是以空格分隔的多个属性值 或以逗号分隔的多个属性值<br>  变量可以定义在规则快内和规则快外</p>
+</li>
+<li><p>变量引用：变量之间可以互相引用</p>
+</li>
+<li><p>变量名<br>  sass变量名可以与css中的属性名和选择器名称相同 包括中划线和下划线<br>  在sass中下划线与中划线是相互兼容的</p>
+</li>
+</ul>
+</li>
+<li><p>sass选择器可以互相嵌套</p>
+<ul>
+<li><p>父选择器<br>  在使用伪类选择器时 如   ：hover 要在徐娜则其之前加入&amp;<br>  当包含夫选择器标识符的嵌套给i则被打开时 他不会像后代选择器那样进行拼接  而是&amp;被父选择器直接替代</p>
+</li>
+<li><p> 群组选择器</p>
+</li>
+<li><p>子组合选择器和同层组合选择器<br>  “&gt;”  “+”  “~”<br>  上面这三个选择器必须和其他选择器配合使用 以指定浏览器仅选择某种特定上下文中的元素</p>
+<p>  子组合选择器：&gt; 选择一个元素的直接子元素<br>  同层相邻组合选择器： + 选择后面紧跟着的元素<br>  同层全体组合选择器： ~ 选择所有之后的同层元素 不管他们之间隔了多少元素</p>
+</li>
+<li><p>嵌套属性<br>  吧属性名从-的地方划开 在根属性后加个冒号 紧跟一个{}块，<br>  吧子属性写在这个{}块中</p>
+</li>
+</ul>
+</li>
+<li><p>导入sass文件 @import “文件名”</p>
+<ul>
+<li>默认变量值 ！default</li>
+<li>原生css可以导入</li>
+</ul>
+</li>
+<li><p>混合器<br>  使用混合器来实现大段样式的重用<br>  使用@mixin标识符定义<br>  使用@include 定义的名字 来进行引用<br>  可以使用混合器吧样式中的通用样式抽离出来，然后在其他地方重用</p>
+<ul>
+<li><p>选择器的链式继承<br>  继承也可以嵌套 互相继承</p>
+  <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">.one{</span><br><span class="line">}</span><br><span class="line">.two{</span><br><span class="line">@extend .one</span><br><span class="line">}</span><br><span class="line">.three{</span><br><span class="line">@extend .two</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>继承的局限性<br>  也有很多选择器不被支持继承<br>  如 包含选择器（.one.two）<br>  或相邻兄弟选择器（.one+.two）目前不支持继承</p>
+</li>
+<li><p>不要太过于依赖继承 后期很难修改和维护</p>
+</li>
+</ul>
+</li>
+<li><p>sass函数</p>
+<ul>
+<li>字符串函数</li>
+<li>数字函数</li>
+<li>列表函数</li>
+<li>introspection函数</li>
+<li>三元函数</li>
+<li>颜色函数</li>
+</ul>
+</li>
+</ul>
+<h2 id="sass编译css"><a href="#sass编译css" class="headerlink" title="sass编译css"></a>sass编译css</h2><ul>
+<li><p>cmd编译<br>  sass sass.文件名 css.文件名</p>
+</li>
+<li><p>vscode编译<br>  下载 easy sass 重启后在编写完的sass文件界面保存就会自动生成sass文件</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>互联网是如何运作的？</title>
+    <url>/2021/01/10/%E4%BA%92%E8%81%94%E7%BD%91%E8%BF%90%E4%BD%9C%E6%B5%81%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="互联网运作"><a href="#互联网运作" class="headerlink" title="互联网运作"></a>互联网运作</h1> <a id="more"></a>
+<h1 id="互联网时如何运作的"><a href="#互联网时如何运作的" class="headerlink" title="互联网时如何运作的"></a>互联网时如何运作的</h1><ul>
+<li>我们在通过自己的个人客户端访问远程服务器时，都会经过一个流程，接下来我将通过介绍访问bilibili官网主页的形式，来介绍从自己的电脑来进行访问的过程</li>
+</ul>
+<h2 id="从自己电脑访问bilibili主页流程"><a href="#从自己电脑访问bilibili主页流程" class="headerlink" title="从自己电脑访问bilibili主页流程"></a>从自己电脑访问bilibili主页流程</h2><ul>
+<li><p>1.当自己电脑连入互联网时，会获得一个ip地址（客户端）</p>
+</li>
+<li><p>2.访问的哔哩哔哩动画的服务器也接入互联网 同时也会有一个ip地址（服务端）</p>
+</li>
+<li><p>3.客户端在需要时通过互联网与服务端进行通信<br> 电脑发送信息给要访问的服务器 要获取的内容<br> 消息将被转换成电子信号 通过电缆放给服务器<br> 在服务器端将电子信号转换为计算机可以使用的文本数据</p>
+</li>
+</ul>
+<hr>
+<h2 id="关于TCP-IP协议"><a href="#关于TCP-IP协议" class="headerlink" title="关于TCP/IP协议"></a>关于TCP/IP协议</h2><ul>
+<li>当然，上面的流程只是简述了通过自己电脑访问网站的几个关键步骤<br> 那么，自己的电脑到底是通过什么方法去连接到远程的服务器端并将信息传输的呢<br> 我们是通过统称为 TCP/IP协议族 一系列规则俩进行网络通信的</li>
+</ul>
+<blockquote>
+<p>协议是一组规则 用于指定计算机 应如何通过网络进行通信</p>
+</blockquote>
+<h3 id="TCP-IP协议介绍"><a href="#TCP-IP协议介绍" class="headerlink" title="TCP/IP协议介绍"></a>TCP/IP协议介绍</h3><ul>
+<li><p>TCP/IP协议一共分为四层，分别是：<br>  1.应用层</p>
+<pre><code>  提供特定于应用程序的协议 HTTP FTP IMAP</code></pre>
+<p>  2.TCP传输控制层</p>
+<pre><code>  发送数据包到计算机上使用特定端口号的应用程序
+
+  tcp是一种面向连接的可靠字节流服务协议</code></pre>
+<p>  3.IP网络层</p>
+<pre><code>  使用IP地址将数据包发送到特定的计算机</code></pre>
+<p>  4.链路层</p>
+<pre><code>  将二进制数据包与网络信号相互之间转换</code></pre>
+<h3 id="TCP-IP访问流程"><a href="#TCP-IP访问流程" class="headerlink" title="TCP/IP访问流程"></a>TCP/IP访问流程</h3></li>
+<li><p>接下来我们还是使用访问哔哩哔哩官网来对流程进行介绍</p>
+<ol>
+<li><p> 使用应用层的http协议请求获取html文本 消息在发送前会被分解成许多片段 称为数据包</p>
+</li>
+<li><p> 通过应用层进入tcp层后 每个数据包都会被分配一个端口号</p>
+</li>
+<li><p> 进入ip层后 每个数据包将会赋予目标计算机的ip地址</p>
+</li>
+<li><p> 进入链路层后 将数据包的文本信息转译为电子信号 通过电缆发送</p>
+</li>
+<li><p>在电缆的另一端的路由器检查每个数据包中的目标地址<br>并确定将其发送到何处<br>最终数据包到达服务器<br>然后数据包从TCP/IP协议族的底部开始向上运行</p>
+</li>
+<li><p>当数据包开始向上运行时<br>客户端添加的所有路由数据<br>如ip地址和端口号都将从数据包中剥离出来<br>当数据到达栈顶时 数据包恢复成最初始的形式<br>通过端口号可以将数据传递给当前服务器监听该端口的应用程序<br>应用程序根据当前请求数据做出反应<br>服务器将该网站的首页的数据通过刚才的方式返回给你得电脑</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h2><pre><code>当我们在进行访问远程地址时，通常都是由域名来进行对ip地址的绑定来进行访问</code></pre>
+<ul>
+<li>浏览器通过dns来将ip地址与域名识别<ul>
+<li>dns是一个分布式数据库 上面记录了域名和其ip地址的对应关系</li>
+<li>在浏览器中输入网址时 浏览器首先连接dns服务器 获取到该域名的ip地址后 浏览器再连接访问该ip的服务器</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>以上就是通过对访问哔哩哔哩来对互联网运作流程的一个简要介绍</li>
+</ul>
+<p> <a href="https://space.bilibili.com/2882171">bilibili主页</a><br> 图片测试<br> <img src="https://img.pic88.com/preview/2020/08/05/15966333861457328.jpg!s640" alt="图片"></p>
+<p> <em>字体是倾斜的哦</em><br> <strong>字体加粗了呢</strong></p>
+<p> <code>&lt;html&gt;&lt;/html&gt;</code><br> </p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">   &lt;title&gt;我是标题&lt;/title&gt;</span><br><span class="line">   &lt;/head&gt;</span><br><span class="line">   &lt;body&gt;&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<blockquote>
+<p>我的内容是引用的<br>还是一句引用</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>互联网</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新文档</title>
+    <url>/2021/01/09/%E6%96%B0%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<h1 id="这是我的第一篇博客"><a href="#这是我的第一篇博客" class="headerlink" title="这是我的第一篇博客"></a>这是我的第一篇博客</h1><h3 id="这个是三级标题"><a href="#这个是三级标题" class="headerlink" title="这个是三级标题"></a>这个是三级标题</h3><ul>
+<li>列表1</li>
+<li>列表2<br> a 子列表<br> b 子列表</li>
+<li>列表3</li>
+</ul>
+<hr>
+<p> <a href="https://space.bilibili.com/2882171">bilibili主页</a><br> 图片测试<br> <img src="https://img.pic88.com/preview/2020/08/05/15966333861457328.jpg!s640" alt="图片"></p>
+<p> <em>字体是倾斜的哦</em><br> <strong>字体加粗了呢</strong></p>
+<p> <code>&lt;html&gt;&lt;/html&gt;</code><br> </p><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">   &lt;title&gt;我是标题&lt;/title&gt;</span><br><span class="line">   &lt;/head&gt;</span><br><span class="line">   &lt;body&gt;&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<blockquote>
+<p>我的内容是引用的<br>还是一句引用</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>你好</title>
     <url>/2021/03/26/%E4%BD%A0%E5%A5%BD/</url>
     <content><![CDATA[]]></content>
+      <tags>
+        <tag>互联网</tag>
+        <tag>浏览器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浏览器是如何运作的？</title>
+    <url>/2021/01/10/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C%E7%9A%84%EF%BC%9F/</url>
+    <content><![CDATA[<h1 id="关于浏览器在运作时的流程"><a href="#关于浏览器在运作时的流程" class="headerlink" title="关于浏览器在运作时的流程"></a>关于浏览器在运作时的流程</h1><h1 id="浏览器是如何运作的"><a href="#浏览器是如何运作的" class="headerlink" title="浏览器是如何运作的"></a>浏览器是如何运作的</h1><ul>
+<li>我们要理解浏览器是如何运作的过程，首先要理解一个概念，也就是进程与线程</li>
+</ul>
+<blockquote>
+<p> 进程是操作系统进行资源分配和调度的基本单元 可以申请和拥有计算机资源 进程是程序的基本执行实体<br>线程是操作系统能够进行运算调度的最小单位 一个进程中可以并发多个线程 每条线程并行执行不同的任务</p>
+</blockquote>
+<ul>
+<li><p>在我们了解了进程与线程的概念以后，就可以和你介绍浏览器的运作流程了</p>
+</li>
+<li><p>当我们在电脑上打开打了浏览器时，相当于运行了浏览器这个应用程序</p>
+<h2 id="浏览器的多进程结构"><a href="#浏览器的多进程结构" class="headerlink" title="浏览器的多进程结构"></a>浏览器的多进程结构</h2></li>
+<li><p>而浏览器这个是一个多进程的浏览器结构，根据进程功能不同来拆分浏览器，我们可以将浏览器分解为：</p>
+<p> 1.浏览器进程</p>
+<pre><code> 负责控制浏览器除标签页外的用户界面 
+
+ 包括地址栏 书签 后退 和前进按钮 以及负责与浏览器的其他进程协调工作</code></pre>
+<p> 2.GPU进程</p>
+<pre><code> 负责整个浏览器界面的渲染</code></pre>
+<p> 3.插件进程</p>
+<pre><code> 负责控制网站使用的所有插件</code></pre>
+<p> 4.缓存进程<br> 5.网络进程</p>
+<pre><code>负责发起接受网络请求</code></pre>
+<p> 6.渲染器进程</p>
+<pre><code>用来控制显示tab标签内的所有内容 浏览器在默认情况下会为每个标签页创建一个渲染器进程</code></pre>
+<h2 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h2></li>
+<li><p>当你在浏览器地址栏输入地址时 浏览器的ui线程会捕捉你的输入内容<br>如果访问的是网址 则ui线程会启动一个网络线程来请求dns进行域名解析<br>接着连接服务器获取数据</p>
+</li>
+<li><p>当网络线程获取到数据后 会通过 safeBrowsing来检查站点（检查是否是恶意站点，会弹出警告） </p>
+<p>   safebrowsing是谷歌内置的一套站点安全系统 通过检测该站点的数据来判断是否安全</p>
+</li>
+<li><p>当安全校验通过时 网络线程会通知ui线程准备好了 然后ui线程会创建一个渲染器进程来渲染页面 浏览器进程通过ipc管道将数据传递给渲染器进程</p>
+</li>
+<li><p>渲染器进程的核心任务就是把 html css js 等资源渲染成用户可以交互的web界面 渲染器进程的主线程将html进行解析 构造dom数据结构 在加载完成后 我们会获得一个dom tree</p>
+</li>
+<li><p>在知道dom的结构和每个节点的样式后 接下来需要知道每个节点放在页面上的哪个位置 也就是节点的坐标以及该节点需要占用多大的区域 这个阶段被称为layout布局 主线程通过遍历dom和计算好的样式来生成layout ree 上面的每个节点都记录了x y 坐标与边框尺寸 （这里注意dom tree 与layout tree并不是一一对应的 设置的display：none的节点并不会出现在layout tree上 而在before伪类添加了content值的元素会出现在layout tree 而不会出现在dom tree上）</p>
+</li>
+<li><p>为了保证在屏幕上展示正确的层级 主线程遍历layout tree创建一个绘制记录表 记录了绘制的顺序 该阶段被称为绘制 paint</p>
+</li>
+<li><p>主线程遍历layout tree 生成layer tree</p>
+</li>
+<li><p>主线程将这些layer tree 和绘制信息传递给合成器线程  合成器线程将他们切分为许多图块 然后将每个图块发送给栅格化线程 栅格化线程栅格化每个图块 并将他们存储在gpu内存中 当图块栅格化完成后 合成器线程将收集称为“draw quads”的图块信息 这些信息里记录了图块在内存中的位置 和在页面的那个位置绘制图块的信息 根据这些信息合成器线程生成了一个合成器帧 这个合成器帧通过ipc传送给浏览器进程 接着浏览器进程将合成器帧传送到gpu 然后gpu渲染展示到屏幕上 当页面发生变化 比如滚动页面 都会生成一个新的合成器帧 重复之前的流程</p>
+</li>
+<li><p>此时，你就可以看到显示在可视区域的图块了</p>
+</li>
+</ul>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li><p>为什么要尽量避免重绘和重排</p>
+<p>   可能会导致掉帧 这是因为j有可能js执行阻塞了主线程 而css中有个动画属性叫transform 通过该属性实现的动画不会经过布局和绘制 而是直接运行在合成器线程和栅格化线程中 所以不会受到主线程中js执行的影响</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>互联网</tag>
+        <tag>浏览器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>javascript数据结构 队列结构（Queue）</title>
+    <url>/2021/01/24/%EF%BC%88Queue%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="JavaScript实现队列结构（Queue）"><a href="#JavaScript实现队列结构（Queue）" class="headerlink" title="JavaScript实现队列结构（Queue）"></a>JavaScript实现队列结构（Queue）</h1><!-- -->
+<ul>
+<li><p>队列是一种受限的线性表，特点为先进先出（FIFO：first in first out）<br><img src="/images/%E9%98%9F%E5%88%97%E7%9A%84%E7%BB%93%E6%9E%84.png" alt="图片"></p>
+</li>
+<li><p>在表的末尾进行添加 再表的前端进行删除</p>
+</li>
+<li><p>队列和栈一样 有两种方式实现，本章介绍使用数组实现的队列</p>
+<h1 id="队列的常见操作："><a href="#队列的常见操作：" class="headerlink" title="队列的常见操作："></a>队列的常见操作：</h1></li>
+<li><p>enqueue（element）：向队列尾部添加一个（或多个）新的项；</p>
+</li>
+<li><p>dequeue（）：移除队列的第一（即排在队列最前面的）项，并返回被移除的元素；</p>
+</li>
+<li><p>front（）：返回队列中的第一个元素——最先被添加，也将是最先被移除的元素。队列不做任何变动（不移除元素，只返回元素信息与Stack类的peek方法非常类似）；</p>
+</li>
+<li><p>isEmpty（）：如果队列中不包含任何元素，返回true，否则返回false；</p>
+</li>
+<li><p>size（）：返回队列包含的元素个数，与数组的length属性类似；</p>
+</li>
+<li><p>toString（）：将队列中的内容，转成字符串形式；</p>
+</li>
+</ul>
+<p>#封装队列</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">// 封装一个队列</span><br><span class="line">function queue(){</span><br><span class="line">    // 属性</span><br><span class="line">    this.items=[];</span><br><span class="line">    // 方法</span><br><span class="line">    // 队列中添加一个元素</span><br><span class="line">   queue.prototype.enqueue=function(element){</span><br><span class="line">        this.items.push(element)</span><br><span class="line">    }</span><br><span class="line">    // 队列中移除一个元素</span><br><span class="line">    queue.prototype.dequeue=function(){</span><br><span class="line">      return  this.items.shift()</span><br><span class="line">    }</span><br><span class="line">    // 查看队列前端的元素</span><br><span class="line">    queue.prototype.front=function(){</span><br><span class="line">        return this.items[0]</span><br><span class="line">    }</span><br><span class="line">    // 查看队列长度</span><br><span class="line">    queue.prototype.size=function(){</span><br><span class="line">       return this.items.length</span><br><span class="line">    }</span><br><span class="line">    // 检查队列是否为空</span><br><span class="line">    queue.prototype.isEmpty=function(){</span><br><span class="line">        return this.items[this.items.length]==0</span><br><span class="line">    }</span><br><span class="line">    // 队列的toString方法</span><br><span class="line">    queue.prototype.toString=function(){</span><br><span class="line">        var resstring='';</span><br><span class="line">        for(var i=0;i&lt;this.items.length;i++){</span><br><span class="line">            resstring+=this.items[i]+'      ';</span><br><span class="line">        }</span><br><span class="line">        return resstring;</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="使用队列实现击鼓传花"><a href="#使用队列实现击鼓传花" class="headerlink" title="使用队列实现击鼓传花"></a>使用队列实现击鼓传花</h2><ul>
+<li> 使用队列实现小游戏：击鼓传花，传入一组数据和设定的数字num，循环遍历数组内元素，遍历到的元素为指定数字num时将该元素删除，直至数组剩下一个元素。</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">// 击鼓传花</span><br><span class="line"></span><br><span class="line">  var passgame=function(namelist,num){</span><br><span class="line">      // 1.调用队列</span><br><span class="line">      var queue1=new queue()</span><br><span class="line"></span><br><span class="line">      // 2.将名字加入到队列中</span><br><span class="line">      for(i=0;i&lt;namelist.length;i++){</span><br><span class="line">          queue1.enqueue(namelist[i])</span><br><span class="line">      }</span><br><span class="line">      // 3.开始数数字</span><br><span class="line"></span><br><span class="line">      while (queue1.size()&gt;1) {</span><br><span class="line">          for(i=0;i&lt;num-1;i++){</span><br><span class="line">              queue1.enqueue(queue1.dequeue())</span><br><span class="line">          }</span><br><span class="line">          queue1.dequeue();</span><br><span class="line">          </span><br><span class="line">      }</span><br><span class="line">       alert(queue1.size())</span><br><span class="line">     return queue1.front()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  }</span><br><span class="line">  // 测试程序</span><br><span class="line">  names=['dwdw','dth','zad','wwf','jtg']</span><br><span class="line">  alert(passgame(names,3))</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="优先级队列"><a href="#优先级队列" class="headerlink" title="优先级队列"></a>优先级队列</h1><ul>
+<li>优先级队列主要考虑的问题为：<ul>
+<li>每个元素不再只是一个数据，还包含数据的优先级；</li>
+<li>在添加数据过程中，根据优先级放入到正确位置；</li>
+<li>优先级队列在封装方法时 特别要考虑的就是插入方法 其他方法的实现与普通队列并无区别</li>
+</ul>
+</li>
+</ul>
+<h2 id="优先级队列的封装"><a href="#优先级队列的封装" class="headerlink" title="优先级队列的封装"></a>优先级队列的封装</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">function Prorioqueue(){</span><br><span class="line">        // 在prioriqueue内部重新创建了一个类 可以理解为内部类</span><br><span class="line">        function Queueelement(element,prorio){</span><br><span class="line">            this.element=element;</span><br><span class="line">            this.prorio=prorio;</span><br><span class="line">        }</span><br><span class="line">     //封装属性</span><br><span class="line">    this.items=[];</span><br><span class="line"></span><br><span class="line">    // 封装方法</span><br><span class="line"></span><br><span class="line">    Prorioqueue.prototype.enqueue=function(element,prorio){</span><br><span class="line"></span><br><span class="line">        var queueelement=new Queueelement(element,prorio)</span><br><span class="line"></span><br><span class="line">        if(this.items==0){</span><br><span class="line">            this.items.push(queueelement)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        }else{</span><br><span class="line">            var add=false;</span><br><span class="line">            for(i=0;i&lt;this.items.length;i++){</span><br><span class="line">                if (queueelement.prorio&lt;this.items[i].prorio) {</span><br><span class="line">                    this.items.splice(i,0,queueelement)</span><br><span class="line">                    add=true;</span><br><span class="line">                    break;</span><br><span class="line">                        </span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        if(!add){</span><br><span class="line">             this.items.push(queueelement)</span><br><span class="line">         }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    // 队列中移除一个元素</span><br><span class="line">     Prorioqueue.prototype.dequeue=function(){</span><br><span class="line">      return  this.items.shift()</span><br><span class="line">    }</span><br><span class="line">    // 查看队列前端的元素</span><br><span class="line">    Prorioqueue.prototype.front=function(){</span><br><span class="line">        return this.items[0]</span><br><span class="line">    }</span><br><span class="line">    // 查看队列长度</span><br><span class="line">    Prorioqueue.prototype.size=function(){</span><br><span class="line">       return this.items.length</span><br><span class="line">    }</span><br><span class="line">    // 检查队列是否为空</span><br><span class="line">    Prorioqueue.prototype.isEmpty=function(){</span><br><span class="line">        return this.items[this.items.length]==0</span><br><span class="line">    }</span><br><span class="line">    // 队列的toString方法</span><br><span class="line">    Prorioqueue.prototype.toString=function(){</span><br><span class="line">    var resstring='';</span><br><span class="line">    for(var i=0;i&lt;this.items.length;i++){</span><br><span class="line">        resstring+=this.items[i].element+'-'+this.items[i].prorio;</span><br><span class="line">        }</span><br><span class="line">        return resstring;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>javascript</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>版本控制工具git</title>
+    <url>/2021/01/13/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7git/</url>
+    <content><![CDATA[<h1 id="版本控制工具"><a href="#版本控制工具" class="headerlink" title="版本控制工具"></a>版本控制工具</h1><ul>
+<li>版本控制工具  <ul>
+<li>在我们的程序开发中，我们通常会不断对程序进行修改，而版本控制工具为我们追踪了多个版本的开发，有了版本控制工具，我们就可以放开手开发，而不用担心之前的版本无法寻回。</li>
+<li>版本控制工具对于我们开发人员来说，通常以下几个功能是很有必要的：<ul>
+<li>版本管理<ul>
+<li>我们可以通过版本控制工具来进行对正在开发项目的的版本管理，可以很方便的回溯到过去的版本</li>
+</ul>
+</li>
+<li>数据备份<ul>
+<li>版本控制工具为我们备份了之前版本的数据记录</li>
+</ul>
+</li>
+<li>权限控制<ul>
+<li>在开发时，不同的开发人员有不同的对项目的管理权限 </li>
+</ul>
+</li>
+<li>历史及记录<ul>
+<li>版本控制工具中记录了开发人员操作的历史与记录</li>
+</ul>
+</li>
+<li>分支管理<ul>
+<li>我们可以在开发时 不只是进行一个主项目的开发，可以独立与主项目 建立分支项目进行独立开发</li>
+</ul>
+</li>
+<li>协同修改<ul>
+<li>不同的开发人员可以一起对一个项目进行开发与维护</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="版本控制工具git"><a href="#版本控制工具git" class="headerlink" title="版本控制工具git"></a>版本控制工具git</h1><ul>
+<li><p>git作为分布式版本控制工具 目前是时间市面上做火热的版本控制工具</p>
+<ul>
+<li>git的优势有很多，如：大部分操作在本地完成，不需要联网等，能够有效、高速的处理从很小到非常大的项目版本管理.</li>
+</ul>
+</li>
+<li><p>git和代码托管中心</p>
+<ul>
+<li><p>局域网环境下 gitlab服务器</p>
+</li>
+<li><p>外网环境下 github 码云</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="git命令行操作"><a href="#git命令行操作" class="headerlink" title="git命令行操作"></a>git命令行操作</h1><ul>
+<li><p>这里只介绍git常用操作命令</p>
+</li>
+<li><p>本地库初始化<br>  git init</p>
+</li>
+<li><p>设置签名</p>
+<ul>
+<li><p>用来区分不同开发人员身份</p>
+</li>
+<li><p>项目级别/仓库级别</p>
+<ul>
+<li><p>只在本地库范围内有效<br>git config user.name tom_pro<br>git config user.email <a href="mailto:goodMorning_pro@atguigu.com">goodMorning_pro@atguigu.com</a></p>
+</li>
+<li><p>此时信息保存到  .git/config</p>
+</li>
+</ul>
+</li>
+<li><p>系统用户级别</p>
+<ul>
+<li><p>登录当前操作系统的用户范围<br>git config–global user.name tom_glb<br>git config–global <a href="mailto:goodMorning_pro@atguigu.com_glb">goodMorning_pro@atguigu.com_glb</a></p>
+</li>
+<li><p>此时信息保存到：~/.gitconfig 文件</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>添加，提交以及查看信息操作</p>
+<ul>
+<li><p>状态查看：git status  查看工作区 暂存区状态</p>
+<blockquote>
+<p>查看具体内容 cat<br>新建文件 vim<br>删除文件 rm<br>文件保存并退出的操作：先按esc 再按：+wq<br>ll  查看当前文件状态</p>
+</blockquote>
+</li>
+<li><p>添加操作：git add【name】 将工作区的新建/修改 添加到暂存区</p>
+</li>
+<li><p>提交操作：git commit -m“备注信息”【name】 将暂存区的内容提交到本地库</p>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>git</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>http与https</title>
+    <url>/2021/01/10/http%E4%B8%8Ehttps%E5%8D%8F%E8%AE%AE/</url>
+    <content><![CDATA[<h1 id="http详解"><a href="#http详解" class="headerlink" title="http详解"></a>http详解</h1><ul>
+<li>HTTP 是超文本传输协议，也就是HyperText Transfer Protocol。</li>
+</ul>
+<h2 id="详解http协议"><a href="#详解http协议" class="headerlink" title="详解http协议"></a>详解http协议</h2><h3 id="可以拆分成三个部分：超文本-传输-协议"><a href="#可以拆分成三个部分：超文本-传输-协议" class="headerlink" title="可以拆分成三个部分：超文本 传输 协议"></a>可以拆分成三个部分：超文本 传输 协议</h3><ul>
+<li><p>协议:<br>  HTTP 是一个用在计算机世界里的协议。它使用计算机能够理解的语言确立了一种计算机之间交流通信的规范（两个以上的参与者），以及相关的各种控制和错误处理方式（行为约定和规范）。</p>
+</li>
+<li><p>传输:<br>  我们在上网冲浪时，浏览器是请求方 A ，百度网站就是应答方 B。双方约定用 HTTP 协议来通信，于是浏览器把请求数据发送给网站，网站再把一些数据返回给浏览器，最后由浏览器渲染在屏幕，就可以看到图片、视频了。<br>  http是一个双向协议<br>  数据虽然在a和b之间传输 但允许中间有中转或接力</p>
+</li>
+<li><p>超文本:<br> http传输的内容是超文本<br> 超文本：超越了普通文本的文本，他是文字，图片，视频等的混合体 最关键有超链接，能从一个超文本跳转到另一个超文本 html就是最常见的超文本</p>
+</li>
+</ul>
+<ul>
+<li>此时 我们可以对http进行更准确的定义：http是一个在计算机世界里专门在【两点】之间【传输】文字，图片，音频，视频等【超文本】数据的【约定和规范】</li>
+</ul>
+<h3 id="问题：那「HTTP-是用于从互联网服务器传输超文本到本地浏览器的协议HTTP」-，这种说法正确吗？"><a href="#问题：那「HTTP-是用于从互联网服务器传输超文本到本地浏览器的协议HTTP」-，这种说法正确吗？" class="headerlink" title="问题：那「HTTP 是用于从互联网服务器传输超文本到本地浏览器的协议HTTP」 ，这种说法正确吗？"></a>问题：那「HTTP 是用于从互联网服务器传输超文本到本地浏览器的协议HTTP」 ，这种说法正确吗？</h3><ul>
+<li>这种说法是不正确的。因为也可以是「服务器&lt; – &gt;服务器」，所以采用两点之间的描述会更准确。</li>
+</ul>
+<h3 id="常见状态码"><a href="#常见状态码" class="headerlink" title="常见状态码"></a>常见状态码</h3><ul>
+<li><p>1xx 类状态码属于提示信息，是协议处理中的一种中间状态，实际用到的比较少。</p>
+</li>
+<li><p>2xx 类状态码表示服务器成功处理了客户端的请求，也是我们最愿意看到的状态。<br>「200 OK」是最常见的成功状态码，表示一切正常。如果是非 HEAD 请求，服务器返回的响应头都会有 body 数据。<br>「204 No Content」也是常见的成功状态码，与 200 OK 基本相同，但响应头没有 body 数据。<br>「206 Partial Content」是应用于 HTTP 分块下载或断电续传，表示响应返回的 body 数据并不是资源的全部，而是其中的一部分，也是服务器处理成功的状态。</p>
+</li>
+<li><p>3xx 类状态码表示客户端请求的资源发送了变动，需要客户端用新的 URL 重新发送请求获取资源，也就是重定向。<br>「301 Moved Permanently」表示永久重定向，说明请求的资源已经不存在了，需改用新的 URL 再次访问。<br>「302 Moved Permanently」表示临时重定向，说明请求的资源还在，但暂时需要用另一个 URL 来访问。<br>301 和 302 都会在响应头里使用字段 Location，指明后续要跳转的 URL，浏览器会自动重定向新的 URL。<br>「304 Not Modified」不具有跳转的含义，表示资源未修改，重定向已存在的缓冲文件，也称缓存重定向，用于缓存控制。</p>
+</li>
+<li><p>4xx 类状态码表示客户端发送的报文有误，服务器无法处理，也就是错误码的含义。<br>「400 Bad Request」表示客户端请求的报文有错误，但只是个笼统的错误。<br>「403 Forbidden」表示服务器禁止访问资源，并不是客户端的请求出错。<br>「404 Not Found」表示请求的资源在服务器上不存在或未找到，所以无法提供给客户端。</p>
+</li>
+<li><p>5xx 类状态码表示客户端请求报文正确，但是服务器处理时内部发生了错误，属于服务器端的错误码。<br>「500 Internal Server Error」与 400 类型，是个笼统通用的错误码，服务器发生了什么错误，我们并不知道。<br>「501 Not Implemented」表示客户端请求的功能还不支持，类似“即将开业，敬请期待”的意思。<br>「502 Bad Gateway」通常是服务器作为网关或代理时返回的错误码，表示服务器自身工作正常，访问后端服务器发生了错误。<br>「503 Service Unavailable」表示服务器当前很忙，暂时无法响应服务器，类似“网络服务正忙，请稍后重试”的意思。</p>
+</li>
+</ul>
+<h3 id="常见字段"><a href="#常见字段" class="headerlink" title="常见字段"></a>常见字段</h3><ul>
+<li><p>host：客户端发送请求时，用来指定服务器的域名</p>
+</li>
+<li><p>服务器在返回数据时，会有 Content-Length 字段，表明本次回应的数据长度。</p>
+</li>
+<li><p>Connection 字段最常用于客户端要求服务器使用 TCP 持久连接，以便其他请求复用。<br>  HTTP/1.1 版本的默认连接都是持久连接，但为了兼容老版本的 HTTP，需要指定 Connection 首部字段的值为 Keep-Alive</p>
+</li>
+<li><p>Content-Type 字段用于服务器回应时，告诉客户端，本次数据是什么格式。</p>
+</li>
+<li><p>Content-Encoding 字段说明数据的压缩方法。表示服务器返回的数据使用了什么压缩格式</p>
+</li>
+</ul>
+<h2 id="get与post"><a href="#get与post" class="headerlink" title="get与post"></a>get与post</h2><ul>
+<li><p>说一下 GET 和 POST 的区别？</p>
+<p> Get 方法的含义是请求从服务器获取资源，这个资源可以是静态的文本、页面、图片视频等。<br> 比如，你打开我的文章，浏览器就会发送 GET 请求给服务器，服务器就会返回文章的所有文字及资源。<br> 而POST 方法则是相反操作，它向 URI 指定的资源提交数据，数据就放在报文的 body 里。<br> 比如，你在我文章底部，敲入了留言后点击「提交」，浏览器就会执行一次 POST 请求，把你的留言文字放进了报文 body 里，然后拼接好 POST 请求头，通过 TCP 协议发送给服务器。</p>
+</li>
+</ul>
+<ul>
+<li><p>GET与POST在传输过程中是安全和幂等的吗？</p>
+<p>  GET 方法就是安全且幂等的，因为它是「只读」操作，无论操作多少次，服务器上的数据都是安全的，且每次的结果都是相同的。<br>  POST 因为是「新增或提交数据」的操作，会修改服务器上的资源，所以是不安全的，且多次提交数据就会创建多个资源，所以不是幂等的。 </p>
+</li>
+</ul>
+<blockquote>
+<p>先说明下安全和幂等的概念：<br>    在 HTTP 协议里，所谓的「安全」是指请求方法不会「破坏」服务器上的资源。<br>    所谓的「幂等」，意思是多次执行相同的操作，结果都是「相同」的。</p>
+</blockquote>
+<h2 id="http特性"><a href="#http特性" class="headerlink" title="http特性"></a>http特性</h2><ul>
+<li><p>HTTP 最凸出的优点是「简单、灵活和易于扩展、应用广泛和跨平台」</p>
+<p>  简单：HTTP 基本的报文格式就是 header + body，头部信息也是 key-value 简单文本的形式，易于理解，降低了学习和使用的门槛。</p>
+<p>  灵活易于拓展：HTTP协议里的各类请求方法、URI/URL、状态码、头字段等每个组成要求都没有被固定死，都允许开发人员自定义和扩充。<br>  同时 HTTP 由于是工作在应用层（ OSI 第七层），则它下层可以随意变化。<br>  HTTPS 也就是在 HTTP 与 TCP 层之间增加了 SSL/TLS 安全传输层，HTTP/3 甚至把 TCPP 层换成了基于 UDP 的 QUIC。</p>
+<p>  应用广泛和跨平台：互联网发展至今，HTTP 的应用范围非常的广泛，从台式机的浏览器到手机上的各种 APP，从看新闻、刷贴吧到购物、理财、吃鸡，HTTP 的应用片地开花，同时天然具有跨平台的优越性。</p>
+</li>
+<li><p>HTTP 协议里有优缺点一体的双刃剑，分别是「无状态、明文传输」，同时还有一大缺点「不安全」</p>
+<p>  无状态的好处，因为服务器不会去记忆 HTTP 的状态，所以不需要额外的资源来记录状态信息，这能减轻服务器的负担，能够把更多的 CPU 和内存用来对外提供服务。<br>  无状态的坏处，既然服务器没有记忆能力，它在完成有关联性的操作时会非常麻烦。<br>  例如登录-&gt;添加购物车-&gt;下单-&gt;结算-&gt;支付，这系列操作都要知道用户的身份才行。但服务器不知道这些请求是有关联的，每次都要问一遍身份信息。<br>  这样每操作一次，都要验证信息，这样的购物体验还能愉快吗？别问，问就是酸爽！<br>  对于无状态的问题，解法方案有很多种，其中比较简单的方式用 Cookie 技术。<br>  Cookie 通过在请求和响应报文中写入 Cookie 信息来控制客户端的状态。<br>  相当于，在客户端第一次请求后，服务器会下发一个装有客户信息的「小贴纸」，后续客户端请求服务器的时候，带上「小贴纸」，服务器就能认得了了。</p>
+<p>  明文意味着在传输过程中的信息，是可方便阅读的，通过浏览器的 F12 控制台或 Wireshark 抓包都可以直接肉眼查看，为我们调试工作带了极大的便利性。<br>  但是这正是这样，HTTP 的所有信息都暴露在了光天化日下，相当于信息裸奔。在传输的漫长的过程中，信息的内容都毫无隐私可言，很容易就能被窃取，如果里面有你的账号密码信息，那你号没了。</p>
+<p>  HTTP 比较严重的缺点就是不安全：<br>  通信使用明文（不加密），内容可能会被窃听。比如，账号信息容易泄漏，那你号没了。<br>  不验证通信方的身份，因此有可能遭遇伪装。比如，访问假的淘宝、拼多多，那你钱没了。<br>  无法证明报文的完整性，所以有可能已遭篡改。比如，网页上植入垃圾广告，视觉污染，眼没了。<br>  HTTP 的安全问题，可以用 HTTPS 的方式解决，也就是通过引入 SSL/TLS 层，使得在安全上达到了极致。</p>
+</li>
+</ul>
+<ul>
+<li><p>http性能：HTTP 协议是基于 TCP/IP，并且使用了「请求 - 应答」的通信模式，所以性能的关键就在这两点里</p>
+<p>  早期 HTTP/1.0 性能上的一个很大的问题，那就是每发起一个请求，都要新建一次 TCP 连接（三次握手），而且是串行请求，做了无畏的 TCP 连接建立和断开，增加了通信开销。<br>  为了解决上述 TCP 连接问题，HTTP/1.1 提出了长连接的通信方式，也叫持久连接。这种方式的好处在于减少了 TCP 连接的重复建立和断开所造成的额外开销，减轻了服务器端的负载。<br>  持久连接的特点是，只要任意一端没有明确提出断开连接，则保持 TCP 连接状态。</p>
+<p>  HTTP/1.1 采用了长连接的方式，这使得管道（pipeline）网络传输成为了可能。<br>  即可在同一个 TCP 连接里面，客户端可以发起多个请求，只要第一个请求发出去了，不必等其回来，就可以发第二个请求出去，可以减少整体的响应时间。<br>  举例来说，客户端需要请求两个资源。以前的做法是，在同一个TCP连接里面，先发送 A 请求，然后等待服务器做出回应，收到后再发出 B 请求。管道机制则是允许浏览器同时发出 A 请求和 B 请求。<br>  但是服务器还是按照顺序，先回应 A 请求，完成后再回应 B 请求。要是 前面的回应特别慢，后面就会有许多请求排队等着。这称为「队头堵塞」。</p>
+<p>  「请求 - 应答」的模式加剧了 HTTP 的性能问题。<br>  因为当顺序发送的请求序列中的一个请求因为某种原因被阻塞时，在后面排队的所有请求也一同被阻塞了，会招致客户端一直请求不到数据，这也就是「队头阻塞」。好比上班的路上塞车。<br>  总之 HTTP/1.1 的性能一般般，后续的 HTTP/2 和 HTTP/3 就是在优化 HTTP 的性能。</p>
+</li>
+</ul>
+<h2 id="http与https"><a href="#http与https" class="headerlink" title="http与https"></a>http与https</h2><ul>
+<li><p>http与https的区别<br>  HTTP 是超文本传输协议，信息是明文传输，存在安全风险的问题。HTTPS 则解决 HTTP 不安全的缺陷，在 TCP 和 HTTP 网络层之间加入了 SSL/TLS 安全协议，使得报文能够加密传输。<br>  HTTP 连接建立相对简单， TCP 三次握手之后便可进行 HTTP 的报文传输。而 HTTPS 在 TCP 三次握手之后，还需进行 SSL/TLS 的握手过程，才可进入加密报文传输。<br>  HTTP 的端口号是 80，HTTPS 的端口号是 443。<br>  HTTPS 协议需要向 CA（证书权威机构）申请数字证书，来保证服务器的身份是可信的。</p>
+</li>
+<li><p>https解决了哪些问题<br>  信息加密：交互信息无法被窃取，但你的号会因为「自身忘记」账号而没。<br>  校验机制：无法篡改通信内容，篡改了就不能正常显示，但百度「竞价排名」依然可以搜索垃圾广告。<br>  身份证书：证明淘宝是真的淘宝网，但你的钱还是会因为「剁手」而没。</p>
+</li>
+<li><p>https如何解决上面三个问题<br>  混合加密的方式实现信息的机密性，解决了窃听的风险。<br>  摘要算法的方式来实现完整性，它能够为数据生成独一无二的「指纹」，指纹用于校验数据的完整性，解决了篡改的风险。<br>  将服务器公钥放入到数字证书中，解决了冒充的风险。</p>
+</li>
+<li><p>https如何建立的<br>  SSL/TLS 协议基本流程：<br>  客户端向服务器索要并验证服务器的公钥。<br>  双方协商生产「会话秘钥」。<br>  双方采用「会话秘钥」进行加密通信。                                      前两步是ssl/tls的建立过程 也就是握手阶段</p>
+</li>
+</ul>
+<h2 id="html演变"><a href="#html演变" class="headerlink" title="html演变"></a>html演变</h2><ul>
+<li><p>HTTP/1.1 相比 HTTP/1.0 性能上的改进：<br>  使用 TCP 长连接的方式改善了 HTTP/1.0 短连接造成的性能开销。<br>  支持 管道（pipeline）网络传输，只要第一个请求发出去了，不必等其回来，就可以发第二个请求出去，可以减少整体的响应时间。</p>
+</li>
+<li><p>但 HTTP/1.1 还是有性能瓶颈：<br>  请求 / 响应头部（Header）未经压缩就发送，首部信息越多延迟越大。只能压缩 Body 的部分；<br>  发送冗长的首部。每次互相发送相同的首部造成的浪费较多；<br>  服务器是按请求的顺序响应的，如果服务器响应慢，会招致客户端一直请求不到数据，也就是队头阻塞；<br>  没有请求优先级控制；<br>  请求只能从客户端开始，服务器只能被动响应。</p>
+</li>
+<li><p>HTTP/2 协议是基于 HTTPS 的，所以 HTTP/2 的安全性也是有保障的</p>
+<ul>
+<li>头部压缩<br>HTTP/2 会压缩头（Header）如果你同时发出多个请求，他们的头是一样的或是相似的，那么，协议会帮你消除重复的分。<br>这就是所谓的 HPACK 算法：在客户端和服务器同时维护一张头信息表，所有字段都会存入这个表，生成一个索引号，以后就不发送同样字段了，只发送索引号，这样就提高速度了。</li>
+<li>二进制格式<br>HTTP/2 不再像 HTTP/1.1 里的纯文本形式的报文，而是全面采用了二进制格式。<br>头信息和数据体都是二进制，并且统称为帧（frame）：头信息帧和数据帧。<br>这样虽然对人不友好，但是对计算机非常友好，因为计算机只懂二进制，那么收到报文后，无需再将明文的报文转成二进制，而是直接解析二进制报文，这增加了数据传输的效率。</li>
+<li>HTTP/2 的数据包不是按顺序发送的，同一个连接里面连续的数据包，可能属于不同的回应。因此，必须要对数据包做标记，指出它属于哪个回应。<br>每个请求或回应的所有数据包，称为一个数据流（Stream）。<br>每个数据流都标记着一个独一无二的编号，其中规定客户端发出的数据流编号为奇数， 服务器发出的数据流编号为偶数<br>客户端还可以指定数据流的优先级。优先级高的请求，服务器就先响应该请求。</li>
+<li>HTTP/2 是可以在一个连接中并发多个请求或回应，而不用按照顺序一一对应。<br>移除了 HTTP/1.1 中的串行请求，不需要排队等待，也就不会再出现「队头阻塞」问题，降低了延迟，大幅度提高了连接的利用率。<br>举例来说，在一个 TCP 连接里，服务器收到了客户端 A 和 B 的两个请求，如果发现 A 处理过程非常耗时，于是就回应 A 请求已经处理好的部分，接着回应 B 请求，完成后，再回应 A 请求剩下的部分。</li>
+<li>HTTP/2 还在一定程度上改善了传统的「请求 - 应答」工作模式，服务不再是被动地响应，也可以主动向客户端发送消息。<br>举例来说，在浏览器刚请求 HTML 的时候，就提前把可能会用到的 JS、CSS 文件等静态资源主动发给客户端，减少延时的等待，也就是服务器推送（Server Push，也叫 Cache Push）。</li>
+</ul>
+</li>
+<li><p>HTTP/2 有哪些缺陷？HTTP/3 做了哪些优化？</p>
+<ul>
+<li>HTTP/2 主要的问题在于：多个 HTTP 请求在复用一个 TCP 连接，下层的 TCP 协议是不知道有多少个 HTTP 请求的。<br>所以一旦发生了丢包现象，就会触发 TCP 的重传机制，这样在一个 TCP 连接中的所有的 HTTP 请求都必须等待这个丢了的包被重传回来。<br>  HTTP/1.1 中的管道（ pipeline）传输中如果有一个请求阻塞了，那么队列后请求也统统被阻塞住了<br>  HTTP/2 多请求复用一个TCP连接，一旦发生丢包，就会阻塞住所有的 HTTP 请求。</li>
+<li>这都是基于 TCP 传输层的问题，所以 HTTP/3 把 HTTP 下层的 TCP 协议改成了 UDP！<br>UDP 发生是不管顺序，也不管丢包的，所以不会出现 HTTP/1.1 的队头阻塞 和 HTTP/2 的一个丢包全部重传问题。<br>大家都知道 UDP 是不可靠传输的，但基于 UDP 的 QUIC 协议 可以实现类似 TCP 的可靠性传输。<br>  QUIC 有自己的一套机制可以保证传输的可靠性的。当某个流发生丢包时，只会阻塞这个流，其他流不会受到影响。<br>  TL3 升级成了最新的 1.3 版本，头部压缩算法也升级成了 QPack。<br>  HTTPS 要建立一个连接，要花费 6 次交互，先是建立三次握手，然后是 TLS/1.3 的三次握手。QUIC 直接把以往的 TCP 和 TLS/1.3 的 6 次交互合并成了 3 次，减少了交互次数。<br>所以， QUIC 是一个在 UDP 之上的伪 TCP + TLS + HTTP/2 的多路复用的协议。<br>QUIC 是新协议，对于很多网络设备，根本不知道什么是 QUIC，只会当做 UDP，这样会出现新的问题。所以 HTTP/3 现在普及的进度非常的缓慢，不知道未来 UDP 是否能够逆袭 TCP。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>互联网</tag>
+        <tag>http</tag>
+      </tags>
   </entry>
 </search>
