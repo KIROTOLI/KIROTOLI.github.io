@@ -696,15 +696,6 @@
       </tags>
   </entry>
   <entry>
-    <title>你好</title>
-    <url>/2021/03/26/%E4%BD%A0%E5%A5%BD/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>互联网</tag>
-        <tag>浏览器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>浏览器是如何运作的？</title>
     <url>/2021/01/10/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C%E7%9A%84%EF%BC%9F/</url>
     <content><![CDATA[<h1 id="关于浏览器在运作时的流程"><a href="#关于浏览器在运作时的流程" class="headerlink" title="关于浏览器在运作时的流程"></a>关于浏览器在运作时的流程</h1><h1 id="浏览器是如何运作的"><a href="#浏览器是如何运作的" class="headerlink" title="浏览器是如何运作的"></a>浏览器是如何运作的</h1><ul>
@@ -1019,6 +1010,166 @@
       <tags>
         <tag>互联网</tag>
         <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jQuery知识点粗浅总结</title>
+    <url>/2021/03/29/jQuery/</url>
+    <content><![CDATA[<h1 id="jquery是一个JavaScript工具库"><a href="#jquery是一个JavaScript工具库" class="headerlink" title="jquery是一个JavaScript工具库"></a>jquery是一个JavaScript工具库</h1><h2 id="关于"><a href="#关于" class="headerlink" title="关于$"></a>关于$</h2><ul>
+<li>$是一个函数，与jquery等价</li>
+<li>参数传递不同，效果也不同<ul>
+<li>如果参数是一个匿名函数– 入口函数</li>
+<li>如果参数是一个字符串–选择器/创建一个对象</li>
+<li>如果参数传递的是一个dom对象，那将dom对象当作一个jquery对象</li>
+</ul>
+</li>
+</ul>
+<h2 id="jquery选择器"><a href="#jquery选择器" class="headerlink" title="jquery选择器"></a>jquery选择器</h2><ul>
+<li>关于jquery中的选择器，大部分都可以使用css中的选择器方法来实现</li>
+<li>基本选择器<ul>
+<li>交集选择器<br>  方法一：<br>  $(“S1S2”)，注意中间没有空格，这样就是需要同时满足这两个条件的选择器，也就是交集。<br>  例如：<br>  $(“div.ff”)<br>  表示即是”div”元素，同时又是clss=”ff”的类。<br>  方法二：<br>  $(“S1”).filter(“S2”);<br>  交集应该是同时符合两个条件，如果先找到符合第一个条件的，再用过滤器找到符合第二个条件的，这样就和选择交集效果相同了。<br>  例如：<br>  $(“div”).filter(“.ff”)<br>  这种方法与上面的$(“div.ff”)选择的集合是相同的。</li>
+<li>并集选择器<br>  例: $(‘div,p,li’)<br>  通过，号将这些属性的标签选择到</li>
+<li>接下来是三种最基本的选择器方法</li>
+<li>标签选择器</li>
+<li>类选择器</li>
+<li>id选择器</li>
+</ul>
+</li>
+<li>层级选择器<ul>
+<li>子代选择器<br>  $(‘ul&gt;li’)表示选择ul标签下的li标签 此选择器只能选择直属后代标签</li>
+<li>后代选择器<br>  $(‘ul li’)表示选择ul标签下的li标签 此标签可以选择父结构下所有符合的子标签</li>
+</ul>
+</li>
+<li>过滤选择器<ul>
+<li>：eq（index）选择索引的元素</li>
+<li>：odd 选择索引号为奇数的元素</li>
+<li>：even选择索引号为偶数的元素</li>
+</ul>
+</li>
+</ul>
+<h2 id="修改类"><a href="#修改类" class="headerlink" title="修改类"></a>修改类</h2><ul>
+<li>添加class<br>.addclass(‘’)</li>
+<li>移除class<br>.remove(‘’)</li>
+<li>判断class<br>.hasclass(‘’)<ul>
+<li>切换class<br>.toggleclass(‘’)</li>
+</ul>
+</li>
+<li>此处无注释，均为单纯方法调用</li>
+</ul>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><ul>
+<li>注册事件 on</li>
+<li>解绑事件 off</li>
+<li>触发器trigger可以触发自定义事件</li>
+</ul>
+<h2 id="操作属性"><a href="#操作属性" class="headerlink" title="操作属性"></a>操作属性</h2><ul>
+<li><p>获取/修改属性<br>attr(‘属性名’，’属性值‘)</p>
+</li>
+<li><p>移除属性<br>removeAttr()</p>
+</li>
+<li><p>对于jquery 关于checked clected disabled这类boolean属性 不能用attr方法 只能用prop方法</p>
+</li>
+<li><p>宽高</p>
+</li>
+<li><p>outerWidth（true）与outerHeight(true)会获取到包含内边距与边框与外边距</p>
+</li>
+<li><p>outerWidth（）与outerHeight()会获取到包含内边距与边框</p>
+</li>
+<li><p>innerWidth（）与innerHeight()会获取到内边距</p>
+</li>
+<li><p>position()得到一个对象 包含了元素距离定位父级top与left的值</p>
+</li>
+<li><p>offset（）得到一个对象 包含了top与left的值</p>
+</li>
+<li><p>scrollTop（）与scrollLeft()是元素内容贝卷曲的长度</p>
+</li>
+<li><p>$(window).scrollTop()与secollLeft()是页面内容贝卷曲的长度   </p>
+</li>
+</ul>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><ul>
+<li><p>显示：show（）参数1：执行动画的时长 毫秒数 参数2：回调函数</p>
+</li>
+<li><p>隐藏：hide（）参数1：执行动画的时长 毫秒数 参数2：回调函数</p>
+</li>
+<li><p>切换：toggle（）参数1：执行动画的时长 毫秒数 参数2：回调函数</p>
+</li>
+<li><p>滑入 slideDown（）参数1：执行动画的时长 毫秒数 参数2：回调函数</p>
+</li>
+<li><p>滑出 slideUp（）参数1：执行动画的时长 毫秒数 参数2：回调函数</p>
+</li>
+<li><p>切换：slideToggle（）参数1：执行动画的时长 毫秒数 参数2：回调函数</p>
+</li>
+<li><p>淡入：fadeIn（）参数1：执行动画的时长 毫秒数 参数2：回调函数</p>
+</li>
+<li><p>淡出：fadeOut（）参数1：执行动画的时长 毫秒数 参数2：回调函数</p>
+</li>
+<li><p>切换：fadeToggle（）参数1：执行动画的时长 毫秒数 参数2：回调函数</p>
+</li>
+<li><p>自定义动画：animate（）参数1：对象  参数2：可选的 代表执行时长 参数三：代表的是缓动swing还是匀速linner 参数四：回调函数   </p>
+</li>
+</ul>
+<h2 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h2><ul>
+<li>.html（）设置内容 如果内容包含了标签 也能被解析<br>  $()也可以创建节点</li>
+<li>添加节点 父元素。appendTo（子元素）</li>
+<li>prepend（）作为第一个子元素添加</li>
+<li>元素1.before（元素2）吧元素2插在元素1前面</li>
+<li>元素1.after（元素2）吧元素2插在元素1后面</li>
+<li>元素1.remove（）移除自己</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>Jquery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript原型链详解</title>
+    <url>/2021/03/29/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="关于JavaScript原型链"><a href="#关于JavaScript原型链" class="headerlink" title="关于JavaScript原型链"></a>关于JavaScript原型链</h1><h1 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h1><ul>
+<li><p>每个函数都有一个prototype属性</p>
+<ul>
+<li>他默认指向一个object空对象</li>
+<li> 原型对象中有一个属性constructor，他默认指向函数对象</li>
+</ul>
+</li>
+<li><p>给函数对象添加属性（一般都是方法）</p>
+</li>
+<li><p>函数的所有实例对象自动拥有原型中的属性（方法）</p>
+<h2 id="显式原型与隐式原型"><a href="#显式原型与隐式原型" class="headerlink" title="显式原型与隐式原型"></a>显式原型与隐式原型</h2></li>
+<li><p>每个函数fuction都有一个proyotype 即显式原型</p>
+</li>
+<li><p>每个实例对象都有一个——proto——称为隐式原型</p>
+</li>
+<li><p>对象的隐式原型的值为其对应构造函数的显式原型的值</p>
+</li>
+<li></li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">fuction Fn(){</span><br><span class="line">    //内部语句：this.prototype={}</span><br><span class="line">}</span><br><span class="line">var fn =new Fn()//内部语句：this.__proto__=Fn.prototype</span><br><span class="line"></span><br><span class="line">//fn.__proto__==Fn.prototype</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><ul>
+<li>访问一个对象的属性时</li>
+</ul>
+<p>1.先在自身属性中查找，找到返回<br>2.如果没有，再沿着——proto——这条链向上查找，找到返回<br>3.如果最终没有找到，返回undefined<br>此流程为隐式原型链</p>
+<ul>
+<li><p><img src="/images/%E5%8E%9F%E5%9E%8B%E9%93%BE.png" alt="原型链"></p>
+</li>
+<li><p>函数的显式原型指向的对象默认式空Object实例对象（但object不满足）</p>
+</li>
+<li><p>所有函数都是Fuction的实例（包含Fuction）</p>
+</li>
+<li><p>Object的原型对象是原型链尽头</p>
+</li>
+<li><p>读取对象的属性时，会自动到原型链中查找</p>
+</li>
+<li><p>设置对象的属性值时，不会查找原型链，如果当前对象中没有此属性，直接添加此属性并设置其值</p>
+</li>
+<li><p>方法一般定义在原型中，属性一般通过构造函数定义在</p>
+</li>
+<li><p> <img src="/images/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%BB%A7%E6%89%BF.png" alt="原型链继承"></p>
+<h2 id="原型链测试题"><a href="#原型链测试题" class="headerlink" title="原型链测试题"></a>原型链测试题</h2></li>
+</ul>
+<h3 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">fuction A(){}</span><br><span class="line">A.prototype.n=1</span><br><span class="line">var B=new A()</span><br><span class="line">A.prototype={</span><br><span class="line">    n:2;</span><br><span class="line">    m:3</span><br><span class="line">}</span><br><span class="line">var c=new A()</span><br><span class="line">console.log(b.n,b.m,c.n,c.m)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">fuction F(){}</span><br><span class="line">object.prototype.a=fuction(){</span><br><span class="line">    console.log('a()')</span><br><span class="line">}</span><br><span class="line">Fuction.prototype.b=fuction(){</span><br><span class="line">    console.log('b()')</span><br><span class="line">}</span><br><span class="line">var f= new F()</span><br><span class="line">f.a()//a()</span><br><span class="line">f.b()//报错</span><br><span class="line">F.a()//a()</span><br><span class="line">F.b()//b()</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
 </search>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript实现集合与字典, 贾志飞的博客">
+    <meta name="keywords" content="JavaScript原型链详解, 贾志飞的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JavaScript实现集合与字典 | 贾志飞的博客</title>
+    <title>JavaScript原型链详解 | 贾志飞的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/3fc01d357efeac40b3c2503c25214b4af3e4b467.jpg@1320w_2346h.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/j8bbb5eaa8d11d769fec2e59a69f059eb0f9e201f.jpg@1320w_934h.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaScript实现集合与字典</h1>
+                    <h1 class="description center-align post-title">JavaScript原型链详解</h1>
                 </div>
             </div>
         </div>
@@ -433,16 +433,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                                <span class="chip bg-color">数据结构</span>
-                            </a>
-                        
-                            <a href="/tags/javascript/">
-                                <span class="chip bg-color">javascript</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -457,21 +449,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-26
+                    2021-03-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-26
+                    2021-03-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    444
                 </div>
                 
 
@@ -493,91 +485,50 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JavaScript实现集合与字典"><a href="#JavaScript实现集合与字典" class="headerlink" title="JavaScript实现集合与字典"></a>JavaScript实现集合与字典</h1><h2 id="一、集合结构"><a href="#一、集合结构" class="headerlink" title="一、集合结构"></a>一、集合结构</h2><ul>
-<li><p>集合比较常见的实现方式是哈希表，这里使用JavaScript的Object类进行封装。</p>
-</li>
-<li><p>集合通常是由一组无序的、不能重复的元素构成。</p>
-</li>
-<li><p>数学中常指的集合中的元素是可以重复的，但是计算机中集合的元素不能重复。</p>
-</li>
-<li><p>集合是特殊的数组：</p>
+                <h1 id="关于JavaScript原型链"><a href="#关于JavaScript原型链" class="headerlink" title="关于JavaScript原型链"></a>关于JavaScript原型链</h1><h1 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h1><ul>
+<li><p>每个函数都有一个prototype属性</p>
 <ul>
-<li>特殊之处在于里面的元素没有顺序，也不能重复。<br>没有顺序意味着不能通过下标值进行访问，不能重复意味着相同的对象在集合中只会存在一份。</li>
+<li>他默认指向一个object空对象</li>
+<li> 原型对象中有一个属性constructor，他默认指向函数对象</li>
 </ul>
 </li>
-<li><p>实现集合类：</p>
+<li><p>给函数对象添加属性（一般都是方法）</p>
+</li>
+<li><p>函数的所有实例对象自动拥有原型中的属性（方法）</p>
+<h2 id="显式原型与隐式原型"><a href="#显式原型与隐式原型" class="headerlink" title="显式原型与隐式原型"></a>显式原型与隐式原型</h2></li>
+<li><p>每个函数fuction都有一个proyotype 即显式原型</p>
+</li>
+<li><p>每个实例对象都有一个——proto——称为隐式原型</p>
+</li>
+<li><p>对象的隐式原型的值为其对应构造函数的显式原型的值</p>
+</li>
+<li></li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fuction Fn(){</span><br><span class="line">    //内部语句：this.prototype={}</span><br><span class="line">}</span><br><span class="line">var fn =new Fn()//内部语句：this.__proto__=Fn.prototype</span><br><span class="line"></span><br><span class="line">//fn.__proto__==Fn.prototype</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><ul>
+<li>访问一个对象的属性时</li>
+</ul>
+<p>1.先在自身属性中查找，找到返回<br>2.如果没有，再沿着——proto——这条链向上查找，找到返回<br>3.如果最终没有找到，返回undefined<br>此流程为隐式原型链</p>
 <ul>
-<li>在ES6中的Set类就是一个集合类，这里我们重新封装一个Set类，了解集合的底层实现。</li>
-<li>JavaScript中的Object类中的key就是一个集合，可以使用它来封装集合类Set。</li>
+<li><p><img src="/images/%E5%8E%9F%E5%9E%8B%E9%93%BE.png" alt="原型链"></p>
+</li>
+<li><p>函数的显式原型指向的对象默认式空Object实例对象（但object不满足）</p>
+</li>
+<li><p>所有函数都是Fuction的实例（包含Fuction）</p>
+</li>
+<li><p>Object的原型对象是原型链尽头</p>
+</li>
+<li><p>读取对象的属性时，会自动到原型链中查找</p>
+</li>
+<li><p>设置对象的属性值时，不会查找原型链，如果当前对象中没有此属性，直接添加此属性并设置其值</p>
+</li>
+<li><p>方法一般定义在原型中，属性一般通过构造函数定义在</p>
+</li>
+<li><p> <img src="/images/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%BB%A7%E6%89%BF.png" alt="原型链继承"></p>
+<h2 id="原型链测试题"><a href="#原型链测试题" class="headerlink" title="原型链测试题"></a>原型链测试题</h2></li>
 </ul>
-</li>
-<li><p>集合常见的操作：</p>
-<ul>
-<li><p>add（value）：向集合添加一个新的项；</p>
-</li>
-<li><p>remove（value）：从集合中移除一个值；</p>
-</li>
-<li><p>has（value）：如果值在集合中，返回true，否则返回false；</p>
-</li>
-<li><p>clear（）：移除集合中的所有项；</p>
-</li>
-<li><p>size（）：返回集合所包含元素的数量，与数组的length属性相似；</p>
-</li>
-<li><p>values（）：返回一个包含集合中所有值的数组；</p>
-<h2 id="集合的实现"><a href="#集合的实现" class="headerlink" title="集合的实现"></a>集合的实现</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">//封装集合类</span><br><span class="line"> function Set(){</span><br><span class="line">     // 属性</span><br><span class="line">     this.items={}</span><br><span class="line">     // 方法</span><br><span class="line">     // 1.add方法</span><br><span class="line">     Set.prototype.add=function(value){</span><br><span class="line">         // 将元素添加到元素中</span><br><span class="line">         // 判断当前集合中是否含有该元素</span><br><span class="line">         if(this.has(value)){</span><br><span class="line">          return false</span><br><span class="line">         }</span><br><span class="line">         this.items[value]=value</span><br><span class="line">         return true</span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // has方法</span><br><span class="line">     Set.prototype.has=function(value){</span><br><span class="line">         return this.items.hasOwnProperty(value)</span><br><span class="line">     }</span><br><span class="line">     // remove方法</span><br><span class="line">     Set.prototype.remove=function(value){</span><br><span class="line">         if(!this.has(value)){</span><br><span class="line">            return false</span><br><span class="line">         }</span><br><span class="line">         // 将元素从集合中删除</span><br><span class="line">         delete this.items[value]</span><br><span class="line">         return true</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // clear方法</span><br><span class="line">     Set.prototype.clear=function(value){</span><br><span class="line">        this.items={}</span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // size方法</span><br><span class="line">     Set.prototype.size=function(value){</span><br><span class="line">        return Object.keys(this.items).length</span><br><span class="line">        </span><br><span class="line">     }</span><br><span class="line">     // values方法 获取集合中所有的值</span><br><span class="line">     Set.prototype.values=function(value){</span><br><span class="line">        return Object.keys(this.items)</span><br><span class="line">        </span><br><span class="line">     }</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="集合间的操作"><a href="#集合间的操作" class="headerlink" title="集合间的操作"></a>集合间的操作</h1></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>并集：对于给定的两个集合，返回一个包含两个集合中所有元素的新集合；</li>
-<li>交集：对于给定的两个集合，返回一个包含两个集合中共有元素的新集合；</li>
-<li>差集：对于给定的两个集合，返回一个包含所有存在于第一个集合且不存在于第二个集合的元素的新集合；</li>
-<li>子集：验证一个给定集合是否是另一个集合的子集；<br><img src="/images/2.png" alt="图片"></li>
-</ul>
-<h2 id="并集的实现："><a href="#并集的实现：" class="headerlink" title="并集的实现："></a>并集的实现：</h2><ul>
-<li><p>实现思路：创建集合C代表集合A和集合B的并集，先将集合A中的所有元素添加到集合C中，再遍历集合B，如果是集合C所没有的元素就把它添加到集合C中。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Set.prototype.union = otherSet =&gt; {</span><br><span class="line">     // this:集合对象A</span><br><span class="line">     // otherSet:集合对象B</span><br><span class="line">     //1.创建一个新的集合</span><br><span class="line">     let unionSet = new Set()</span><br><span class="line"></span><br><span class="line">     //2.将A集合中的所有元素添加到新集合中</span><br><span class="line">     let values = this.values()</span><br><span class="line">     // for(let i of values){</span><br><span class="line">     //   unionSet.add(i)</span><br><span class="line">     // }</span><br><span class="line">     for(let i = 0;i &lt; values.length;i++){</span><br><span class="line">       unionSet.add(values[i])</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">     //3.取出B集合中的元素,判断是否需要加到新集合中</span><br><span class="line">     values = otherSet.values()</span><br><span class="line">     // for(let i of values){</span><br><span class="line">     //   //由于集合的add方法已经对重复的元素进行了判断,所以这里可以直接添加</span><br><span class="line">     //   unionSet.add(i)</span><br><span class="line">     // }</span><br><span class="line">     for(let i = 0;i &lt; values.length;i++){</span><br><span class="line">       unionSet.add(values[i])</span><br><span class="line">     }</span><br><span class="line">     return unionSet</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="交集的实现："><a href="#交集的实现：" class="headerlink" title="交集的实现："></a>交集的实现：</h2></li>
-<li><p>实现思路：遍历集合A，当取得的元素也存在于集合B时，就把该元素添加到另一个集合C中。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Set.prototype.intersection = otherSet =&gt; {</span><br><span class="line">     // this:集合A</span><br><span class="line">     // otherSet:集合B</span><br><span class="line">     //1.创建新的集合</span><br><span class="line">     let intersectionSet = new Set()</span><br><span class="line">     </span><br><span class="line">     //2.从A中取出一个元素，判断是否同时存在于集合B中，是则放入新集合中</span><br><span class="line">     let values = this.values()</span><br><span class="line">     for(let i =0 ; i &lt; values.length; i++){</span><br><span class="line">       let item = values[i]</span><br><span class="line">       if (otherSet.has(item)) {</span><br><span class="line">         intersectionSet.add(item)</span><br><span class="line">       }</span><br><span class="line">     }</span><br><span class="line">     return intersectionSet</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="差集的实现："><a href="#差集的实现：" class="headerlink" title="差集的实现："></a>差集的实现：</h2></li>
-<li><p>实现思路：遍历集合A，当取得的元素不存在于集合B时，就把该元素添加到另一个集合C中。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Set.prototype.diffrence = otherSet =&gt; {</span><br><span class="line">        //this:集合A</span><br><span class="line">        //otherSet:集合B</span><br><span class="line">        //1.创建新的集合</span><br><span class="line">        var diffrenceSet = new Set()</span><br><span class="line"></span><br><span class="line">        //2.取出A集合中的每一个元素，判断是否同时存在于B中，不存在则添加到新集合中</span><br><span class="line">        var values = this.values()</span><br><span class="line">        for(var i = 0;i &lt; values.length; i++){</span><br><span class="line">          var item = values[i]</span><br><span class="line">          if (!otherSet.has(item)) {</span><br><span class="line">            diffrenceSet.add(item)</span><br><span class="line">          }</span><br><span class="line">        }</span><br><span class="line">        return diffrenceSet</span><br><span class="line">      }</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="子集的实现："><a href="#子集的实现：" class="headerlink" title="子集的实现："></a>子集的实现：</h2></li>
-<li><p>实现思路：遍历集合A，当取得的元素中有一个不存在于集合B时，就说明集合A不是集合B的子集，返回false。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Set.prototype.subset = otherSet =&gt; {</span><br><span class="line">       //this:集合A</span><br><span class="line">       //otherSet：集合B</span><br><span class="line">       //遍历集合A中的所有元素，如果发现，集合A中的元素，在集合B中不存在，那么放回false，如果遍历完整个集合A没有返回false，就返回true</span><br><span class="line">       let values = this.values()</span><br><span class="line">       for(let i = 0; i &lt; values.length; i++){</span><br><span class="line">         let item = values[i]</span><br><span class="line">         if(!otherSet.has(item)){</span><br><span class="line">           return false</span><br><span class="line">         }</span><br><span class="line">       }</span><br><span class="line">       return true</span><br><span class="line">     }</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="字典结构"><a href="#字典结构" class="headerlink" title="字典结构"></a>字典结构</h1></li>
-<li><p>字典的特点：</p>
-</li>
-<li><p>字典存储的是键值对，主要特点是一一对应；</p>
-<ul>
-<li>比如保存一个人的信息：数组形式：[19，‘Tom’，1.65]，可通过下标值取出信息；字典形式：{“age”：19，”name”：”Tom”，”height”：165}，可以通过key取出value。<br>此外，在字典中key是不能重复且无序的，而Value可以重复。</li>
-</ul>
-</li>
-<li><p>字典和映射的关系：</p>
-<ul>
-<li>有些编程语言中称这种映射关系为字典，如Swift中的Dictonary，Python中的dict；</li>
-<li>有些编程语言中称这种映射关系为Map，比如Java中的HashMap&amp;TreeMap等；</li>
-</ul>
-</li>
-<li><p>字典类常见的操作：</p>
-<ul>
-<li>set(key,value)：向字典中添加新元素。</li>
-<li>remove(key)：通过使用键值来从字典中移除键值对应的数据值。</li>
-<li>has(key)：如果某个键值存在于这个字典中，则返回true，反之则返回false。</li>
-<li>get(key)：通过键值查找特定的数值并返回。</li>
-<li>clear()：将这个字典中的所有元素全部删除。</li>
-<li>size()：返回字典所包含元素的数量。与数组的length属性类似。</li>
-<li>keys()：将字典所包含的所有键名以数组形式返回。</li>
-<li>values()：将字典所包含的所有数值以数组形式返回。<h2 id="封装字典"><a href="#封装字典" class="headerlink" title="封装字典"></a>封装字典</h2></li>
-</ul>
-</li>
-<li><p>字典类可以基于JavaScript中的对象结构来实现，这里直接实现字典类中的常用方法。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">//封装字典类</span><br><span class="line">function Dictionary(){</span><br><span class="line">  //字典属性</span><br><span class="line">  this.items = {}</span><br><span class="line"></span><br><span class="line">  //字典操作方法</span><br><span class="line">  //一.在字典中添加键值对</span><br><span class="line">  Dictionary.prototype.set = function(key, value){</span><br><span class="line">    this.items[key] = value</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //二.判断字典中是否有某个key</span><br><span class="line">  Dictionary.prototype.has = function(key){</span><br><span class="line">    return this.items.hasOwnProperty(key)</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //三.从字典中移除元素</span><br><span class="line">  Dictionary.prototype.remove = function(key){</span><br><span class="line">    //1.判断字典中是否有这个key</span><br><span class="line">    if(!this.has(key)) return false</span><br><span class="line"></span><br><span class="line">    //2.从字典中删除key</span><br><span class="line">    delete this.items[key]</span><br><span class="line">    return true</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //四.根据key获取value</span><br><span class="line">  Dictionary.prototype.get = function(key){</span><br><span class="line">    return this.has(key) ? this.items[key] : undefined</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //五.获取所有keys</span><br><span class="line">  Dictionary.prototype.keys = function(){</span><br><span class="line">    return Object.keys(this.items)</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //六.size方法</span><br><span class="line">  Dictionary.prototype.keys = function(){</span><br><span class="line">    return this.keys().length</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  //七.clear方法</span><br><span class="line">  Dictionary.prototype.clear = function(){</span><br><span class="line">    this.items = {}</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</li>
-</ul>
-
+<h3 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fuction A(){}</span><br><span class="line">A.prototype.n=1</span><br><span class="line">var B=new A()</span><br><span class="line">A.prototype={</span><br><span class="line">    n:2;</span><br><span class="line">    m:3</span><br><span class="line">}</span><br><span class="line">var c=new A()</span><br><span class="line">console.log(b.n,b.m,c.n,c.m)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="题2"><a href="#题2" class="headerlink" title="题2"></a>题2</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fuction F(){}</span><br><span class="line">object.prototype.a=fuction(){</span><br><span class="line">    console.log('a()')</span><br><span class="line">}</span><br><span class="line">Fuction.prototype.b=fuction(){</span><br><span class="line">    console.log('b()')</span><br><span class="line">}</span><br><span class="line">var f= new F()</span><br><span class="line">f.a()//a()</span><br><span class="line">f.b()//报错</span><br><span class="line">F.a()//a()</span><br><span class="line">F.b()//b()</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -603,7 +554,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://KIROTOLI.github.io/2021/01/26/JavaScript%E5%AE%9E%E7%8E%B0%E9%9B%86%E5%90%88%E4%B8%8E%E5%AD%97%E5%85%B8/">https://KIROTOLI.github.io/2021/01/26/JavaScript%E5%AE%9E%E7%8E%B0%E9%9B%86%E5%90%88%E4%B8%8E%E5%AD%97%E5%85%B8/</a>
+                    <a href="https://KIROTOLI.github.io/2021/03/29/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE%E8%AF%A6%E8%A7%A3/">https://KIROTOLI.github.io/2021/03/29/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE%E8%AF%A6%E8%A7%A3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -641,16 +592,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                                    <span class="chip bg-color">数据结构</span>
-                                </a>
-                            
-                                <a href="/tags/javascript/">
-                                    <span class="chip bg-color">javascript</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -1083,16 +1026,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/01/29/JavaScript%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/">
+                <a href="/2021/03/29/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE%E8%AF%A6%E8%A7%A3/">
                     <div class="card-image">
                         
-                        <img src="/images/c383d5bc27d7356160c7ff7fcef8f279e5486c78.jpg@1320w_742h.webp" class="responsive-img" alt="JavaScript单向链表的实现">
+                        <img src="/images/j8bbb5eaa8d11d769fec2e59a69f059eb0f9e201f.jpg@1320w_934h.webp" class="responsive-img" alt="JavaScript原型链详解">
                         
-                        <span class="card-title">JavaScript单向链表的实现</span>
+                        <span class="card-title">JavaScript原型链详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1102,9 +1046,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1113,19 +1057,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                        <span class="chip bg-color">数据结构</span>
-                    </a>
-                    
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -1139,12 +1076,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/24/%EF%BC%88Queue%EF%BC%89/">
+                <a href="/2021/03/29/jQuery/">
                     <div class="card-image">
                         
-                        <img src="/images/hgywadtf1gohgywadtf1go.jpg" class="responsive-img" alt="javascript数据结构 队列结构（Queue）">
+                        <img src="/images/f24a386ead502bb1790dcb7ad0852f57403ea800.jpg@1320w_1320h.webp" class="responsive-img" alt="jQuery知识点粗浅总结">
                         
-                        <span class="card-title">javascript数据结构 队列结构（Queue）</span>
+                        <span class="card-title">jQuery知识点粗浅总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1155,7 +1092,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
                             </span>
                         <span class="publish-author">
                             
@@ -1168,16 +1105,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                        <span class="chip bg-color">数据结构</span>
-                    </a>
-                    
                     <a href="/tags/javascript/">
                         <span class="chip bg-color">javascript</span>
                     </a>
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/Jquery/">
+                        <span class="chip bg-color">Jquery</span>
                     </a>
                     
                 </div>
