@@ -1193,4 +1193,56 @@
         <tag>bug</tag>
       </tags>
   </entry>
+  <entry>
+    <title>vue3从零开始搭建项目</title>
+    <url>/2021/04/01/vue3%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="一-环境依赖"><a href="#一-环境依赖" class="headerlink" title="一 环境依赖"></a>一 环境依赖</h1><ul>
+<li><p>node</p>
+<ul>
+<li>首先要在环境中安装node.js<br>可以直接在弄得js官网下载并进行安装，之后可以通过cmd命令行  node -v来查看是否安装成功和当前node版本<br><img src="/images/%E6%9F%A5%E7%9C%8Bnode%E7%89%88%E6%9C%AC.png" alt="图片"><br>可以看到我当前版本的node为14.15.5 下面的是npm版本,值得注意的是npm在新版本安装node会自动进行安装,无需进行手动安装</li>
+</ul>
+</li>
+<li><p>vue-cli3脚手架</p>
+<ul>
+<li>命令:npm instal -g @vue/cli<br><img src="/images/vuecli%E7%89%88%E6%9C%AC.png" alt="图片"></li>
+</ul>
+</li>
+</ul>
+<h1 id="二-创建新项目"><a href="#二-创建新项目" class="headerlink" title="二 创建新项目"></a>二 创建新项目</h1><ul>
+<li><p>在终端中输入命令行:</p>
+<ul>
+<li>vue create 项目名称<br>就会开始创建新项目了</li>
+</ul>
+</li>
+<li><p>安装依赖</p>
+<ul>
+<li><p>在项目生成后,会出现下列选择进行项目依赖的安装<br><img src="/images/vue%E7%8E%AF%E5%A2%83.png" alt="图片"></p>
+</li>
+<li><p>简单介绍一下分别是: </p>
+<p>babel:对es6语法的解析</p>
+<p>TypeScript:是否使用typescript语法</p>
+<p>router:vue路由依赖</p>
+<p>vuex:vue状态管理依赖</p>
+<p>css Pre-processors:css预编译</p>
+<p>Linter/Formatter:严格模式</p>
+<p>Unit Testing:单元测试</p>
+<p>E2E Testing—e2e测试</p>
+<p>使用空格表示选中 回车表示完成</p>
+</li>
+</ul>
+</li>
+<li><p>运行项目</p>
+<ul>
+<li>此时新vue项目就可以运行了<br>cd进行项目目录,输入 npm run serve<br>默认地址为:<a href="http://localhost:8080/">http://localhost:8080/</a></li>
+</ul>
+<p><img src="/images/vue%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png" alt="图片"></p>
+</li>
+<li><p>当一个vue新项目贝创建好后,目录结构大致为以上结构,接下来就是根据自己的项目进行结构划分了</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>-vue -webpack</tag>
+      </tags>
+  </entry>
 </search>
